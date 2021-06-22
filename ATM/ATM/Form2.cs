@@ -12,11 +12,16 @@ namespace ATM
 {
     public partial class Form2 : Form
     {
+        
         public Form2()
         {
             InitializeComponent();
+            this.TopMost = true;
+            UcPanel1 panel = new UcPanel1(this);
+            controllView(panel, "ucpanel1");
         }
-        private void controllView(UserControl uc, string view)
+
+        public void controllView(UserControl uc, string view)
         {
             if (!mainL.Controls.ContainsKey(view))
             {
