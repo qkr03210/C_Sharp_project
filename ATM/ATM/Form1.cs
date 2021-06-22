@@ -13,7 +13,7 @@ namespace ATM
 {
     public partial class Form1 : Form
     {
-        MySqlConnection connection =new MySqlConnection("Server=localhost;Database=member1;Uid=root;Pwd=1234;");
+        //MySqlConnection connection =new MySqlConnection("Server=localhost;Database=member1;Uid=root;Pwd=1234;");
         public Form1()
         {
             InitializeComponent();
@@ -49,7 +49,7 @@ namespace ATM
                 rdr.Close();
             }
         }
-
+        //아직 안씀
         private static void SelectUsingAdapter()
         {
             DataSet ds = new DataSet();
@@ -68,6 +68,12 @@ namespace ATM
             {
                 Console.WriteLine(r["Name"]);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            new Form2().ShowDialog();
         }
     }
 }

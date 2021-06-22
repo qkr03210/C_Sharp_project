@@ -22,3 +22,6 @@ C:\Users\KB\source\repos\ATM\ATM\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\KB\source\repos\ATM\ATM\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\KB\source\repos\ATM\ATM\bin\Debug\MySql.Data.xml
 C:\Users\KB\source\repos\ATM\ATM\obj\Debug\ATM.csproj.CopyComplete
+C:\Users\KB\source\repos\ATM\ATM\obj\Debug\ATM.Form2.resources
+C:\Users\KB\source\repos\ATM\ATM\obj\Debug\ATM.UcPanel1.resources
+C:\Users\KB\source\repos\ATM\ATM\obj\Debug\ATM.UcPanel2.resources
