@@ -34,6 +34,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.24.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,30 +50,37 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\MySql.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="UcPanel1.cs">
+    <Compile Include="Panel\UcPanel1.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcPanel1.Designer.cs">
+    <Compile Include="Panel\UcPanel1.Designer.cs">
       <DependentUpon>UcPanel1.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UcPanel2.cs">
+    <Compile Include="Panel\UcPanel2.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UcPanel2.Designer.cs">
+    <Compile Include="Panel\UcPanel2.Designer.cs">
       <DependentUpon>UcPanel2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\UcPanel3.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\UcPanel3.Designer.cs">
+      <DependentUpon>UcPanel3.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UcPanel1.resx">
+    <EmbeddedResource Include="Panel\UcPanel1.resx">
       <DependentUpon>UcPanel1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -82,9 +92,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UcPanel2.resx">
+    <EmbeddedResource Include="Panel\UcPanel2.resx">
       <DependentUpon>UcPanel2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panel\UcPanel3.resx">
+      <DependentUpon>UcPanel3.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

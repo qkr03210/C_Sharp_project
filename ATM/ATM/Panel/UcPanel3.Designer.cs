@@ -1,7 +1,7 @@
 ﻿
 namespace ATM
 {
-    partial class UcPanel2
+    partial class UcPanel3
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -29,32 +29,18 @@ namespace ATM
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_switch_panel1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button_switch_panel1
-            // 
-            this.button_switch_panel1.Location = new System.Drawing.Point(94, 107);
-            this.button_switch_panel1.Name = "button_switch_panel1";
-            this.button_switch_panel1.Size = new System.Drawing.Size(116, 53);
-            this.button_switch_panel1.TabIndex = 0;
-            this.button_switch_panel1.Text = "패널1로";
-            this.button_switch_panel1.UseVisualStyleBackColor = true;
-            this.button_switch_panel1.Click += new System.EventHandler(this.button_switch_panel1_Click);
-            // 
-            // UcPanel2
+            // UcPanel3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button_switch_panel1);
-            this.Name = "UcPanel2";
+            this.Name = "UcPanel3";
             this.Size = new System.Drawing.Size(800, 450);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button_switch_panel1;
     }
 }
