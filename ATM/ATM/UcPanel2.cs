@@ -12,8 +12,8 @@ namespace ATM
 {
     public partial class UcPanel2 : UserControl
     {
-        Form2 parentForm;
-        public UcPanel2(Form2 form)
+        Form1 parentForm;
+        public UcPanel2(Form1 form)
         {
             InitializeComponent();
             parentForm = form;

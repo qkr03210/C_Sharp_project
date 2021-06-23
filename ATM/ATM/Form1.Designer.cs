@@ -29,50 +29,24 @@ namespace ATM
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_panel = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.mainL = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
-            // button_panel
+            // mainL
             // 
-            this.button_panel.Location = new System.Drawing.Point(45, 72);
-            this.button_panel.Name = "button_panel";
-            this.button_panel.Size = new System.Drawing.Size(153, 81);
-            this.button_panel.TabIndex = 0;
-            this.button_panel.Text = "패널전환 연습";
-            this.button_panel.UseVisualStyleBackColor = true;
-            this.button_panel.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(45, 206);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 100);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "mysql select 연습";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(831, 29);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(51, 40);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.mainL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainL.Location = new System.Drawing.Point(0, 0);
+            this.mainL.Name = "mainL";
+            this.mainL.Size = new System.Drawing.Size(802, 454);
+            this.mainL.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 581);
+            this.ClientSize = new System.Drawing.Size(802, 454);
             this.ControlBox = false;
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button_panel);
+            this.Controls.Add(this.mainL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -82,9 +56,7 @@ namespace ATM
 
         #endregion
 
-        private System.Windows.Forms.Button button_panel;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Panel mainL;
     }
 }
 

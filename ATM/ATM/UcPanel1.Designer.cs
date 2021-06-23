@@ -30,11 +30,13 @@ namespace ATM
         private void InitializeComponent()
         {
             this.button_switch_panel2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_switch_panel2
             // 
-            this.button_switch_panel2.Location = new System.Drawing.Point(53, 67);
+            this.button_switch_panel2.Location = new System.Drawing.Point(673, 378);
             this.button_switch_panel2.Name = "button_switch_panel2";
             this.button_switch_panel2.Size = new System.Drawing.Size(90, 46);
             this.button_switch_panel2.TabIndex = 0;
@@ -42,10 +44,32 @@ namespace ATM
             this.button_switch_panel2.UseVisualStyleBackColor = true;
             this.button_switch_panel2.Click += new System.EventHandler(this.button_switch_panel2_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(694, 29);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(68, 42);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "종료";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(37, 32);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(108, 48);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "MySql 연습(Select)";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // UcPanel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_switch_panel2);
             this.Name = "UcPanel1";
             this.Size = new System.Drawing.Size(800, 450);
@@ -56,5 +80,7 @@ namespace ATM
         #endregion
 
         private System.Windows.Forms.Button button_switch_panel2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
