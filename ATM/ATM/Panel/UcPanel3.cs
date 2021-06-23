@@ -31,51 +31,41 @@ namespace ATM
         }
         public void temp()
         {
-                
-            while (true)
+
+            using (WebClient wc = new WebClient())
             {
-                 using (WebClient wc = new WebClient())
-                 {
-                    var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey="+ mykey+"&searchdate=20210623&data=AP01");
-                    //var jArray = JObject.Parse(json);
+                var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate=20210623&data=AP01");
+                //var jArray = JObject.Parse(json);
 
-                    var objs = JArray.Parse(json).ToObject<List<JObject>>();
-                    string name = objs[0]["cur_unit"].ToString().Trim().Replace(",", "");
-                    string price = objs[0]["kftc_deal_bas_r"].ToString().Trim().Replace(",", "");
-
+                var objs = JArray.Parse(json).ToObject<List<JObject>>();
+                string price = "";
+                string name = "";
+                for (int i = 0; i < objs.Count; i++)
+                {
+                    name = objs[i]["cur_unit"].ToString().Trim().Replace(",", "");
+                    price = objs[i]["kftc_deal_bas_r"].ToString().Trim().Replace(",", "");
                     Console.WriteLine(name);
                     Console.WriteLine(price);
-                    //if (jArray["returnValue"].ToString() == "fail")
-                   
-                            
-                        //"result":1,
-                        //"cur_unit":"AED",
-                        //"ttb":"288.78",
-                        //"tts":"294.61",
-                        //"deal_bas_r":"291.7",
-                        //"bkpr":"291",
-                        //"yy_efee_r":"0",
-                        //"ten_dd_efee_r":"0",
-                        //"kftc_bkpr":"291",
-                        //"kftc_deal_bas_r":"291.7",
-                        //"cur_nm":"아랍에미리트 디르함"
+                }
 
-                           
-                            //jArray["drwtNo3"].ToString();
-                            //jArray["drwtNo4"].ToString();
-                            //jArray["drwtNo5"].ToString();
-                            //jArray["drwtNo6"].ToString();
-                            //jArray["bnusNo"].ToString();
-                            //jArray["drwNo"].ToString();
-                            //jArray["drwNoDate"].ToString();
-                           
+                //"result":1,
+                //"cur_unit":"AED",
+                //"ttb":"288.78",
+                //"tts":"294.61",
+                //"deal_bas_r":"291.7",
+                //"bkpr":"291",
+                //"yy_efee_r":"0",
+                //"ten_dd_efee_r":"0",
+                //"kftc_bkpr":"291",
+                //"kftc_deal_bas_r":"291.7",
+                //"cur_nm":"아랍에미리트 디르함"
 
-                 }
             }
 
+
         }
-    
-    
+
+
     }
 
 
