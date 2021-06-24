@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using ATM.Model;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,35 +22,38 @@ namespace ATM
         string url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON";
         string mykey = "hKSdbCbx9x9G7ynyLP8yxL7z0t9Gwl2c";
 
-
+        List<ExchangeRate> exchanges = new List<ExchangeRate>();
         Form1 parentForm;
         public UcPanel3(Form1 form)
         {
+
             InitializeComponent();
             parentForm = form;
-            temp();
+            
         }
+        //박상준,20210624
+        //당일 환율 api정보를 가져와서 데이터 그리드뷰에 출력(버튼)
         public void temp()
         {
 
             using (WebClient wc = new WebClient())
             {
+                //박상준,20210624
+                //가끔 api로 json읽어올때 한글 깨지는 경우가 있어서 Encoding 문제 발생->해결
                 wc.Encoding = System.Text.Encoding.UTF8;
-                var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate=20210623&data=AP01");
-                Console.WriteLine("json");
-                Console.WriteLine(json);
-                //var json = wc.DownloadString("https://api.upbit.com/v1/candles/minutes/1?market=KRW-BTC&count=1");
-                //var jArray = JObject.Parse(json);
+                var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate="+DateTime.Now.ToString("yyyyMMdd")+"&data=AP01");
 
                 var objs = JArray.Parse(json).ToObject<List<JObject>>();
                 string price = "";
                 string name = "";
+                dataGridView1.DataSource = null;
+                exchanges.Clear();
                 for (int i = 0; i < objs.Count; i++)
                 {
                     name = objs[i]["cur_unit"].ToString().Trim().Replace(",", "");
                     price = objs[i]["kftc_deal_bas_r"].ToString().Trim().Replace(",", "");
-                    Console.WriteLine(name);
-                    Console.WriteLine(price);
+                    ExchangeRate temp = new ExchangeRate(name,price);
+                    exchanges.Add(temp);
                 }
 
                 //"result":1,
@@ -64,12 +68,24 @@ namespace ATM
                 //"kftc_deal_bas_r":"291.7",
                 //"cur_nm":"아랍에미리트 디르함"
 
+                dataGridView1.DataSource = exchanges;
             }
 
 
         }
+        //박상준,20210624
+        //UcPanel1로 이동
+        private void button1_Click(object sender, EventArgs e)
+        {
+            parentForm.HomePanel();
+        }
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            temp();
+        }
 
-
+        //TODO 당일 api읽어와서 파일로 저장하는 기능 해야함
     }
 
 

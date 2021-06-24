@@ -13,11 +13,11 @@ namespace ATM
 {
     public partial class Form1 : Form
     {
-      
+        UcPanel1 panel;
         public Form1()
         {
             InitializeComponent();
-            UcPanel1 panel = new UcPanel1(this);
+            panel = new UcPanel1(this);
             controllView(panel, "ucpanel1");
         }
 
@@ -29,6 +29,11 @@ namespace ATM
                 mainL.Controls.Add(uc);
             }
             mainL.Controls[view].BringToFront();
+        }
+        public void HomePanel()
+        {
+            UcPanel1 panel = new UcPanel1(this);
+            controllView(panel, "ucpanel1");
         }
     }
 }
