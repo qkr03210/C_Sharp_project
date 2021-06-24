@@ -35,6 +35,7 @@ namespace ATM
             using (WebClient wc = new WebClient())
             {
                 var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate=20210623&data=AP01");
+                //var json = wc.DownloadString("https://api.upbit.com/v1/candles/minutes/1?market=KRW-BTC&count=1");
                 //var jArray = JObject.Parse(json);
 
                 var objs = JArray.Parse(json).ToObject<List<JObject>>();
