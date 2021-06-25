@@ -35,21 +35,21 @@ namespace ATM
             // 
             // button_switch_panel1
             // 
-            this.button_switch_panel1.Location = new System.Drawing.Point(94, 107);
+            this.button_switch_panel1.Location = new System.Drawing.Point(681, 394);
             this.button_switch_panel1.Name = "button_switch_panel1";
             this.button_switch_panel1.Size = new System.Drawing.Size(116, 53);
             this.button_switch_panel1.TabIndex = 0;
-            this.button_switch_panel1.Text = "패널1로";
+            this.button_switch_panel1.Text = "메인으로";
             this.button_switch_panel1.UseVisualStyleBackColor = true;
             this.button_switch_panel1.Click += new System.EventHandler(this.button_switch_panel1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(242, 107);
+            this.button1.Location = new System.Drawing.Point(3, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 53);
             this.button1.TabIndex = 1;
-            this.button1.Text = "패널3으로";
+            this.button1.Text = "환율";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 

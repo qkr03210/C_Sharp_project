@@ -23,13 +23,32 @@ namespace ATM
         private void button_switch_panel2_Click(object sender, EventArgs e)
         {
             UcPanel2 panel2 = new UcPanel2(parentForm);
-            parentForm.controllView(panel2,"ucpanel2");
+            parentForm.controllView(panel2, "ucpanel2");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button_HwanYoul_Click(object sender, EventArgs e)
+        {
+            UcPanel3 panel3 = new UcPanel3(parentForm);
+            parentForm.controllView(panel3, "ucpanel3");
+        }
+
+        private void button_Panel4_Click(object sender, EventArgs e)
+        {
+            Panel.UcPanel4 panel4 = new Panel.UcPanel4(parentForm);
+            parentForm.controllView(panel4, "ucpanel4");
+        }
+
+        private void button_panel5_Click(object sender, EventArgs e)
+        {
+            Panel.UcPanel5 panel5 = new Panel.UcPanel5(parentForm);
+            parentForm.controllView(panel5, "ucpanel5");
+        }
+
+        private void button_Exit_Click(object sender, EventArgs e)
         {
             parentForm.Close();
         }
+
         private static void SelectUsingReader()
         {
             string connStr = "Server=localhost;Database=atm;Uid=root;Pwd=1234;";
@@ -72,9 +91,11 @@ namespace ATM
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button_Test_Mysql_Click(object sender, EventArgs e)
         {
             SelectUsingReader();
         }
+
+
     }
 }

@@ -57,7 +57,7 @@ namespace ATM
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(669, 390);
+            this.button1.Location = new System.Drawing.Point(701, 412);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(96, 35);
             this.button1.TabIndex = 1;
@@ -68,7 +68,7 @@ namespace ATM
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(382, 33);
+            this.label1.Location = new System.Drawing.Point(518, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 2;
