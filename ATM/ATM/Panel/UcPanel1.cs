@@ -20,30 +20,47 @@ namespace ATM
             parentForm = form;
         }
 
+        //패널 2번으로
         private void button_switch_panel2_Click(object sender, EventArgs e)
         {
             UcPanel2 panel2 = new UcPanel2(parentForm);
             parentForm.controllView(panel2, "ucpanel2");
         }
 
+        //환율버튼
         private void button_HwanYoul_Click(object sender, EventArgs e)
         {
             UcPanel3 panel3 = new UcPanel3(parentForm);
             parentForm.controllView(panel3, "ucpanel3");
         }
 
+        // 패널 4번으로
         private void button_Panel4_Click(object sender, EventArgs e)
         {
             Panel.UcPanel4 panel4 = new Panel.UcPanel4(parentForm);
             parentForm.controllView(panel4, "ucpanel4");
         }
 
+        //패널 5번으로
         private void button_panel5_Click(object sender, EventArgs e)
         {
             Panel.UcPanel5 panel5 = new Panel.UcPanel5(parentForm);
             parentForm.controllView(panel5, "ucpanel5");
         }
 
+        //패널 6번으로
+        private void button_panel6_Click(object sender, EventArgs e)
+        {
+            Panel.UcPanel6 panel6 = new Panel.UcPanel6(parentForm);
+            parentForm.controllView(panel6, "ucpanel6");
+        }
+
+        private void button_panel7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        //종료
         private void button_Exit_Click(object sender, EventArgs e)
         {
             parentForm.Close();

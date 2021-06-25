@@ -35,11 +35,12 @@ namespace ATM
             this.button_HwanYoul = new System.Windows.Forms.Button();
             this.button_Panel4 = new System.Windows.Forms.Button();
             this.button_panel5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
+            this.button_panel6 = new System.Windows.Forms.Button();
+            this.button_panel7 = new System.Windows.Forms.Button();
+            this.button_panel8 = new System.Windows.Forms.Button();
+            this.button_panel9 = new System.Windows.Forms.Button();
+            this.button_panel10 = new System.Windows.Forms.Button();
+            this.button_panel11 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_switch_panel2
@@ -54,9 +55,9 @@ namespace ATM
             // 
             // button_Exit
             // 
-            this.button_Exit.Location = new System.Drawing.Point(729, 405);
+            this.button_Exit.Location = new System.Drawing.Point(707, 399);
             this.button_Exit.Name = "button_Exit";
-            this.button_Exit.Size = new System.Drawing.Size(68, 42);
+            this.button_Exit.Size = new System.Drawing.Size(90, 46);
             this.button_Exit.TabIndex = 1;
             this.button_Exit.Text = "종료";
             this.button_Exit.UseVisualStyleBackColor = true;
@@ -102,60 +103,72 @@ namespace ATM
             this.button_panel5.UseVisualStyleBackColor = true;
             this.button_panel5.Click += new System.EventHandler(this.button_panel5_Click);
             // 
-            // button6
+            // button_panel6
             // 
-            this.button6.Location = new System.Drawing.Point(3, 266);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(90, 46);
-            this.button6.TabIndex = 6;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button_panel6.Location = new System.Drawing.Point(3, 266);
+            this.button_panel6.Name = "button_panel6";
+            this.button_panel6.Size = new System.Drawing.Size(90, 46);
+            this.button_panel6.TabIndex = 6;
+            this.button_panel6.Text = "패널6으로";
+            this.button_panel6.UseVisualStyleBackColor = true;
+            this.button_panel6.Click += new System.EventHandler(this.button_panel6_Click);
             // 
-            // button7
+            // button_panel7
             // 
-            this.button7.Location = new System.Drawing.Point(572, 3);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(90, 46);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button_panel7.Location = new System.Drawing.Point(707, 3);
+            this.button_panel7.Name = "button_panel7";
+            this.button_panel7.Size = new System.Drawing.Size(90, 46);
+            this.button_panel7.TabIndex = 7;
+            this.button_panel7.Text = "패널7로";
+            this.button_panel7.UseVisualStyleBackColor = true;
+            this.button_panel7.Click += new System.EventHandler(this.button_panel7_Click);
             // 
-            // button8
+            // button_panel8
             // 
-            this.button8.Location = new System.Drawing.Point(572, 55);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(90, 46);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "button8";
-            this.button8.UseVisualStyleBackColor = true;
+            this.button_panel8.Location = new System.Drawing.Point(707, 64);
+            this.button_panel8.Name = "button_panel8";
+            this.button_panel8.Size = new System.Drawing.Size(90, 46);
+            this.button_panel8.TabIndex = 8;
+            this.button_panel8.Text = "패널8로";
+            this.button_panel8.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // button_panel9
             // 
-            this.button9.Location = new System.Drawing.Point(572, 107);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(90, 46);
-            this.button9.TabIndex = 9;
-            this.button9.Text = "button9";
-            this.button9.UseVisualStyleBackColor = true;
+            this.button_panel9.Location = new System.Drawing.Point(707, 129);
+            this.button_panel9.Name = "button_panel9";
+            this.button_panel9.Size = new System.Drawing.Size(90, 46);
+            this.button_panel9.TabIndex = 9;
+            this.button_panel9.Text = "패널9로";
+            this.button_panel9.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // button_panel10
             // 
-            this.button10.Location = new System.Drawing.Point(572, 159);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(90, 46);
-            this.button10.TabIndex = 10;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
+            this.button_panel10.Location = new System.Drawing.Point(707, 197);
+            this.button_panel10.Name = "button_panel10";
+            this.button_panel10.Size = new System.Drawing.Size(90, 46);
+            this.button_panel10.TabIndex = 10;
+            this.button_panel10.Text = "패널10으로";
+            this.button_panel10.UseVisualStyleBackColor = true;
+            // 
+            // button_panel11
+            // 
+            this.button_panel11.Location = new System.Drawing.Point(707, 266);
+            this.button_panel11.Name = "button_panel11";
+            this.button_panel11.Size = new System.Drawing.Size(90, 46);
+            this.button_panel11.TabIndex = 11;
+            this.button_panel11.Text = "패널11로";
+            this.button_panel11.UseVisualStyleBackColor = true;
             // 
             // UcPanel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.button_panel11);
+            this.Controls.Add(this.button_panel10);
+            this.Controls.Add(this.button_panel9);
+            this.Controls.Add(this.button_panel8);
+            this.Controls.Add(this.button_panel7);
+            this.Controls.Add(this.button_panel6);
             this.Controls.Add(this.button_panel5);
             this.Controls.Add(this.button_Panel4);
             this.Controls.Add(this.button_HwanYoul);
@@ -176,10 +189,11 @@ namespace ATM
         private System.Windows.Forms.Button button_HwanYoul;
         private System.Windows.Forms.Button button_Panel4;
         private System.Windows.Forms.Button button_panel5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button_panel6;
+        private System.Windows.Forms.Button button_panel7;
+        private System.Windows.Forms.Button button_panel8;
+        private System.Windows.Forms.Button button_panel9;
+        private System.Windows.Forms.Button button_panel10;
+        private System.Windows.Forms.Button button_panel11;
     }
 }
