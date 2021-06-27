@@ -41,8 +41,8 @@ namespace ATM
                 //박상준,20210624
                 //가끔 api로 json읽어올때 한글 깨지는 경우가 있어서 Encoding 문제 발생->해결
                 wc.Encoding = System.Text.Encoding.UTF8;
-                var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate="+DateTime.Now.ToString("yyyyMMdd")+"&data=AP01");
-
+                var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate="+"20210625"+"&data=AP01");
+                //var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate=" + DateTime.Now.ToString("yyyyMMdd") + "&data=AP01");
                 var objs = JArray.Parse(json).ToObject<List<JObject>>();
                 string price = "";
                 string name = "";

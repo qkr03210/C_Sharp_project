@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ATM.Panel;
 using MySql.Data.MySqlClient;
 
 namespace ATM
@@ -30,8 +31,16 @@ namespace ATM
         //환율버튼
         private void button_HwanYoul_Click(object sender, EventArgs e)
         {
-            UcPanel3 panel3 = new UcPanel3(parentForm);
-            parentForm.controllView(panel3, "ucpanel3");
+            if(parentForm.chkLogin())
+            {
+                UcPanel3 panel3 = new UcPanel3(parentForm);
+                parentForm.controllView(panel3, "ucpanel3");
+            }
+            else
+            {
+                UcPanel_login uc_login = new UcPanel_login(parentForm);
+                parentForm.controllView(uc_login, "UcPanel_login");
+            }
         }
 
         // 패널 4번으로
