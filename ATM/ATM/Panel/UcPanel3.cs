@@ -33,6 +33,8 @@ namespace ATM
         }
         //박상준,20210624
         //당일 환율 api정보를 가져와서 데이터 그리드뷰에 출력(버튼)
+        //박상준,20210627
+        //환율api 정보를 당일 날짜를 기준으로 불러오는것으로 만들었으나, 주말에는 값을 null로 가져오는것을 확인
         public void temp()
         {
 
@@ -79,7 +81,8 @@ namespace ATM
         {
             parentForm.HomePanel();
         }
-        
+        //박상준,20210627
+        //api로 환율 정보 읽어오는 버튼
         private void button2_Click(object sender, EventArgs e)
         {
             temp();

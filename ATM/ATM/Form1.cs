@@ -15,6 +15,10 @@ namespace ATM
     {
         UcPanel1 panel;
         string UserAccount = "";
+
+        //박상준,20210627
+        //주석 추가, ucpanel1을 기본 홈패널로 생각
+        //기본 화면을 ucpanel1로 지정한다.(나중에 패널명 수정 필요)
         public Form1()
         {
             InitializeComponent();
@@ -45,6 +49,9 @@ namespace ATM
         {
             UserAccount = account;
         }
+
+        //박상준,20210627
+        //사용자 계좌가 ""로 없다면 false를 반환하고 아니면 true를 반환한다.
         public Boolean chkLogin()
         {
             if(UserAccount.Equals(""))
@@ -56,9 +63,12 @@ namespace ATM
                 return true;
             }
         }
+        //박상준,20210627
+        //사용자 계좌 정보를 없애고, 패널을 홈패널로 이동한다.
         public void logout()
         {
-            UserAccount = null;
+            UserAccount = "";
+            HomePanel();
         }
     }
 }
