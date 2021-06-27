@@ -1,5 +1,4 @@
-﻿
-namespace ATM.Panel
+﻿namespace ATM.Panel
 {
     partial class UcPanel8
     {
@@ -37,9 +36,10 @@ namespace ATM.Panel
             this.button_back.Location = new System.Drawing.Point(701, 412);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(96, 35);
-            this.button_back.TabIndex = 4;
+            this.button_back.TabIndex = 5;
             this.button_back.Text = "돌아가기";
             this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // UcPanel8
             // 

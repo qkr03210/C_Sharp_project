@@ -12,9 +12,16 @@ namespace ATM.Panel
 {
     public partial class UcPanel8 : UserControl
     {
-        public UcPanel8()
+        Form1 parentForm;
+        public UcPanel8(Form1 form)
         {
             InitializeComponent();
+            parentForm = form;
+        }
+
+        private void button_back_Click(object sender, EventArgs e)
+        {
+            parentForm.HomePanel();
         }
     }
 }

@@ -21,6 +21,15 @@ namespace ATM
             parentForm = form;
         }
 
+        //이승직 20210627
+        //계좌 로그인으로
+        private void button_login_Click(object sender, EventArgs e)
+        {
+            UcPanel_login panel_login = new UcPanel_login(parentForm);
+            parentForm.controllView(panel_login, "ucpanel_login");
+        }
+
+        //이승직 20210627
         //패널 2번으로
         private void button_switch_panel2_Click(object sender, EventArgs e)
         {
@@ -28,6 +37,7 @@ namespace ATM
             parentForm.controllView(panel2, "ucpanel2");
         }
 
+        //이승직 20210627
         //환율버튼
         private void button_HwanYoul_Click(object sender, EventArgs e)
         {
@@ -43,6 +53,7 @@ namespace ATM
             }
         }
 
+        //이승직 20210627
         // 패널 4번으로
         private void button_Panel4_Click(object sender, EventArgs e)
         {
@@ -50,6 +61,7 @@ namespace ATM
             parentForm.controllView(panel4, "ucpanel4");
         }
 
+        //이승직 20210627
         //패널 5번으로
         private void button_panel5_Click(object sender, EventArgs e)
         {
@@ -57,6 +69,7 @@ namespace ATM
             parentForm.controllView(panel5, "ucpanel5");
         }
 
+        //이승직 20210627
         //패널 6번으로
         private void button_panel6_Click(object sender, EventArgs e)
         {
@@ -64,9 +77,44 @@ namespace ATM
             parentForm.controllView(panel6, "ucpanel6");
         }
 
+        //이승직 20210627
+        //패널 7번으로
         private void button_panel7_Click(object sender, EventArgs e)
         {
+            Panel.UcPanel7 panel7 = new Panel.UcPanel7(parentForm);
+            parentForm.controllView(panel7, "ucpanel7");
+        }
 
+        //이승직 20210627
+        //패널 8번으로
+        private void button_panel8_Click(object sender, EventArgs e)
+        {
+            Panel.UcPanel8 panel8 = new Panel.UcPanel8(parentForm);
+            parentForm.controllView(panel8, "ucpanel8");
+        }
+
+        //이승직 20210627
+        //패널 9번으로
+        private void button_panel9_Click(object sender, EventArgs e)
+        {
+            Panel.UcPanel9 panel9 = new Panel.UcPanel9(parentForm);
+            parentForm.controllView(panel9, "ucpanel9");
+        }
+
+        //이승직 20210627
+        //패널 10번으로
+        private void button_panel10_Click(object sender, EventArgs e)
+        {
+            Panel.UcPanel10 panel10 = new Panel.UcPanel10(parentForm);
+            parentForm.controllView(panel10, "ucpanel10");
+        }
+
+        //이승직 20210627
+        //패널 11번으로
+        private void button_panel11_Click(object sender, EventArgs e)
+        {
+            Panel.UcPanel11 panel11 = new Panel.UcPanel11(parentForm);
+            parentForm.controllView(panel11, "ucpanel11");
         }
 
         //종료

@@ -41,6 +41,7 @@ namespace ATM
             this.button_panel9 = new System.Windows.Forms.Button();
             this.button_panel10 = new System.Windows.Forms.Button();
             this.button_panel11 = new System.Windows.Forms.Button();
+            this.button_login = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_switch_panel2
@@ -131,6 +132,7 @@ namespace ATM
             this.button_panel8.TabIndex = 8;
             this.button_panel8.Text = "패널8로";
             this.button_panel8.UseVisualStyleBackColor = true;
+            this.button_panel8.Click += new System.EventHandler(this.button_panel8_Click);
             // 
             // button_panel9
             // 
@@ -140,6 +142,7 @@ namespace ATM
             this.button_panel9.TabIndex = 9;
             this.button_panel9.Text = "패널9로";
             this.button_panel9.UseVisualStyleBackColor = true;
+            this.button_panel9.Click += new System.EventHandler(this.button_panel9_Click);
             // 
             // button_panel10
             // 
@@ -149,6 +152,7 @@ namespace ATM
             this.button_panel10.TabIndex = 10;
             this.button_panel10.Text = "패널10으로";
             this.button_panel10.UseVisualStyleBackColor = true;
+            this.button_panel10.Click += new System.EventHandler(this.button_panel10_Click);
             // 
             // button_panel11
             // 
@@ -158,11 +162,23 @@ namespace ATM
             this.button_panel11.TabIndex = 11;
             this.button_panel11.Text = "패널11로";
             this.button_panel11.UseVisualStyleBackColor = true;
+            this.button_panel11.Click += new System.EventHandler(this.button_panel11_Click);
+            // 
+            // button_login
+            // 
+            this.button_login.Location = new System.Drawing.Point(3, 329);
+            this.button_login.Name = "button_login";
+            this.button_login.Size = new System.Drawing.Size(90, 46);
+            this.button_login.TabIndex = 12;
+            this.button_login.Text = "계좌 로그인";
+            this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // UcPanel1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button_login);
             this.Controls.Add(this.button_panel11);
             this.Controls.Add(this.button_panel10);
             this.Controls.Add(this.button_panel9);
@@ -195,5 +211,6 @@ namespace ATM
         private System.Windows.Forms.Button button_panel9;
         private System.Windows.Forms.Button button_panel10;
         private System.Windows.Forms.Button button_panel11;
+        private System.Windows.Forms.Button button_login;
     }
 }

@@ -65,6 +65,18 @@
     <Compile Include="Panel\UcPanel1.Designer.cs">
       <DependentUpon>UcPanel1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Panel\UcPanel10.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\UcPanel10.Designer.cs">
+      <DependentUpon>UcPanel10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\UcPanel11.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\UcPanel11.Designer.cs">
+      <DependentUpon>UcPanel11.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panel\UcPanel4.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -82,6 +94,24 @@
     </Compile>
     <Compile Include="Panel\UcPanel6.Designer.cs">
       <DependentUpon>UcPanel6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\UcPanel7.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\UcPanel7.Designer.cs">
+      <DependentUpon>UcPanel7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\UcPanel8.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\UcPanel8.Designer.cs">
+      <DependentUpon>UcPanel8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\UcPanel9.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\UcPanel9.Designer.cs">
+      <DependentUpon>UcPanel9.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel\UcPanel_login.cs">
       <SubType>UserControl</SubType>
@@ -109,6 +139,12 @@
     <EmbeddedResource Include="Panel\UcPanel1.resx">
       <DependentUpon>UcPanel1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panel\UcPanel10.resx">
+      <DependentUpon>UcPanel10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel\UcPanel11.resx">
+      <DependentUpon>UcPanel11.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel4.resx">
       <DependentUpon>UcPanel4.cs</DependentUpon>
     </EmbeddedResource>
@@ -117,6 +153,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel6.resx">
       <DependentUpon>UcPanel6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel\UcPanel7.resx">
+      <DependentUpon>UcPanel7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel\UcPanel8.resx">
+      <DependentUpon>UcPanel8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Panel\UcPanel9.resx">
+      <DependentUpon>UcPanel9.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel_login.resx">
       <DependentUpon>UcPanel_login.cs</DependentUpon>
