@@ -32,7 +32,7 @@ namespace ATM.Panel
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "SELECT count(*) as cnt FROM client where account = '" + textBox_account.Text + "' and pwd = '" + textBox_pwd.Text + "';";
+                string sql = "SELECT count(*) as cnt FROM account where acc_num = '" + textBox_account.Text + "' and pwd = '" + textBox_pwd.Text + "';";
 
                 //ExecuteReader를 이용하여
                 //연결 모드로 데이타 가져오기

@@ -49,13 +49,15 @@ namespace ATM
                 var objs = JArray.Parse(json).ToObject<List<JObject>>();
                 string price = "";
                 string name = "";
+                string country = "";
                 dataGridView1.DataSource = null;
                 exchanges.Clear();
                 for (int i = 0; i < objs.Count; i++)
                 {
+                    country = objs[i]["cur_nm"].ToString().Trim().Replace(",", "").Split(' ')[0];
                     name = objs[i]["cur_unit"].ToString().Trim().Replace(",", "");
                     price = objs[i]["kftc_deal_bas_r"].ToString().Trim().Replace(",", "");
-                    ExchangeRate temp = new ExchangeRate(name,price);
+                    ExchangeRate temp = new ExchangeRate(country,name,price);
                     exchanges.Add(temp);
                 }
 

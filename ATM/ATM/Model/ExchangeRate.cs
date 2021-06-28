@@ -10,12 +10,14 @@ namespace ATM.Model
     //환율(나라,환율)
     class ExchangeRate
     {
-        public ExchangeRate(string currency, string price)
+        public ExchangeRate(string curr_name, string currency, string price)
         {
+            this.curr_name = curr_name;
             this.currency = currency;
             this.price = price;
         }
         public string currency { get; set; }
         public string price { get; set; }
+        public string curr_name { get; set; }
     }
 }
