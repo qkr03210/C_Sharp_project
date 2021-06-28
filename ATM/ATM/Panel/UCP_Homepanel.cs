@@ -25,7 +25,7 @@ namespace ATM
         //계좌 로그인으로
         private void button_login_Click(object sender, EventArgs e)
         {
-            UcPanel_login panel_login = new UcPanel_login(parentForm);
+            UCP_Login panel_login = new UCP_Login(parentForm);
             parentForm.controllView(panel_login, "ucpanel_login");
         }
 
@@ -50,7 +50,7 @@ namespace ATM
             //로그인이 안되어있으면
             else
             {
-                UcPanel_login uc_login = new UcPanel_login(parentForm);
+                UCP_Login uc_login = new UCP_Login(parentForm);
                 parentForm.controllView(uc_login, "UcPanel_login");
             }
         }
@@ -59,7 +59,7 @@ namespace ATM
         // 패널 4번으로
         private void button_Panel4_Click(object sender, EventArgs e)
         {
-            Panel.UcPanel4 panel4 = new Panel.UcPanel4(parentForm);
+            Panel.UCP_Transaction panel4 = new Panel.UCP_Transaction(parentForm);
             parentForm.controllView(panel4, "ucpanel4");
         }
 
@@ -75,7 +75,7 @@ namespace ATM
         //패널 6번으로
         private void button_panel6_Click(object sender, EventArgs e)
         {
-            Panel.UCP_account_check panel6 = new Panel.UCP_account_check(parentForm);
+            Panel.UCP_Account_check panel6 = new Panel.UCP_Account_check(parentForm);
             parentForm.controllView(panel6, "ucpanel6");
         }
 
@@ -83,16 +83,8 @@ namespace ATM
         //패널 7번으로
         private void button_panel7_Click(object sender, EventArgs e)
         {
-            Panel.UcPanel7 panel7 = new Panel.UcPanel7(parentForm);
+            Panel.UCP_Upbit panel7 = new Panel.UCP_Upbit(parentForm);
             parentForm.controllView(panel7, "ucpanel7");
-        }
-
-        //이승직 20210627
-        //패널 8번으로
-        private void button_panel8_Click(object sender, EventArgs e)
-        {
-            Panel.UcPanel8 panel8 = new Panel.UcPanel8(parentForm);
-            parentForm.controllView(panel8, "ucpanel8");
         }
 
         //이승직 20210627
@@ -107,7 +99,7 @@ namespace ATM
         //패널 10번으로
         private void button_panel10_Click(object sender, EventArgs e)
         {
-            Panel.UcPanel10 panel10 = new Panel.UcPanel10(parentForm);
+            Panel.UCP_Transaction_history panel10 = new Panel.UCP_Transaction_history(parentForm);
             parentForm.controllView(panel10, "ucpanel10");
         }
 
@@ -115,7 +107,7 @@ namespace ATM
         //패널 11번으로
         private void button_panel11_Click(object sender, EventArgs e)
         {
-            Panel.UcPanel11 panel11 = new Panel.UcPanel11(parentForm);
+            Panel.UCP_Myinfo panel11 = new Panel.UCP_Myinfo(parentForm);
             parentForm.controllView(panel11, "ucpanel11");
         }
 

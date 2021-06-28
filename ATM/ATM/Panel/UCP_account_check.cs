@@ -14,10 +14,10 @@ using System.Windows.Forms;
 
 namespace ATM.Panel
 {
-    public partial class UCP_account_check : UserControl
+    public partial class UCP_Account_check : UserControl
     {
         Form1 parentForm;
-        public UCP_account_check(Form1 form)
+        public UCP_Account_check(Form1 form)
         {
             InitializeComponent();
             parentForm = form;

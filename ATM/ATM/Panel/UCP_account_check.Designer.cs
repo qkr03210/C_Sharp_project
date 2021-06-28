@@ -1,7 +1,7 @@
 ﻿
 namespace ATM.Panel
 {
-    partial class UCP_account_check
+    partial class UCP_Account_check
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.

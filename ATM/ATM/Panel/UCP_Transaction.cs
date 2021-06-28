@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace ATM.Panel
 {
-    public partial class UcPanel4 : UserControl
+    public partial class UCP_Transaction : UserControl
     {
         MySqlConnection Myconn = new MySqlConnection();
         MySqlDataAdapter da;
         DataSet ds;
         Form1 parentForm;
-        public UcPanel4(Form1 form)
+        public UCP_Transaction(Form1 form)
         {
             InitializeComponent();
             parentForm = form;

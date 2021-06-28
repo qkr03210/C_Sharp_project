@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ATM.Panel
 {
-    public partial class UcPanel7 : UserControl
+    public partial class UCP_Upbit : UserControl
     {
         Form1 parentForm;
-        public UcPanel7(Form1 form)
+        public UCP_Upbit(Form1 form)
         {
             InitializeComponent();
             parentForm = form;

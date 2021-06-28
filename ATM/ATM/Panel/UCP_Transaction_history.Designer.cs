@@ -1,6 +1,6 @@
 ﻿namespace ATM.Panel
 {
-    partial class UcPanel8
+    partial class UCP_Transaction_history
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -36,17 +36,16 @@
             this.button_back.Location = new System.Drawing.Point(701, 412);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(96, 35);
-            this.button_back.TabIndex = 5;
+            this.button_back.TabIndex = 7;
             this.button_back.Text = "돌아가기";
             this.button_back.UseVisualStyleBackColor = true;
-            this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
-            // UcPanel8
+            // UcPanel10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button_back);
-            this.Name = "UcPanel8";
+            this.Name = "UcPanel10";
             this.Size = new System.Drawing.Size(800, 450);
             this.ResumeLayout(false);
 

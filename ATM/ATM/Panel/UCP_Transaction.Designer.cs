@@ -1,7 +1,7 @@
 ﻿
 namespace ATM.Panel
 {
-    partial class UcPanel4
+    partial class UCP_Transaction
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.

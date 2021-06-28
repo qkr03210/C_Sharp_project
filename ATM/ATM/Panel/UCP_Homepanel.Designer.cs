@@ -37,7 +37,6 @@ namespace ATM
             this.button_panel5 = new System.Windows.Forms.Button();
             this.button_panel6 = new System.Windows.Forms.Button();
             this.button_panel7 = new System.Windows.Forms.Button();
-            this.button_panel8 = new System.Windows.Forms.Button();
             this.button_panel9 = new System.Windows.Forms.Button();
             this.button_panel10 = new System.Windows.Forms.Button();
             this.button_panel11 = new System.Windows.Forms.Button();
@@ -124,16 +123,6 @@ namespace ATM
             this.button_panel7.UseVisualStyleBackColor = true;
             this.button_panel7.Click += new System.EventHandler(this.button_panel7_Click);
             // 
-            // button_panel8
-            // 
-            this.button_panel8.Location = new System.Drawing.Point(707, 64);
-            this.button_panel8.Name = "button_panel8";
-            this.button_panel8.Size = new System.Drawing.Size(90, 46);
-            this.button_panel8.TabIndex = 8;
-            this.button_panel8.Text = "환전";
-            this.button_panel8.UseVisualStyleBackColor = true;
-            this.button_panel8.Click += new System.EventHandler(this.button_panel8_Click);
-            // 
             // button_panel9
             // 
             this.button_panel9.Location = new System.Drawing.Point(707, 129);
@@ -182,7 +171,6 @@ namespace ATM
             this.Controls.Add(this.button_panel11);
             this.Controls.Add(this.button_panel10);
             this.Controls.Add(this.button_panel9);
-            this.Controls.Add(this.button_panel8);
             this.Controls.Add(this.button_panel7);
             this.Controls.Add(this.button_panel6);
             this.Controls.Add(this.button_panel5);
@@ -207,7 +195,6 @@ namespace ATM
         private System.Windows.Forms.Button button_panel5;
         private System.Windows.Forms.Button button_panel6;
         private System.Windows.Forms.Button button_panel7;
-        private System.Windows.Forms.Button button_panel8;
         private System.Windows.Forms.Button button_panel9;
         private System.Windows.Forms.Button button_panel10;
         private System.Windows.Forms.Button button_panel11;

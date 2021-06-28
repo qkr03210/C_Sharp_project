@@ -1,7 +1,7 @@
 ﻿
 namespace ATM.Panel
 {
-    partial class UcPanel_login
+    partial class UCP_Login
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.

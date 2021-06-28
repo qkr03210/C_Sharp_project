@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ATM.Panel
 {
-    public partial class UcPanel8 : UserControl
+    public partial class UCP_Transaction_history : UserControl
     {
         Form1 parentForm;
-        public UcPanel8(Form1 form)
+        public UCP_Transaction_history(Form1 form)
         {
             InitializeComponent();
             parentForm = form;

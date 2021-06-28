@@ -93,7 +93,7 @@ namespace ATM
 
         private void button_mycurrency_Click(object sender, EventArgs e)
         {
-            UcPanel_MyCurrency ucpanel_mycurrency = new UcPanel_MyCurrency(parentForm);
+            UCP_Mycurrency ucpanel_mycurrency = new UCP_Mycurrency(parentForm);
             parentForm.controllView(ucpanel_mycurrency, "ucpanel_mycurrency");
         }
 

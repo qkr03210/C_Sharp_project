@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace ATM.Panel
 {
-    public partial class UcPanel_login : UserControl
+    public partial class UCP_Login : UserControl
     {
         Form1 parentForm;
-        public UcPanel_login(Form1 form)
+        public UCP_Login(Form1 form)
         {
             InitializeComponent();
             parentForm = form;

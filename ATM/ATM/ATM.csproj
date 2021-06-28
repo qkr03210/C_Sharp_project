@@ -62,17 +62,17 @@
     </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\ExchangeRate.cs" />
-    <Compile Include="Panel\UCP_account_check.cs">
+    <Compile Include="Panel\UCP_Account_check.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\UCP_account_check.Designer.cs">
-      <DependentUpon>UCP_account_check.cs</DependentUpon>
+    <Compile Include="Panel\UCP_Account_check.Designer.cs">
+      <DependentUpon>UCP_Account_check.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel\UcPanel1.cs">
+    <Compile Include="Panel\UCP_Homepanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\UcPanel1.Designer.cs">
-      <DependentUpon>UcPanel1.cs</DependentUpon>
+    <Compile Include="Panel\UCP_Homepanel.Designer.cs">
+      <DependentUpon>UCP_Homepanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel\UcPanel10.cs">
       <SubType>UserControl</SubType>
@@ -116,17 +116,17 @@
     <Compile Include="Panel\UcPanel9.Designer.cs">
       <DependentUpon>UcPanel9.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel\UcPanel_login.cs">
+    <Compile Include="Panel\UCP_Login.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\UcPanel_login.Designer.cs">
-      <DependentUpon>UcPanel_login.cs</DependentUpon>
+    <Compile Include="Panel\UCP_Login.Designer.cs">
+      <DependentUpon>UCP_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel\UcPanel_MyCurrency.cs">
+    <Compile Include="Panel\UCP_Mycurrency.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\UcPanel_MyCurrency.Designer.cs">
-      <DependentUpon>UcPanel_MyCurrency.cs</DependentUpon>
+    <Compile Include="Panel\UCP_Mycurrency.Designer.cs">
+      <DependentUpon>UCP_Mycurrency.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -136,20 +136,20 @@
     <Compile Include="Panel\UcPanel2.Designer.cs">
       <DependentUpon>UcPanel2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel\UcPanel3.cs">
+    <Compile Include="Panel\UCP_Exchange.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\UcPanel3.Designer.cs">
-      <DependentUpon>UcPanel3.cs</DependentUpon>
+    <Compile Include="Panel\UCP_Exchange.Designer.cs">
+      <DependentUpon>UCP_Exchange.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UCP_account_check.resx">
-      <DependentUpon>UCP_account_check.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_Account_check.resx">
+      <DependentUpon>UCP_Account_check.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel1.resx">
-      <DependentUpon>UcPanel1.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_Homepanel.resx">
+      <DependentUpon>UCP_Homepanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel10.resx">
       <DependentUpon>UcPanel10.cs</DependentUpon>
@@ -172,11 +172,11 @@
     <EmbeddedResource Include="Panel\UcPanel9.resx">
       <DependentUpon>UcPanel9.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel_login.resx">
-      <DependentUpon>UcPanel_login.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_Login.resx">
+      <DependentUpon>UCP_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel_MyCurrency.resx">
-      <DependentUpon>UcPanel_MyCurrency.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_Mycurrency.resx">
+      <DependentUpon>UCP_Mycurrency.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -190,8 +190,8 @@
     <EmbeddedResource Include="Panel\UcPanel2.resx">
       <DependentUpon>UcPanel2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel3.resx">
-      <DependentUpon>UcPanel3.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_Exchange.resx">
+      <DependentUpon>UCP_Exchange.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ATM.Model.Account1.datasource" />

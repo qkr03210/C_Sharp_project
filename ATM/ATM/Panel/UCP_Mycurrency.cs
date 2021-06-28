@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ATM.Panel
 {
-    public partial class UcPanel_MyCurrency : UserControl
+    public partial class UCP_Mycurrency : UserControl
     {
         Form1 parentForm;
-        public UcPanel_MyCurrency(Form1 form)
+        public UCP_Mycurrency(Form1 form)
         {
             InitializeComponent();
             parentForm = form;
