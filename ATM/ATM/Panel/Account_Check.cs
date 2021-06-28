@@ -26,7 +26,7 @@ namespace ATM.Panel
 
         private void button_check_Click(object sender, EventArgs e)
         {
-
+            //버튼
         }
     }
 }
