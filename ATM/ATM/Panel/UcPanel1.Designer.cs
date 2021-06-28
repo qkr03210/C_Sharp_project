@@ -50,7 +50,7 @@ namespace ATM
             this.button_switch_panel2.Name = "button_switch_panel2";
             this.button_switch_panel2.Size = new System.Drawing.Size(90, 46);
             this.button_switch_panel2.TabIndex = 0;
-            this.button_switch_panel2.Text = "패널2로";
+            this.button_switch_panel2.Text = "입금";
             this.button_switch_panel2.UseVisualStyleBackColor = true;
             this.button_switch_panel2.Click += new System.EventHandler(this.button_switch_panel2_Click);
             // 
@@ -90,7 +90,7 @@ namespace ATM
             this.button_Panel4.Name = "button_Panel4";
             this.button_Panel4.Size = new System.Drawing.Size(90, 46);
             this.button_Panel4.TabIndex = 4;
-            this.button_Panel4.Text = "패널4로";
+            this.button_Panel4.Text = "송금";
             this.button_Panel4.UseVisualStyleBackColor = true;
             this.button_Panel4.Click += new System.EventHandler(this.button_Panel4_Click);
             // 
@@ -100,7 +100,7 @@ namespace ATM
             this.button_panel5.Name = "button_panel5";
             this.button_panel5.Size = new System.Drawing.Size(90, 46);
             this.button_panel5.TabIndex = 5;
-            this.button_panel5.Text = "패널5로";
+            this.button_panel5.Text = "지로/공과금";
             this.button_panel5.UseVisualStyleBackColor = true;
             this.button_panel5.Click += new System.EventHandler(this.button_panel5_Click);
             // 
@@ -110,7 +110,7 @@ namespace ATM
             this.button_panel6.Name = "button_panel6";
             this.button_panel6.Size = new System.Drawing.Size(90, 46);
             this.button_panel6.TabIndex = 6;
-            this.button_panel6.Text = "패널6으로";
+            this.button_panel6.Text = "계좌조회";
             this.button_panel6.UseVisualStyleBackColor = true;
             this.button_panel6.Click += new System.EventHandler(this.button_panel6_Click);
             // 
@@ -130,7 +130,7 @@ namespace ATM
             this.button_panel8.Name = "button_panel8";
             this.button_panel8.Size = new System.Drawing.Size(90, 46);
             this.button_panel8.TabIndex = 8;
-            this.button_panel8.Text = "패널8로";
+            this.button_panel8.Text = "환전";
             this.button_panel8.UseVisualStyleBackColor = true;
             this.button_panel8.Click += new System.EventHandler(this.button_panel8_Click);
             // 
@@ -170,7 +170,7 @@ namespace ATM
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(90, 46);
             this.button_login.TabIndex = 12;
-            this.button_login.Text = "계좌 로그인";
+            this.button_login.Text = "계좌인증(로그인)";
             this.button_login.UseVisualStyleBackColor = true;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 

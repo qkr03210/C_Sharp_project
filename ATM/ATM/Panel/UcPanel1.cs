@@ -41,11 +41,13 @@ namespace ATM
         //환율버튼
         private void button_HwanYoul_Click(object sender, EventArgs e)
         {
+            //로그인이 되어있으면
             if(parentForm.chkLogin())
             {
                 UcPanel3 panel3 = new UcPanel3(parentForm);
                 parentForm.controllView(panel3, "ucpanel3");
             }
+            //로그인이 안되어있으면
             else
             {
                 UcPanel_login uc_login = new UcPanel_login(parentForm);
