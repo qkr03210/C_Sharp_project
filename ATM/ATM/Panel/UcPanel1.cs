@@ -75,7 +75,7 @@ namespace ATM
         //패널 6번으로
         private void button_panel6_Click(object sender, EventArgs e)
         {
-            Panel.UcPanel6 panel6 = new Panel.UcPanel6(parentForm);
+            Panel.Account_Check panel6 = new Panel.Account_Check(parentForm);
             parentForm.controllView(panel6, "ucpanel6");
         }
 

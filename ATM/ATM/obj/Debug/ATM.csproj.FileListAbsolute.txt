@@ -232,3 +232,10 @@ C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.CoreCompile
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.CopyComplete
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.exe
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.pdb
+C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel10.resources
+C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel11.resources
+C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel7.resources
+C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel8.resources
+C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
+C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel_login.resources
+C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel_MyCurrency.resources

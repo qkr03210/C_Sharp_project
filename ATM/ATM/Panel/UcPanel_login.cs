@@ -27,7 +27,7 @@ namespace ATM.Panel
 
         private void button_login_Click(object sender, EventArgs e)
         {
-            string connStr = "Server=localhost;Database=atm;Uid=root;Pwd=1234;";
+            string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
             int result = 0;
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {

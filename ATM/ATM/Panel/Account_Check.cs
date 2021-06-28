@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace ATM.Panel
 {
-    public partial class UcPanel6 : UserControl
+    public partial class Account_Check : UserControl
     {
         Form1 parentForm;
-        public UcPanel6(Form1 form)
+        public Account_Check(Form1 form)
         {
             InitializeComponent();
             parentForm = form;
@@ -22,6 +22,11 @@ namespace ATM.Panel
         private void button_back_Click(object sender, EventArgs e)
         {
             parentForm.HomePanel();
+        }
+
+        private void button_check_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
