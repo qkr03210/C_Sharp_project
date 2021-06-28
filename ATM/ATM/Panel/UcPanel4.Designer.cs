@@ -30,6 +30,13 @@ namespace ATM.Panel
         private void InitializeComponent()
         {
             this.button_back = new System.Windows.Forms.Button();
+            this.bank_name = new System.Windows.Forms.Label();
+            this.accNum = new System.Windows.Forms.Label();
+            this.money = new System.Windows.Forms.Label();
+            this.accNum_text = new System.Windows.Forms.TextBox();
+            this.money_text = new System.Windows.Forms.TextBox();
+            this.transaction = new System.Windows.Forms.Button();
+            this.bankName = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button_back
@@ -42,20 +49,104 @@ namespace ATM.Panel
             this.button_back.UseVisualStyleBackColor = true;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
+            // bank_name
+            // 
+            this.bank_name.AutoSize = true;
+            this.bank_name.Location = new System.Drawing.Point(57, 35);
+            this.bank_name.Name = "bank_name";
+            this.bank_name.Size = new System.Drawing.Size(29, 12);
+            this.bank_name.TabIndex = 3;
+            this.bank_name.Text = "은행";
+            // 
+            // accNum
+            // 
+            this.accNum.AutoSize = true;
+            this.accNum.Location = new System.Drawing.Point(57, 62);
+            this.accNum.Name = "accNum";
+            this.accNum.Size = new System.Drawing.Size(53, 12);
+            this.accNum.TabIndex = 4;
+            this.accNum.Text = "계좌번호";
+            // 
+            // money
+            // 
+            this.money.AutoSize = true;
+            this.money.Location = new System.Drawing.Point(57, 89);
+            this.money.Name = "money";
+            this.money.Size = new System.Drawing.Size(29, 12);
+            this.money.TabIndex = 5;
+            this.money.Text = "금액";
+            // 
+            // accNum_text
+            // 
+            this.accNum_text.Location = new System.Drawing.Point(137, 62);
+            this.accNum_text.Name = "accNum_text";
+            this.accNum_text.Size = new System.Drawing.Size(131, 21);
+            this.accNum_text.TabIndex = 7;
+            this.accNum_text.TextChanged += new System.EventHandler(this.accNum_text_TextChanged);
+            // 
+            // money_text
+            // 
+            this.money_text.Location = new System.Drawing.Point(137, 89);
+            this.money_text.Name = "money_text";
+            this.money_text.Size = new System.Drawing.Size(131, 21);
+            this.money_text.TabIndex = 8;
+            // 
+            // transaction
+            // 
+            this.transaction.Location = new System.Drawing.Point(59, 116);
+            this.transaction.Name = "transaction";
+            this.transaction.Size = new System.Drawing.Size(101, 43);
+            this.transaction.TabIndex = 9;
+            this.transaction.Text = "송금";
+            this.transaction.UseVisualStyleBackColor = true;
+            this.transaction.Click += new System.EventHandler(this.transaction_Click);
+            // 
+            // bankName
+            // 
+            this.bankName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bankName.FormattingEnabled = true;
+            this.bankName.Items.AddRange(new object[] {
+            "국민",
+            "농협",
+            "신한",
+            "우리",
+            "카카오",
+            "하나"});
+            this.bankName.Location = new System.Drawing.Point(137, 36);
+            this.bankName.Name = "bankName";
+            this.bankName.Size = new System.Drawing.Size(131, 20);
+            this.bankName.TabIndex = 10;
+            // 
             // UcPanel4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
+            this.Controls.Add(this.bankName);
+            this.Controls.Add(this.transaction);
+            this.Controls.Add(this.money_text);
+            this.Controls.Add(this.accNum_text);
+            this.Controls.Add(this.money);
+            this.Controls.Add(this.accNum);
+            this.Controls.Add(this.bank_name);
             this.Controls.Add(this.button_back);
             this.Name = "UcPanel4";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Size = new System.Drawing.Size(800, 450);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button button_back;
+        private System.Windows.Forms.Label bank_name;
+        private System.Windows.Forms.Label accNum;
+        private System.Windows.Forms.Label money;
+        private System.Windows.Forms.TextBox accNum_text;
+        private System.Windows.Forms.TextBox money_text;
+        private System.Windows.Forms.Button transaction;
+        private System.Windows.Forms.ComboBox bankName;
     }
 }
