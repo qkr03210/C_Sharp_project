@@ -187,7 +187,6 @@ D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel10.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel11.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel4.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel5.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel6.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel7.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel8.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
@@ -239,3 +238,4 @@ C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel
 C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
 C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel_login.resources
 C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel_MyCurrency.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.Account_Check.resources

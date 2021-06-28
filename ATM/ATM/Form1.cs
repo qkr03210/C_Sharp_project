@@ -25,16 +25,20 @@ namespace ATM
             panel = new UcPanel1(this);
             controllView(panel, "ucpanel1");
         }
-        //박상준,20210627 주석 추가
-        //패널전환,패널 객체+패널이름
+        //박상준,20210628
+        //패널전환 방식 수정
         public void controllView(UserControl uc, string view)
         {
-            if (!mainL.Controls.ContainsKey(view))
-            {
-                uc.Dock = DockStyle.Fill;
-                mainL.Controls.Add(uc);
-            }
-            mainL.Controls[view].BringToFront();
+            //if (!mainL.Controls.ContainsKey(view))
+            //{
+            //    uc.Dock = DockStyle.Fill;
+            //    mainL.Controls.Add(uc);
+            //}
+            //mainL.Controls[view].BringToFront();
+            mainL.Controls.Clear();
+            mainL.Controls.Add(uc);
+
+
         }
         //박상준,20210627 주석 추가
         //다른 패널에서 홈 패널로 이동

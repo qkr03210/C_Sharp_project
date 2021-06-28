@@ -62,6 +62,12 @@
     </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\ExchangeRate.cs" />
+    <Compile Include="Panel\Account_Check.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\Account_Check.Designer.cs">
+      <DependentUpon>Account_Check.cs</DependentUpon>
+    </Compile>
     <Compile Include="Panel\UcPanel1.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,12 +97,6 @@
     </Compile>
     <Compile Include="Panel\UcPanel5.Designer.cs">
       <DependentUpon>UcPanel5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Panel\UcPanel6.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Panel\UcPanel6.Designer.cs">
-      <DependentUpon>UcPanel6.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel\UcPanel7.cs">
       <SubType>UserControl</SubType>
@@ -145,6 +145,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panel\Account_Check.resx">
+      <DependentUpon>Account_Check.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel1.resx">
       <DependentUpon>UcPanel1.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,9 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel5.resx">
       <DependentUpon>UcPanel5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel6.resx">
-      <DependentUpon>UcPanel6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel7.resx">
       <DependentUpon>UcPanel7.cs</DependentUpon>
