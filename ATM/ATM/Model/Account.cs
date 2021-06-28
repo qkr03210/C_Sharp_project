@@ -10,12 +10,11 @@ namespace ATM.Model
     //계좌 조회용
     class Account
     {
-        public Account(string bank, string acc_num, string name, string phone, int balance)
+        public Account(string bank, string acc_num, string name,int balance)
         {
             this.bank = bank;
             this.acc_num = acc_num;
             this.name = name;
-            this.phone = phone;
             this.balance = balance;
         }
 
@@ -24,8 +23,6 @@ namespace ATM.Model
         public string acc_num { get; set; }
 
         public string name { get; set; }
-
-        public string phone { get; set; }
 
         public int balance { get; set; }
     }

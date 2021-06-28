@@ -1,7 +1,7 @@
 ﻿
 namespace ATM.Panel
 {
-    partial class Account_Check
+    partial class UCP_account_check
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -41,7 +41,6 @@ namespace ATM.Panel
             this.bankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accnumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -60,7 +59,7 @@ namespace ATM.Panel
             // 
             // textBox_num
             // 
-            this.textBox_num.Location = new System.Drawing.Point(119, 99);
+            this.textBox_num.Location = new System.Drawing.Point(307, 129);
             this.textBox_num.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_num.Name = "textBox_num";
             this.textBox_num.PasswordChar = '*';
@@ -69,7 +68,7 @@ namespace ATM.Panel
             // 
             // textBox_name
             // 
-            this.textBox_name.Location = new System.Drawing.Point(119, 64);
+            this.textBox_name.Location = new System.Drawing.Point(307, 94);
             this.textBox_name.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(174, 21);
@@ -78,7 +77,7 @@ namespace ATM.Panel
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 101);
+            this.label2.Location = new System.Drawing.Point(206, 131);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 12);
@@ -88,7 +87,7 @@ namespace ATM.Panel
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 66);
+            this.label1.Location = new System.Drawing.Point(206, 96);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
@@ -97,7 +96,7 @@ namespace ATM.Panel
             // 
             // button_check
             // 
-            this.button_check.Location = new System.Drawing.Point(218, 140);
+            this.button_check.Location = new System.Drawing.Point(406, 170);
             this.button_check.Name = "button_check";
             this.button_check.Size = new System.Drawing.Size(75, 23);
             this.button_check.TabIndex = 10;
@@ -122,13 +121,12 @@ namespace ATM.Panel
             this.bankDataGridViewTextBoxColumn,
             this.accnumDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn,
             this.balanceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.accountBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(37, 235);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(444, 150);
             this.dataGridView1.TabIndex = 12;
             // 
             // bankDataGridViewTextBoxColumn
@@ -149,12 +147,6 @@ namespace ATM.Panel
             this.nameDataGridViewTextBoxColumn.HeaderText = "name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
             // balanceDataGridViewTextBoxColumn
             // 
             this.balanceDataGridViewTextBoxColumn.DataPropertyName = "balance";
@@ -165,7 +157,7 @@ namespace ATM.Panel
             // 
             this.accountBindingSource.DataSource = typeof(ATM.Model.Account);
             // 
-            // Account_Check
+            // UCP_account_check
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -177,7 +169,7 @@ namespace ATM.Panel
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_back);
-            this.Name = "Account_Check";
+            this.Name = "UCP_account_check";
             this.Size = new System.Drawing.Size(800, 450);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();
@@ -196,10 +188,10 @@ namespace ATM.Panel
         private System.Windows.Forms.Button button_check;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn bankDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn accnumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn balanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource accountBindingSource;
     }

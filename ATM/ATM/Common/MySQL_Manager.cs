@@ -25,7 +25,7 @@ namespace ATM.Common
 
             foreach (DataRow item in MySQL_Helper.ds.Tables[0].Rows)
             {
-                Account temp = new Account(bank,acc_num,name,phone,balance);
+                Account temp = new Account(bank,acc_num,name,balance);
                 bank = item["bank"].ToString();
                 acc_num = item["acc_num"].ToString();
                 //pwd = item["pwd"].ToString();

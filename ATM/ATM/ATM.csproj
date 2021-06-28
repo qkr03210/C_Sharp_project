@@ -62,11 +62,11 @@
     </Compile>
     <Compile Include="Model\Account.cs" />
     <Compile Include="Model\ExchangeRate.cs" />
-    <Compile Include="Panel\Account_Check.cs">
+    <Compile Include="Panel\UCP_account_check.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\Account_Check.Designer.cs">
-      <DependentUpon>Account_Check.cs</DependentUpon>
+    <Compile Include="Panel\UCP_account_check.Designer.cs">
+      <DependentUpon>UCP_account_check.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel\UcPanel1.cs">
       <SubType>UserControl</SubType>
@@ -145,8 +145,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\Account_Check.resx">
-      <DependentUpon>Account_Check.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_account_check.resx">
+      <DependentUpon>UCP_account_check.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel1.resx">
       <DependentUpon>UcPanel1.cs</DependentUpon>
@@ -194,6 +194,7 @@
       <DependentUpon>UcPanel3.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\ATM.Model.Account1.datasource" />
     <None Include="Properties\DataSources\ATM.Model.ExchangeRate.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
