@@ -12,10 +12,10 @@ using MySql.Data.MySqlClient;
 
 namespace ATM
 {
-    public partial class UcPanel1 : UserControl
+    public partial class UCP_Homepanel : UserControl
     {
         Form1 parentForm;
-        public UcPanel1(Form1 form)
+        public UCP_Homepanel(Form1 form)
         {
             InitializeComponent();
             parentForm = form;
@@ -44,7 +44,7 @@ namespace ATM
             //로그인이 되어있으면
             if(parentForm.chkLogin())
             {
-                UcPanel3 panel3 = new UcPanel3(parentForm);
+                UCP_Exchange panel3 = new UCP_Exchange(parentForm);
                 parentForm.controllView(panel3, "ucpanel3");
             }
             //로그인이 안되어있으면

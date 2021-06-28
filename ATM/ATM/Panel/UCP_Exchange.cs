@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace ATM
 {
-    public partial class UcPanel3 : UserControl
+    public partial class UCP_Exchange : UserControl
     {
         //(타입) AP01 : 환율, AP02 : 대출금리, AP03 : 국제금리
         //(요청) https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=AUTHKEY1234567890&searchdate=20180102&data=AP01
@@ -25,7 +25,7 @@ namespace ATM
 
         List<ExchangeRate> exchanges = new List<ExchangeRate>();
         Form1 parentForm;
-        public UcPanel3(Form1 form)
+        public UCP_Exchange(Form1 form)
         {
 
             InitializeComponent();

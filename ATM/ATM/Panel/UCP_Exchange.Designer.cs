@@ -1,7 +1,7 @@
 ﻿
 namespace ATM
 {
-    partial class UcPanel3
+    partial class UCP_Exchange
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.

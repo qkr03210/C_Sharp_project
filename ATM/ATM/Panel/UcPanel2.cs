@@ -21,13 +21,13 @@ namespace ATM
 
         private void button_switch_panel1_Click(object sender, EventArgs e)
         {
-            UcPanel1 panel1 = new UcPanel1(parentForm);
+            UCP_Homepanel panel1 = new UCP_Homepanel(parentForm);
             parentForm.controllView(panel1,"ucpanel1");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UcPanel3 panel3 = new UcPanel3(parentForm);
+            UCP_Exchange panel3 = new UCP_Exchange(parentForm);
             parentForm.controllView(panel3, "ucpanel3");
         }
     }

@@ -1,7 +1,7 @@
 ﻿
 namespace ATM
 {
-    partial class UcPanel1
+    partial class UCP_Homepanel
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -119,7 +119,7 @@ namespace ATM
             this.button_panel7.Name = "button_panel7";
             this.button_panel7.Size = new System.Drawing.Size(90, 46);
             this.button_panel7.TabIndex = 7;
-            this.button_panel7.Text = "패널7로";
+            this.button_panel7.Text = "Upbit";
             this.button_panel7.UseVisualStyleBackColor = true;
             this.button_panel7.Click += new System.EventHandler(this.button_panel7_Click);
             // 
@@ -149,7 +149,7 @@ namespace ATM
             this.button_panel11.Name = "button_panel11";
             this.button_panel11.Size = new System.Drawing.Size(90, 46);
             this.button_panel11.TabIndex = 11;
-            this.button_panel11.Text = "패널11로";
+            this.button_panel11.Text = "내 정보보기";
             this.button_panel11.UseVisualStyleBackColor = true;
             this.button_panel11.Click += new System.EventHandler(this.button_panel11_Click);
             // 

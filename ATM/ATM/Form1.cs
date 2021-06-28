@@ -13,7 +13,7 @@ namespace ATM
 {
     public partial class Form1 : Form
     {
-        UcPanel1 panel;
+        UCP_Homepanel panel;
         string UserAccount = "";
 
         //박상준,20210627
@@ -22,7 +22,7 @@ namespace ATM
         public Form1()
         {
             InitializeComponent();
-            panel = new UcPanel1(this);
+            panel = new UCP_Homepanel(this);
             controllView(panel, "ucpanel1");
         }
         //박상준,20210628
@@ -44,7 +44,7 @@ namespace ATM
         //다른 패널에서 홈 패널로 이동
         public void HomePanel()
         {
-            UcPanel1 panel = new UcPanel1(this);
+            UCP_Homepanel panel = new UCP_Homepanel(this);
             controllView(panel, "ucpanel1");
         }
         //박상준,20210627

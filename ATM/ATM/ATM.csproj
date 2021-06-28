@@ -74,23 +74,23 @@
     <Compile Include="Panel\UCP_Homepanel.Designer.cs">
       <DependentUpon>UCP_Homepanel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel\UcPanel10.cs">
+    <Compile Include="Panel\UCP_Transaction_history.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\UcPanel10.Designer.cs">
-      <DependentUpon>UcPanel10.cs</DependentUpon>
+    <Compile Include="Panel\UCP_Transaction_history.Designer.cs">
+      <DependentUpon>UCP_Transaction_history.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel\UcPanel11.cs">
+    <Compile Include="Panel\UCP_Myinfo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\UcPanel11.Designer.cs">
-      <DependentUpon>UcPanel11.cs</DependentUpon>
+    <Compile Include="Panel\UCP_Myinfo.Designer.cs">
+      <DependentUpon>UCP_Myinfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel\UcPanel4.cs">
+    <Compile Include="Panel\UCP_Transaction.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\UcPanel4.Designer.cs">
-      <DependentUpon>UcPanel4.cs</DependentUpon>
+    <Compile Include="Panel\UCP_Transaction.Designer.cs">
+      <DependentUpon>UCP_Transaction.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel\UcPanel5.cs">
       <SubType>UserControl</SubType>
@@ -98,17 +98,11 @@
     <Compile Include="Panel\UcPanel5.Designer.cs">
       <DependentUpon>UcPanel5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Panel\UcPanel7.cs">
+    <Compile Include="Panel\UCP_Upbit.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Panel\UcPanel7.Designer.cs">
-      <DependentUpon>UcPanel7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Panel\UcPanel8.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Panel\UcPanel8.Designer.cs">
-      <DependentUpon>UcPanel8.cs</DependentUpon>
+    <Compile Include="Panel\UCP_Upbit.Designer.cs">
+      <DependentUpon>UCP_Upbit.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel\UcPanel9.cs">
       <SubType>UserControl</SubType>
@@ -151,23 +145,20 @@
     <EmbeddedResource Include="Panel\UCP_Homepanel.resx">
       <DependentUpon>UCP_Homepanel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel10.resx">
-      <DependentUpon>UcPanel10.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_Transaction_history.resx">
+      <DependentUpon>UCP_Transaction_history.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel11.resx">
-      <DependentUpon>UcPanel11.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_Myinfo.resx">
+      <DependentUpon>UCP_Myinfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel4.resx">
-      <DependentUpon>UcPanel4.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_Transaction.resx">
+      <DependentUpon>UCP_Transaction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel5.resx">
       <DependentUpon>UcPanel5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel7.resx">
-      <DependentUpon>UcPanel7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel8.resx">
-      <DependentUpon>UcPanel8.cs</DependentUpon>
+    <EmbeddedResource Include="Panel\UCP_Upbit.resx">
+      <DependentUpon>UCP_Upbit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UcPanel9.resx">
       <DependentUpon>UcPanel9.cs</DependentUpon>
