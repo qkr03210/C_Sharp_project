@@ -1,4 +1,5 @@
 ﻿using ATM.Model;
+using ATM.Panel;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -43,8 +44,8 @@ namespace ATM
                 //박상준,20210624
                 //가끔 api로 json읽어올때 한글 깨지는 경우가 있어서 Encoding 문제 발생->해결
                 wc.Encoding = System.Text.Encoding.UTF8;
-                var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate="+"20210625"+"&data=AP01");
-                //var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate=" + DateTime.Now.ToString("yyyyMMdd") + "&data=AP01");
+                //var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate="+"20210625"+"&data=AP01");
+                var json = wc.DownloadString("https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=" + mykey + "&searchdate=" + DateTime.Now.ToString("yyyyMMdd") + "&data=AP01");
                 var objs = JArray.Parse(json).ToObject<List<JObject>>();
                 string price = "";
                 string name = "";
@@ -87,6 +88,53 @@ namespace ATM
         {
             temp();
         }
+
+        private void button_mycurrency_Click(object sender, EventArgs e)
+        {
+            UcPanel_MyCurrency ucpanel_mycurrency = new UcPanel_MyCurrency(parentForm);
+            parentForm.controllView(ucpanel_mycurrency, "ucpanel_mycurrency");
+        }
+
+        private void textBox_amount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
+            {
+                e.Handled = true;
+            }
+
+            if (textBox_amount.TextLength == 0 && e.KeyChar == Convert.ToChar(Keys.D0))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_amount_TextChanged(object sender, EventArgs e)
+        {
+            label_totalPrice.Text = textBox_amount.Text;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 데이터가 없는 경우 return
+            if (this.dataGridView1.RowCount == 0)
+                return;
+
+            // 현재 Row를 가져온다.
+            DataGridViewRow dgvr = dataGridView1.CurrentRow;
+
+            // 선택한 Row의 데이터를 가져온다.
+            DataRow row = (dgvr.DataBoundItem as DataRowView).Row;
+
+            // TextBox에 그리드 데이터를 넣는다.
+            label_currency.Text = row["currency"].ToString();
+            label_price.Text = row["price"].ToString();
+        }
+
+        private void UcPanel3_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
         //TODO 당일 api읽어와서 파일로 저장하는 기능 해야함
     }

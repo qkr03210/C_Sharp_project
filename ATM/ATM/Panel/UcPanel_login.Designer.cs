@@ -40,7 +40,7 @@ namespace ATM.Panel
             // button_login
             // 
             this.button_login.Location = new System.Drawing.Point(671, 388);
-            this.button_login.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_login.Margin = new System.Windows.Forms.Padding(2);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(93, 41);
             this.button_login.TabIndex = 0;
@@ -71,7 +71,7 @@ namespace ATM.Panel
             // textBox_account
             // 
             this.textBox_account.Location = new System.Drawing.Point(352, 171);
-            this.textBox_account.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_account.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_account.Name = "textBox_account";
             this.textBox_account.Size = new System.Drawing.Size(174, 21);
             this.textBox_account.TabIndex = 4;
@@ -79,8 +79,9 @@ namespace ATM.Panel
             // textBox_pwd
             // 
             this.textBox_pwd.Location = new System.Drawing.Point(352, 206);
-            this.textBox_pwd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_pwd.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_pwd.Name = "textBox_pwd";
+            this.textBox_pwd.PasswordChar = '*';
             this.textBox_pwd.Size = new System.Drawing.Size(174, 21);
             this.textBox_pwd.TabIndex = 5;
             // 
@@ -105,7 +106,7 @@ namespace ATM.Panel
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_home);
             this.Controls.Add(this.button_login);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UcPanel_login";
             this.Size = new System.Drawing.Size(800, 450);
             this.ResumeLayout(false);
