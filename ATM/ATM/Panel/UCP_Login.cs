@@ -45,7 +45,8 @@ namespace ATM.Panel
                 }
                 rdr.Close();
             }
-
+            //박상준,20210629
+            //일지하는 정보(result)가 있으면 원하는 패널로 이동
             if(result==0)
             {
                 textBox_account = null;

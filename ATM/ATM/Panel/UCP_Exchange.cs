@@ -79,8 +79,8 @@ namespace ATM
 
 
         }
-        //박상준,20210624
-        //UcPanel1로 이동
+        //박상준,20210629
+        //UCP_Homepanel로 이동
         private void button1_Click(object sender, EventArgs e)
         {
             parentForm.HomePanel();
@@ -128,7 +128,8 @@ namespace ATM
         {
 
         }
-
+        //박상준,20210628
+        //환전 기능,
         private void button3_Click(object sender, EventArgs e)
         {
             string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
@@ -162,7 +163,7 @@ namespace ATM
 
         }
 
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             label_currency.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             label_price.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
