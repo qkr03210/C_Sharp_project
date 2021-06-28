@@ -10,6 +10,7 @@ namespace ATM.Common
 {
     class MySQL_Manager
     {
+        //주석추가
         public static List<Account> accounts = new List<Account>();
 
         public static void Load()
