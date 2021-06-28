@@ -31,6 +31,10 @@ namespace ATM
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.currnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exchangeRateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,10 +48,6 @@ namespace ATM
             this.label8 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox_amount = new System.Windows.Forms.TextBox();
-            this.exchangeRateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.currnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exchangeRateBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -70,7 +70,32 @@ namespace ATM
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(540, 298);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
+            // 
+            // currnameDataGridViewTextBoxColumn
+            // 
+            this.currnameDataGridViewTextBoxColumn.DataPropertyName = "curr_name";
+            this.currnameDataGridViewTextBoxColumn.HeaderText = "국가명";
+            this.currnameDataGridViewTextBoxColumn.Name = "currnameDataGridViewTextBoxColumn";
+            this.currnameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // currencyDataGridViewTextBoxColumn
+            // 
+            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "currency";
+            this.currencyDataGridViewTextBoxColumn.HeaderText = "통화단위";
+            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
+            this.currencyDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "환율";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // exchangeRateBindingSource
+            // 
+            this.exchangeRateBindingSource.DataSource = typeof(ATM.Model.ExchangeRate);
             // 
             // button1
             // 
@@ -179,6 +204,7 @@ namespace ATM
             this.button3.TabIndex = 12;
             this.button3.Text = "환전하기";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox_amount
             // 
@@ -190,32 +216,7 @@ namespace ATM
             this.textBox_amount.TextChanged += new System.EventHandler(this.textBox_amount_TextChanged);
             this.textBox_amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_amount_KeyPress);
             // 
-            // exchangeRateBindingSource
-            // 
-            this.exchangeRateBindingSource.DataSource = typeof(ATM.Model.ExchangeRate);
-            // 
-            // currnameDataGridViewTextBoxColumn
-            // 
-            this.currnameDataGridViewTextBoxColumn.DataPropertyName = "curr_name";
-            this.currnameDataGridViewTextBoxColumn.HeaderText = "국가명";
-            this.currnameDataGridViewTextBoxColumn.Name = "currnameDataGridViewTextBoxColumn";
-            this.currnameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // currencyDataGridViewTextBoxColumn
-            // 
-            this.currencyDataGridViewTextBoxColumn.DataPropertyName = "currency";
-            this.currencyDataGridViewTextBoxColumn.HeaderText = "통화단위";
-            this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
-            this.currencyDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "환율";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // UcPanel3
+            // UCP_Exchange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -233,7 +234,7 @@ namespace ATM
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "UcPanel3";
+            this.Name = "UCP_Exchange";
             this.Size = new System.Drawing.Size(800, 450);
             this.Load += new System.EventHandler(this.UcPanel3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

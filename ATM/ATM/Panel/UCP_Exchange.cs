@@ -1,5 +1,6 @@
 ﻿using ATM.Model;
 using ATM.Panel;
+using MySql.Data.MySqlClient;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
@@ -112,31 +113,60 @@ namespace ATM
 
         private void textBox_amount_TextChanged(object sender, EventArgs e)
         {
-            label_totalPrice.Text = textBox_amount.Text;
+            if (textBox_amount.Text == "")
+            {
+                label_totalPrice.Text = "0";
+            }
+            else
+            {
+                label_totalPrice.Text = (Convert.ToDouble(textBox_amount.Text) * Convert.ToDouble(label_price.Text)).ToString();
+            }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // 데이터가 없는 경우 return
-            if (this.dataGridView1.RowCount == 0)
-                return;
-
-            // 현재 Row를 가져온다.
-            DataGridViewRow dgvr = dataGridView1.CurrentRow;
-
-            // 선택한 Row의 데이터를 가져온다.
-            DataRow row = (dgvr.DataBoundItem as DataRowView).Row;
-
-            // TextBox에 그리드 데이터를 넣는다.
-            label_currency.Text = row["currency"].ToString();
-            label_price.Text = row["price"].ToString();
-        }
 
         private void UcPanel3_Load(object sender, EventArgs e)
         {
 
         }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
+            int result = 0;
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "SELECT balance FROM account where acc_num = '" + parentForm.getUserAccount() + "';";
+
+                //ExecuteReader를 이용하여
+                //연결 모드로 데이타 가져오기
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    result = Convert.ToInt32(rdr["balance"]);
+                    if (result - Convert.ToDouble(label_totalPrice.Text) < 0)
+                    {
+                        MessageBox.Show("잔액이 부족합니다");
+                    }
+                    else
+                    {
+                        exchange();
+                    }
+                }
+                rdr.Close();
+            }
+        }
+        public void exchange()
+        {
+
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            label_currency.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            label_price.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+        }
 
         //TODO 당일 api읽어와서 파일로 저장하는 기능 해야함
     }

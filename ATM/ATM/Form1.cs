@@ -74,5 +74,12 @@ namespace ATM
             UserAccount = "";
             HomePanel();
         }
+
+        //박상준,20210628
+        //사용자 계좌정보 반환
+        public string getUserAccount()
+        {
+            return UserAccount;
+        }
     }
 }
