@@ -102,7 +102,7 @@
             this.chart1.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(0, 47);
+            this.chart1.Location = new System.Drawing.Point(31, 71);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Candlestick;
@@ -110,7 +110,7 @@
             series1.Name = "DateTime";
             series1.YValuesPerPoint = 4;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(800, 400);
+            this.chart1.Size = new System.Drawing.Size(564, 346);
             this.chart1.TabIndex = 9;
             this.chart1.Text = "chart1";
             // 
@@ -136,5 +136,6 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        //private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
