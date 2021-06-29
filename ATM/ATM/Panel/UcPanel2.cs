@@ -28,7 +28,7 @@ namespace ATM
         private void button1_Click(object sender, EventArgs e)
         {
             UCP_Exchange panel3 = new UCP_Exchange(parentForm);
-            parentForm.controllView(panel3, "ucpanel3");
+            parentForm.controllView(panel3);
         }
     }
 }

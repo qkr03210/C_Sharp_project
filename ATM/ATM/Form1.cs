@@ -23,18 +23,12 @@ namespace ATM
         {
             InitializeComponent();
             panel = new UCP_Homepanel(this);
-            controllView(panel, "ucpanel1");
+            controllView(panel);
         }
-        //박상준,20210628
+        //박상준,20210629
         //패널전환 방식 수정
-        public void controllView(UserControl uc, string view)
+        public void controllView(UserControl uc)
         {
-            //if (!mainL.Controls.ContainsKey(view))
-            //{
-            //    uc.Dock = DockStyle.Fill;
-            //    mainL.Controls.Add(uc);
-            //}
-            //mainL.Controls[view].BringToFront();
             mainL.Controls.Clear();
             mainL.Controls.Add(uc);
 
@@ -45,7 +39,7 @@ namespace ATM
         public void HomePanel()
         {
             UCP_Homepanel panel = new UCP_Homepanel(this);
-            controllView(panel, "ucpanel1");
+            controllView(panel);
         }
         //박상준,20210627
         //게좌와 비밀번호로 로그인되면 form1에 정보 기록
