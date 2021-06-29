@@ -97,7 +97,8 @@ namespace ATM
             UCP_Mycurrency ucpanel_mycurrency = new UCP_Mycurrency(parentForm);
             parentForm.controllView(ucpanel_mycurrency, "ucpanel_mycurrency");
         }
-
+        //박상준,20210629
+        //숫자와 백스페이스만 입력받는 기능
         private void textBox_amount_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
@@ -110,7 +111,8 @@ namespace ATM
                 e.Handled = true;
             }
         }
-
+        //박상준.20210629
+        //텍스트 박스에 수량 입력시 환전할 금액 변경
         private void textBox_amount_TextChanged(object sender, EventArgs e)
         {
             if (textBox_amount.Text == "")
@@ -129,14 +131,15 @@ namespace ATM
 
         }
         //박상준,20210628
-        //환전 기능,
+        //환전 기능, 계좌 잔액을 가져와 환전 가능한지를 파악하고 가능하면 exchange()로 넘어감
         private void button3_Click(object sender, EventArgs e)
         {
             string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
-            int result = 0;
+            double result = 0;
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
+                //
                 string sql = "SELECT balance FROM account where acc_num = '" + parentForm.getUserAccount() + "';";
 
                 //ExecuteReader를 이용하여
@@ -145,27 +148,65 @@ namespace ATM
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    result = Convert.ToInt32(rdr["balance"]);
-                    if (result - Convert.ToDouble(label_totalPrice.Text) < 0)
+                    Console.WriteLine("기존 금액"+Convert.ToInt32(rdr["balance"]));
+                    Console.WriteLine("환전할 금액" + Convert.ToDouble(label_totalPrice.Text));
+                    result = Convert.ToInt32(rdr["balance"]) - Convert.ToDouble(label_totalPrice.Text);
+                    Console.WriteLine("DB에 들어갈 금액" + result);
+                    if (result < 0)
                     {
                         MessageBox.Show("잔액이 부족합니다");
                     }
                     else
                     {
-                        exchange();
+                        exchange(result);
                     }
                 }
                 rdr.Close();
             }
         }
-        public void exchange()
+        //박상준,20210629
+        //계좌 잔액을 업데이트 하고, 이미 구매한 화폐가 있다면 update로 수량을, 없다면 insert로 exchange테이블에 추가한다.
+        public void exchange(double result)
         {
+            string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
 
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                conn.Open();
+                string sql = "UPDATE account SET balance = " + result + " where acc_num = '" + parentForm.getUserAccount() + "';";
+
+                //ExecuteReader를 이용하여
+                //연결 모드로 데이타 가져오기
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlDataReader rdr = cmd.ExecuteReader();
+                rdr.Close();
+                sql = "SELECT count(*) as cnt FROM exchange where acc_num = '" + parentForm.getUserAccount() + "' and country = '"+label_country.Text+"'; ";
+                cmd = new MySqlCommand(sql, conn);
+                rdr = cmd.ExecuteReader();
+                rdr.Read();
+                int count = Convert.ToInt32(rdr["cnt"]);
+                if (count==0)
+                {
+                    sql = "INSERT INTO exchange(acc_num,country,currency,amount) VALUES( '"+ parentForm.getUserAccount() + "','" + label_country.Text + "','"+ label_currency .Text+"',"+textBox_amount.Text + "); ";
+                }
+                else
+                {
+                    sql = "UPDATE exchange ,(SELECT amount FROM exchange where acc_num = '"+ parentForm.getUserAccount() + "') as A SET exchange.amount = "+textBox_amount.Text+" + A.amount WHERE exchange.acc_num = '" + parentForm.getUserAccount() + "'; ";
+                }
+                rdr.Close();
+                cmd = new MySqlCommand(sql, conn);
+                rdr = cmd.ExecuteReader();
+                rdr.Close();
+            }
         }
-
+        //박상준,20210629
+        //데이터 그리드뷰 클릭하면 정보 출력
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            label_currency.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            label_totalPrice.Text = "";
+            textBox_amount.Text = "";
+            label_country.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            label_currency.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             label_price.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
 

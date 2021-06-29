@@ -42,7 +42,6 @@ D:\psj\C_Sharp_project\ATM\ATM\bin\Debug\System.Numerics.Vectors.dll
 D:\psj\C_Sharp_project\ATM\ATM\bin\Debug\MySql.Data.xml
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csprojAssemblyReference.cache
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Form1.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UcPanel1.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Properties.Resources.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UcPanel2.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.GenerateResource.cache
@@ -50,7 +49,6 @@ D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.CoreCompileInputs.cache
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.CopyComplete
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.exe
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.pdb
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UcPanel3.resources
 D:\psj\C_Sharp_project\ATM\ATM\bin\Debug\Newtonsoft.Json.dll
 D:\psj\C_Sharp_project\ATM\ATM\bin\Debug\Newtonsoft.Json.xml
 D:\kjs\C_Sharp_project\ATM\ATM\bin\Debug\ATM.exe.config
@@ -174,15 +172,8 @@ C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPan
 C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel10.resources
 C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel11.resources
 C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel10.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel11.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel4.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel5.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel7.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel8.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel_login.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel_MyCurrency.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\bin\Debug\ATM.exe.config
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\bin\Debug\ATM.exe
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\bin\Debug\ATM.pdb
@@ -223,7 +214,6 @@ C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.CopyComplet
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.exe
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.pdb
 C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.Account_Check.resources
 C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_account_check.resources
 C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Login.resources
 C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Mycurrency.resources
@@ -243,3 +233,12 @@ D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
 D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Login.resources
 D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Mycurrency.resources
 D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_Exchange.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Account_check.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_Homepanel.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Transaction_history.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Myinfo.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Transaction.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Upbit.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Login.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Mycurrency.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_Exchange.resources
