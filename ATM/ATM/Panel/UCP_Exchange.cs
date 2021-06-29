@@ -149,6 +149,7 @@ namespace ATM
                     if (result < 0)
                     {
                         MessageBox.Show("잔액이 부족합니다");
+                        break;
                     }
                     else
                     {
@@ -170,7 +171,7 @@ namespace ATM
             {
                 conn.Open();
                 string sql2 = "insert transaction(trans_date, in_acc, in_bank, in_name, out_acc, out_bank, out_name, out_balance, trans_price, trans_type) " +
-                    "values (now(), '00000', '외환거래소', '외환거래소', '" + parentForm.getUserAccount() + "','" + parentForm.getBank() + "','" + parentForm.getName() + "'," + parentForm.getBalance() + Convert.ToDouble(label_totalPrice.Text) + ",'exchange')";
+                    "values (now(), '00000', '외환거래소', '외환거래소', '" + parentForm.getUserAccount() + "','" + parentForm.getBank() + "','" + parentForm.getName() + "'," + result +"," + Convert.ToDouble(label_totalPrice.Text) + ",'exchange')";
 
                 //ExecuteReader를 이용하여
                 //연결 모드로 데이타 가져오기
