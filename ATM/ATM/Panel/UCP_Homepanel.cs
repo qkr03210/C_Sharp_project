@@ -25,7 +25,7 @@ namespace ATM
         //계좌 로그인으로
         private void button_login_Click(object sender, EventArgs e)
         {
-            UCP_Login panel_login = new UCP_Login(parentForm);
+            UCP_Login panel_login = new UCP_Login(parentForm,0);
             parentForm.controllView(panel_login);
         }
 
@@ -50,7 +50,7 @@ namespace ATM
             //로그인이 안되어있으면
             else
             {
-                UCP_Login uc_login = new UCP_Login(parentForm);
+                UCP_Login uc_login = new UCP_Login(parentForm,0);
                 parentForm.controllView(uc_login);
             }
         }
@@ -59,8 +59,19 @@ namespace ATM
         // 패널 4번으로
         private void button_Panel4_Click(object sender, EventArgs e)
         {
-            Panel.UCP_Transaction panel4 = new Panel.UCP_Transaction(parentForm);
-            parentForm.controllView(panel4);
+            //로그인이 되어있으면
+            if (parentForm.chkLogin())
+            {
+                Panel.UCP_Transaction panel4 = new Panel.UCP_Transaction(parentForm);
+                parentForm.controllView(panel4);
+            }
+            //로그인이 안되어있으면
+            else
+            {
+                UCP_Login uc_login = new UCP_Login(parentForm, 1);
+                parentForm.controllView(uc_login);
+            }
+
         }
 
         //이승직 20210627

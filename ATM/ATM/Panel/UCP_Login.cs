@@ -14,10 +14,15 @@ namespace ATM.Panel
     public partial class UCP_Login : UserControl
     {
         Form1 parentForm;
-        public UCP_Login(Form1 form)
+        int panelNum;
+        string bank;
+        string name;
+        int balance;
+        public UCP_Login(Form1 form, int panelNum)
         {
             InitializeComponent();
             parentForm = form;
+            this.panelNum = panelNum;
         }
 
         private void button_home_Click(object sender, EventArgs e)
@@ -29,11 +34,11 @@ namespace ATM.Panel
         {
             string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
             int result = 0;
+
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "SELECT count(*) as cnt FROM account where acc_num = '" + textBox_account.Text + "' and pwd = '" + textBox_pwd.Text + "';";
-
+                string sql = "SELECT count(*) as cnt, bank, name, balance  FROM account where acc_num = '" + textBox_account.Text + "' and pwd = '" + textBox_pwd.Text + "';";
                 //ExecuteReader를 이용하여
                 //연결 모드로 데이타 가져오기
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -41,6 +46,9 @@ namespace ATM.Panel
                 while (rdr.Read())
                 {
                     result=Convert.ToInt32(rdr["cnt"]);
+                    bank = rdr["bank"].ToString();
+                    name = rdr["name"].ToString();
+                    balance = Convert.ToInt32(rdr["balance"]);
                     Console.WriteLine("{0}", result);
                 }
                 rdr.Close();
@@ -55,9 +63,26 @@ namespace ATM.Panel
             }
             else if(result ==1)
             {
-                parentForm.login(textBox_account.Text);
-                UCP_Exchange panel3 = new UCP_Exchange(parentForm);
-                parentForm.controllView(panel3);
+                //form에 로그인한 정보 저장
+                parentForm.login(textBox_account.Text,bank,name,balance);
+
+                switch (panelNum)
+                {
+                    case 0://환전
+                        UCP_Exchange exchange = new UCP_Exchange(parentForm);
+                        parentForm.controllView(exchange);
+                        break;
+                    case 1:
+                        UCP_Transaction trans = new UCP_Transaction(parentForm);
+                        parentForm.controllView(trans);
+                        break;
+                    case 2:
+                       
+                        break;
+                    default:
+                       
+                        break;
+                }              
             }
         }
     }

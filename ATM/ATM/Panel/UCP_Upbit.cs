@@ -102,9 +102,30 @@ namespace ATM.Panel
             comboBox2.SelectedValue = "days";
         }
 
-        private async void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
+            string time = comboBox2.SelectedValue.ToString();
+            int intCheck;
+            if (int.TryParse(time, out intCheck))
+            {
+                if (!timer1.Enabled)
+                {
+                    timer1.Enabled = true;
+                }
 
+                timer1.Interval = 60*1000 * (Convert.ToInt32(time));
+
+            }
+            else
+            {
+                temp();
+            }
+                
+
+
+        }
+        private async void temp()
+        {
             string requestUrl;
             int intCheck;
             string coin = comboBox1.SelectedValue.ToString();
@@ -131,6 +152,10 @@ namespace ATM.Panel
                 chart1.DataSource = dt;
                 chart1.DataBind();
             }
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            temp();
         }
     }
 }

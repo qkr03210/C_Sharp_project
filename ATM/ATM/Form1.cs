@@ -14,8 +14,12 @@ namespace ATM
     public partial class Form1 : Form
     {
         UCP_Homepanel panel;
-        string UserAccount = "";
-
+        //박상준,20210629
+        //로그인 하면 회원 정보 저장하는 변수(계좌번호, 은행, 이름, 잔액)
+        private string UserAccount = "";
+        private string bank = "";
+        private string name = "";
+        private int balance = 0;
         //박상준,20210627
         //주석 추가, ucpanel1을 기본 홈패널로 생각
         //기본 화면을 ucpanel1로 지정한다.(나중에 패널명 수정 필요)
@@ -41,12 +45,15 @@ namespace ATM
             UCP_Homepanel panel = new UCP_Homepanel(this);
             controllView(panel);
         }
-        //박상준,20210627
+        //박상준,20210629
         //게좌와 비밀번호로 로그인되면 form1에 정보 기록
-        public void login(string account)
+        public void login(string account, string bank,string name, int balance)
         {
             UserAccount = account;
-        }
+            this.bank = bank;
+            this.name = name;
+            this.balance = balance;
+    }
 
         //박상준,20210627
         //사용자 계좌가 ""로 없다면 false를 반환하고 아니면 true를 반환한다.
@@ -66,14 +73,35 @@ namespace ATM
         public void logout()
         {
             UserAccount = "";
+            bank = "";
+            name = "";
+            balance = 0;
             HomePanel();
         }
 
-        //박상준,20210628
-        //사용자 계좌정보 반환
+        //박상준,20210629
+        //사용자 계좌번호 반환
         public string getUserAccount()
         {
             return UserAccount;
+        }
+        //박상준,20210629
+        //사용자 은행정보 반환
+        public string getBank()
+        {
+            return bank;
+        }
+        //박상준,20210629
+        //사용자 이름정보 반환
+        public string getName()
+        {
+            return name;
+        }
+        //박상준,20210629
+        //사용자 잔액정보 반환
+        public int getBalance()
+        {
+            return balance;
         }
     }
 }
