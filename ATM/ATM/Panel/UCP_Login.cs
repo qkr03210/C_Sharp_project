@@ -57,7 +57,7 @@ namespace ATM.Panel
             {
                 parentForm.login(textBox_account.Text);
                 UCP_Exchange panel3 = new UCP_Exchange(parentForm);
-                parentForm.controllView(panel3, "ucpanel3");
+                parentForm.controllView(panel3);
             }
         }
     }

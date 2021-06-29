@@ -95,7 +95,7 @@ namespace ATM
         private void button_mycurrency_Click(object sender, EventArgs e)
         {
             UCP_Mycurrency ucpanel_mycurrency = new UCP_Mycurrency(parentForm);
-            parentForm.controllView(ucpanel_mycurrency, "ucpanel_mycurrency");
+            parentForm.controllView(ucpanel_mycurrency);
         }
         //박상준,20210629
         //숫자와 백스페이스만 입력받는 기능

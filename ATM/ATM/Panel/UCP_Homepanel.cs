@@ -26,7 +26,7 @@ namespace ATM
         private void button_login_Click(object sender, EventArgs e)
         {
             UCP_Login panel_login = new UCP_Login(parentForm);
-            parentForm.controllView(panel_login, "ucpanel_login");
+            parentForm.controllView(panel_login);
         }
 
         //이승직 20210627
@@ -34,7 +34,7 @@ namespace ATM
         private void button_switch_panel2_Click(object sender, EventArgs e)
         {
             UcPanel2 panel2 = new UcPanel2(parentForm);
-            parentForm.controllView(panel2, "ucpanel2");
+            parentForm.controllView(panel2);
         }
 
         //이승직 20210627
@@ -45,13 +45,13 @@ namespace ATM
             if(parentForm.chkLogin())
             {
                 UCP_Exchange panel3 = new UCP_Exchange(parentForm);
-                parentForm.controllView(panel3, "ucpanel3");
+                parentForm.controllView(panel3);
             }
             //로그인이 안되어있으면
             else
             {
                 UCP_Login uc_login = new UCP_Login(parentForm);
-                parentForm.controllView(uc_login, "UcPanel_login");
+                parentForm.controllView(uc_login);
             }
         }
 
@@ -60,7 +60,7 @@ namespace ATM
         private void button_Panel4_Click(object sender, EventArgs e)
         {
             Panel.UCP_Transaction panel4 = new Panel.UCP_Transaction(parentForm);
-            parentForm.controllView(panel4, "ucpanel4");
+            parentForm.controllView(panel4);
         }
 
         //이승직 20210627
@@ -68,7 +68,7 @@ namespace ATM
         private void button_panel5_Click(object sender, EventArgs e)
         {
             Panel.UcPanel5 panel5 = new Panel.UcPanel5(parentForm);
-            parentForm.controllView(panel5, "ucpanel5");
+            parentForm.controllView(panel5);
         }
 
         //이승직 20210627
@@ -76,7 +76,7 @@ namespace ATM
         private void button_panel6_Click(object sender, EventArgs e)
         {
             Panel.UCP_Account_check panel6 = new Panel.UCP_Account_check(parentForm);
-            parentForm.controllView(panel6, "ucpanel6");
+            parentForm.controllView(panel6);
         }
 
         //이승직 20210627
@@ -84,7 +84,7 @@ namespace ATM
         private void button_panel7_Click(object sender, EventArgs e)
         {
             Panel.UCP_Upbit panel7 = new Panel.UCP_Upbit(parentForm);
-            parentForm.controllView(panel7, "ucpanel7");
+            parentForm.controllView(panel7);
         }
 
         //이승직 20210627
@@ -92,7 +92,7 @@ namespace ATM
         private void button_panel9_Click(object sender, EventArgs e)
         {
             Panel.UcPanel9 panel9 = new Panel.UcPanel9(parentForm);
-            parentForm.controllView(panel9, "ucpanel9");
+            parentForm.controllView(panel9);
         }
 
         //이승직 20210627
@@ -100,7 +100,7 @@ namespace ATM
         private void button_panel10_Click(object sender, EventArgs e)
         {
             Panel.UCP_Transaction_history panel10 = new Panel.UCP_Transaction_history(parentForm);
-            parentForm.controllView(panel10, "ucpanel10");
+            parentForm.controllView(panel10);
         }
 
         //이승직 20210627
@@ -108,7 +108,7 @@ namespace ATM
         private void button_panel11_Click(object sender, EventArgs e)
         {
             Panel.UCP_Myinfo panel11 = new Panel.UCP_Myinfo(parentForm);
-            parentForm.controllView(panel11, "ucpanel11");
+            parentForm.controllView(panel11);
         }
 
         //종료
