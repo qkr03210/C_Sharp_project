@@ -31,7 +31,7 @@ namespace ATM
 
             InitializeComponent();
             parentForm = form;
-            
+
         }
         //박상준,20210624
         //당일 환율 api정보를 가져와서 데이터 그리드뷰에 출력(버튼)
@@ -55,10 +55,10 @@ namespace ATM
                 exchanges.Clear();
                 for (int i = 0; i < objs.Count; i++)
                 {
-                    country = objs[i]["cur_nm"].ToString().Trim().Replace(",", "").Split(' ')[0];
+                    country = objs[i]["cur_nm"].ToString().Trim().Replace(",", "");
                     name = objs[i]["cur_unit"].ToString().Trim().Replace(",", "");
                     price = objs[i]["kftc_deal_bas_r"].ToString().Trim().Replace(",", "");
-                    ExchangeRate temp = new ExchangeRate(country,name,price);
+                    ExchangeRate temp = new ExchangeRate(country, name, price);
                     exchanges.Add(temp);
                 }
 
@@ -73,7 +73,6 @@ namespace ATM
                 //"kftc_bkpr":"291",
                 //"kftc_deal_bas_r":"291.7",
                 //"cur_nm":"아랍에미리트 디르함"
-
                 dataGridView1.DataSource = exchanges;
             }
 
@@ -125,11 +124,6 @@ namespace ATM
             }
         }
 
-
-        private void UcPanel3_Load(object sender, EventArgs e)
-        {
-
-        }
         //박상준,20210628
         //환전 기능, 계좌 잔액을 가져와 환전 가능한지를 파악하고 가능하면 exchange()로 넘어감
         private void button3_Click(object sender, EventArgs e)
@@ -148,9 +142,9 @@ namespace ATM
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Console.WriteLine("기존 금액"+Convert.ToInt32(rdr["balance"]));
+                    Console.WriteLine("기존 금액" + Convert.ToInt32(rdr["balance"]));
                     Console.WriteLine("환전할 금액" + Convert.ToDouble(label_totalPrice.Text));
-                    result = Convert.ToInt32(rdr["balance"]) - Convert.ToDouble(label_totalPrice.Text);
+                    result = Convert.ToInt32(rdr["balance"]) - Convert.ToDouble(label_totalPrice.Text); //총 금액(=trans_price)
                     Console.WriteLine("DB에 들어갈 금액" + result);
                     if (result < 0)
                     {
@@ -166,6 +160,8 @@ namespace ATM
         }
         //박상준,20210629
         //계좌 잔액을 업데이트 하고, 이미 구매한 화폐가 있다면 update로 수량을, 없다면 insert로 exchange테이블에 추가한다.
+        //박소윤,20210629
+        //거래가 진행되면 DB 내 transaction 테이블에 거래내역 기록 & coin 테이블에 보유 외화 저장
         public void exchange(double result)
         {
             string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
@@ -173,25 +169,26 @@ namespace ATM
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "UPDATE account SET balance = " + result + " where acc_num = '" + parentForm.getUserAccount() + "';";
+                string sql2 = "insert transaction(trans_date, in_acc, in_bank, in_name, out_acc, out_bank, out_name, out_balance, trans_price, trans_type) " +
+                    "values (now(), '00000', '외환거래소', '외환거래소', '" + parentForm.getUserAccount() + "','" + parentForm.getBank() + "','" + parentForm.getName() + "'," + parentForm.getBalance() + Convert.ToDouble(label_totalPrice.Text) + ",'exchange')";
 
                 //ExecuteReader를 이용하여
                 //연결 모드로 데이타 가져오기
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                MySqlCommand cmd = new MySqlCommand(sql2, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 rdr.Close();
-                sql = "SELECT count(*) as cnt FROM exchange where acc_num = '" + parentForm.getUserAccount() + "' and country = '"+label_country.Text+"'; ";
+                string sql = "SELECT count(*) as cnt FROM exchange where acc_num = '" + parentForm.getUserAccount() + "' and country = '" + label_country.Text + "'; ";
                 cmd = new MySqlCommand(sql, conn);
                 rdr = cmd.ExecuteReader();
                 rdr.Read();
                 int count = Convert.ToInt32(rdr["cnt"]);
-                if (count==0)
+                if (count == 0)
                 {
-                    sql = "INSERT INTO exchange(acc_num,country,currency,amount) VALUES( '"+ parentForm.getUserAccount() + "','" + label_country.Text + "','"+ label_currency .Text+"',"+textBox_amount.Text + "); ";
+                    sql = "INSERT INTO exchange(acc_num,country,currency,amount) VALUES( '" + parentForm.getUserAccount() + "','" + label_country.Text + "','" + label_currency.Text + "'," + textBox_amount.Text + "); ";
                 }
                 else
                 {
-                    sql = "UPDATE exchange ,(SELECT amount FROM exchange where acc_num = '"+ parentForm.getUserAccount() + "') as A SET exchange.amount = "+textBox_amount.Text+" + A.amount WHERE exchange.acc_num = '" + parentForm.getUserAccount() + "'; ";
+                    sql = "update exchange set amount = amount+" + textBox_amount.Text + " where acc_num = '" + parentForm.getUserAccount() + "' and currency = '" + label_currency.Text + "';";
                 }
                 rdr.Close();
                 cmd = new MySqlCommand(sql, conn);
@@ -209,7 +206,6 @@ namespace ATM
             label_currency.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             label_price.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
-
         //TODO 당일 api읽어와서 파일로 저장하는 기능 해야함
     }
 

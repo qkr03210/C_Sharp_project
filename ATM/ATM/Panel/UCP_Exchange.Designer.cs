@@ -263,7 +263,6 @@ namespace ATM
             this.Controls.Add(this.dataGridView1);
             this.Name = "UCP_Exchange";
             this.Size = new System.Drawing.Size(800, 450);
-            this.Load += new System.EventHandler(this.UcPanel3_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exchangeRateBindingSource)).EndInit();
             this.ResumeLayout(false);
