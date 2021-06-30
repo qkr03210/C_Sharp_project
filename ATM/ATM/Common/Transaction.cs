@@ -77,38 +77,5 @@ namespace ATM.Common
                 cmd.ExecuteNonQuery();
             }
         }
-        public List<TsHistory> TsHistory(string acc_num, string bank)
-        {
-            List<TsHistory> list = new List<TsHistory>();
-            TsHistory th;
-            using (MySqlConnection conn = new MySqlConnection(connStr))
-            {
-                conn.Open();
-                string sql =     $"select * from ("
-                               + $" SELECT trans_date as trans_date, out_name as name , trans_price as price , in_balance as balance, '입금' as type"
-                               + $" FROM atm.transaction where in_acc = '{acc_num}' and in_bank = '{bank}'"
-                               + $" Union"
-                               + $" SELECT trans_date as trans_date, in_name as name, trans_price as price , out_balance as balance, '출금' as type"
-                               + $" FROM atm.transaction where out_acc = '{acc_num}' and out_bank = '{bank}') a"
-                               + $" order by trans_date desc; ";
-                //ExecuteReader를 이용하여
-                //연결 모드로 데이타 가져오기
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    
-                    th = new TsHistory();
-                    th.trans_date = rdr["trans_date"].ToString();
-                    th.name = rdr["name"].ToString();
-                    th.amount = rdr["price"].ToString();
-                    th.balance = double.Parse(rdr["balance"].ToString());
-                    th.type = rdr["type"].ToString();
-                    list.Add(th);
-                }
-                rdr.Close();
-            }
-            return list;
-        }
     }
 }
