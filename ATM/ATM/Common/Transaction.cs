@@ -34,9 +34,9 @@ namespace ATM.Common
             return bal;
         }
         //송금할 계좌 정보 확인
-        public checkAcc checkAcc(string acc_num, string bank)
+        public CheckAcc checkAcc(string acc_num, string bank)
         {
-            checkAcc ca = new checkAcc();
+            CheckAcc ca = new CheckAcc();
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
@@ -51,7 +51,7 @@ namespace ATM.Common
                     ca.Acc_num = rdr["acc_num"].ToString();
                     ca.Bank = rdr["bank"].ToString();
                     ca.Name = rdr["name"].ToString();
-                    ca.Balance = int.Parse(rdr["balance"].ToString());
+                    ca.Balance = Convert.ToDouble(rdr["balance"].ToString());
                     ca.Acc_check = true;
                 }
                 rdr.Close();
@@ -59,13 +59,13 @@ namespace ATM.Common
             return ca;
         }
         //송금
-        public void transaction(string out_acc, string out_bank, string out_name, int out_balance,
-            string in_acc, string in_bank, string in_name, int in_balance, int trans_amount)
+        public void transaction(string out_acc, string out_bank, string out_name, double out_balance,
+            string in_acc, string in_bank, string in_name, double in_balance, int trans_amount)
         {
             string sql = "Insert Into transaction (trans_date," +
                 "out_acc,out_bank,out_name,out_balance," +
                 "in_acc,in_bank,in_name,in_balance," +
-                "trans_amount,trans_type)" +
+                "trans_price,trans_type)" +
                 "value(now(), '" + out_acc + "', '" + out_bank + "', '" + out_name + "'," + (out_balance - trans_amount) + "," +
                 "'" + in_acc + "', '" + in_bank + "', '" + in_name + "'," + (in_balance + trans_amount) + "," + trans_amount + ", 'money'); ";
             using (MySqlConnection conn = new MySqlConnection(connStr))

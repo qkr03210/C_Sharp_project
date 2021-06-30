@@ -82,7 +82,6 @@ namespace ATM.Panel
             this.accNum_text.Name = "accNum_text";
             this.accNum_text.Size = new System.Drawing.Size(131, 21);
             this.accNum_text.TabIndex = 7;
-            this.accNum_text.TextChanged += new System.EventHandler(this.accNum_text_TextChanged);
             // 
             // money_text
             // 
