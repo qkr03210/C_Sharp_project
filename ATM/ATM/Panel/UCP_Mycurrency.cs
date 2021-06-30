@@ -21,6 +21,7 @@ namespace ATM.Panel
             InitializeComponent();
             parentForm = form;
             label_account.Text = parentForm.getUserAccount();
+            label_bank2.Text = parentForm.getBank();
             dataGridView1.DataSource = Mycurr();
         }
 

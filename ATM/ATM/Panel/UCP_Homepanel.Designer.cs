@@ -34,13 +34,15 @@ namespace ATM
             this.button_Test_Mysql = new System.Windows.Forms.Button();
             this.button_HwanYoul = new System.Windows.Forms.Button();
             this.button_Panel4 = new System.Windows.Forms.Button();
-            this.button_panel5 = new System.Windows.Forms.Button();
             this.button_panel6 = new System.Windows.Forms.Button();
             this.button_panel7 = new System.Windows.Forms.Button();
             this.button_panel9 = new System.Windows.Forms.Button();
             this.button_panel10 = new System.Windows.Forms.Button();
             this.button_panel11 = new System.Windows.Forms.Button();
             this.button_login = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_switch_panel2
@@ -49,7 +51,7 @@ namespace ATM
             this.button_switch_panel2.Name = "button_switch_panel2";
             this.button_switch_panel2.Size = new System.Drawing.Size(90, 46);
             this.button_switch_panel2.TabIndex = 0;
-            this.button_switch_panel2.Text = "입금";
+            this.button_switch_panel2.Text = "무통장 입금";
             this.button_switch_panel2.UseVisualStyleBackColor = true;
             this.button_switch_panel2.Click += new System.EventHandler(this.button_switch_panel2_Click);
             // 
@@ -75,41 +77,31 @@ namespace ATM
             // 
             // button_HwanYoul
             // 
-            this.button_HwanYoul.Location = new System.Drawing.Point(3, 64);
+            this.button_HwanYoul.Location = new System.Drawing.Point(3, 266);
             this.button_HwanYoul.Name = "button_HwanYoul";
             this.button_HwanYoul.Size = new System.Drawing.Size(90, 46);
             this.button_HwanYoul.TabIndex = 3;
-            this.button_HwanYoul.Text = "환율";
+            this.button_HwanYoul.Text = "외화거래";
             this.button_HwanYoul.UseVisualStyleBackColor = true;
             this.button_HwanYoul.Click += new System.EventHandler(this.button_HwanYoul_Click);
             // 
             // button_Panel4
             // 
-            this.button_Panel4.Location = new System.Drawing.Point(3, 129);
+            this.button_Panel4.Location = new System.Drawing.Point(3, 55);
             this.button_Panel4.Name = "button_Panel4";
             this.button_Panel4.Size = new System.Drawing.Size(90, 46);
             this.button_Panel4.TabIndex = 4;
-            this.button_Panel4.Text = "송금";
+            this.button_Panel4.Text = "계좌이체";
             this.button_Panel4.UseVisualStyleBackColor = true;
             this.button_Panel4.Click += new System.EventHandler(this.button_Panel4_Click);
             // 
-            // button_panel5
-            // 
-            this.button_panel5.Location = new System.Drawing.Point(3, 197);
-            this.button_panel5.Name = "button_panel5";
-            this.button_panel5.Size = new System.Drawing.Size(90, 46);
-            this.button_panel5.TabIndex = 5;
-            this.button_panel5.Text = "지로/공과금";
-            this.button_panel5.UseVisualStyleBackColor = true;
-            this.button_panel5.Click += new System.EventHandler(this.button_panel5_Click);
-            // 
             // button_panel6
             // 
-            this.button_panel6.Location = new System.Drawing.Point(3, 266);
+            this.button_panel6.Location = new System.Drawing.Point(3, 107);
             this.button_panel6.Name = "button_panel6";
             this.button_panel6.Size = new System.Drawing.Size(90, 46);
             this.button_panel6.TabIndex = 6;
-            this.button_panel6.Text = "계좌조회";
+            this.button_panel6.Text = "내 계좌조회";
             this.button_panel6.UseVisualStyleBackColor = true;
             this.button_panel6.Click += new System.EventHandler(this.button_panel6_Click);
             // 
@@ -125,7 +117,7 @@ namespace ATM
             // 
             // button_panel9
             // 
-            this.button_panel9.Location = new System.Drawing.Point(707, 129);
+            this.button_panel9.Location = new System.Drawing.Point(707, 64);
             this.button_panel9.Name = "button_panel9";
             this.button_panel9.Size = new System.Drawing.Size(90, 46);
             this.button_panel9.TabIndex = 9;
@@ -139,7 +131,7 @@ namespace ATM
             this.button_panel10.Name = "button_panel10";
             this.button_panel10.Size = new System.Drawing.Size(90, 46);
             this.button_panel10.TabIndex = 10;
-            this.button_panel10.Text = "패널10으로";
+            this.button_panel10.Text = "거래내역 조회";
             this.button_panel10.UseVisualStyleBackColor = true;
             this.button_panel10.Click += new System.EventHandler(this.button_panel10_Click);
             // 
@@ -155,25 +147,49 @@ namespace ATM
             // 
             // button_login
             // 
-            this.button_login.Location = new System.Drawing.Point(3, 329);
+            this.button_login.Location = new System.Drawing.Point(3, 163);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(90, 46);
+            this.button_login.Size = new System.Drawing.Size(108, 46);
             this.button_login.TabIndex = 12;
             this.button_login.Text = "계좌인증(로그인)";
             this.button_login.UseVisualStyleBackColor = true;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ATM.Properties.Resources.piggy_bank;
+            this.pictureBox1.Location = new System.Drawing.Point(233, 125);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(331, 276);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.label2.Font = new System.Drawing.Font("배달의민족 도현", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.label2.Location = new System.Drawing.Point(259, 53);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(280, 57);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "GDG BANK";
+            // 
             // UCP_Homepanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button_login);
             this.Controls.Add(this.button_panel11);
             this.Controls.Add(this.button_panel10);
             this.Controls.Add(this.button_panel9);
             this.Controls.Add(this.button_panel7);
             this.Controls.Add(this.button_panel6);
-            this.Controls.Add(this.button_panel5);
             this.Controls.Add(this.button_Panel4);
             this.Controls.Add(this.button_HwanYoul);
             this.Controls.Add(this.button_Test_Mysql);
@@ -181,7 +197,9 @@ namespace ATM
             this.Controls.Add(this.button_switch_panel2);
             this.Name = "UCP_Homepanel";
             this.Size = new System.Drawing.Size(800, 450);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -192,12 +210,13 @@ namespace ATM
         private System.Windows.Forms.Button button_Test_Mysql;
         private System.Windows.Forms.Button button_HwanYoul;
         private System.Windows.Forms.Button button_Panel4;
-        private System.Windows.Forms.Button button_panel5;
         private System.Windows.Forms.Button button_panel6;
         private System.Windows.Forms.Button button_panel7;
         private System.Windows.Forms.Button button_panel9;
         private System.Windows.Forms.Button button_panel10;
         private System.Windows.Forms.Button button_panel11;
         private System.Windows.Forms.Button button_login;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

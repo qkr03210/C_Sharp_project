@@ -36,10 +36,12 @@ namespace ATM.Panel
             this.label_acctitle = new System.Windows.Forms.Label();
             this.label_account = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.exchangeRateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exchangeRateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label_bank = new System.Windows.Forms.Label();
+            this.label_bank2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exchangeRateBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -112,10 +114,6 @@ namespace ATM.Panel
             this.dataGridView1.Size = new System.Drawing.Size(675, 215);
             this.dataGridView1.TabIndex = 5;
             // 
-            // exchangeRateBindingSource
-            // 
-            this.exchangeRateBindingSource.DataSource = typeof(ATM.Model.ExchangeRate);
-            // 
             // currencyDataGridViewTextBoxColumn
             // 
             this.currencyDataGridViewTextBoxColumn.DataPropertyName = "currency";
@@ -137,12 +135,38 @@ namespace ATM.Panel
             this.currnameDataGridViewTextBoxColumn.Name = "currnameDataGridViewTextBoxColumn";
             this.currnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // exchangeRateBindingSource
+            // 
+            this.exchangeRateBindingSource.DataSource = typeof(ATM.Model.ExchangeRate);
+            // 
+            // label_bank
+            // 
+            this.label_bank.AutoSize = true;
+            this.label_bank.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_bank.Location = new System.Drawing.Point(383, 93);
+            this.label_bank.Name = "label_bank";
+            this.label_bank.Size = new System.Drawing.Size(74, 21);
+            this.label_bank.TabIndex = 3;
+            this.label_bank.Text = "은행명 : ";
+            // 
+            // label_bank2
+            // 
+            this.label_bank2.AutoSize = true;
+            this.label_bank2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_bank2.Location = new System.Drawing.Point(451, 94);
+            this.label_bank2.Name = "label_bank2";
+            this.label_bank2.Size = new System.Drawing.Size(16, 21);
+            this.label_bank2.TabIndex = 4;
+            this.label_bank2.Text = " ";
+            // 
             // UCP_Mycurrency
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label_bank2);
             this.Controls.Add(this.label_account);
+            this.Controls.Add(this.label_bank);
             this.Controls.Add(this.label_acctitle);
             this.Controls.Add(this.label_title);
             this.Controls.Add(this.button_back);
@@ -168,5 +192,7 @@ namespace ATM.Panel
         private System.Windows.Forms.DataGridViewTextBoxColumn currencyDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn currnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label label_bank;
+        private System.Windows.Forms.Label label_bank2;
     }
 }
