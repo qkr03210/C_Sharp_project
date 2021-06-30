@@ -192,6 +192,7 @@
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ATM.Model.Account1.datasource" />
+    <None Include="Properties\DataSources\ATM.Model.Coin1.datasource" />
     <None Include="Properties\DataSources\ATM.Model.ExchangeRate.datasource" />
     <None Include="Properties\DataSources\ATM.Model.TsHistory1.datasource" />
     <None Include="Properties\Settings.settings">

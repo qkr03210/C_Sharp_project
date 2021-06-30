@@ -188,7 +188,6 @@ D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Transaction_history.resources
 D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Myinfo.resources
 D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Transaction.resources
 D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Upbit.resources
-D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
 D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Login.resources
 D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Mycurrency.resources
 D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_Exchange.resources
@@ -250,3 +249,4 @@ D:\kjs\C_Sharp_project\ATM\ATM\obj\Debug\ATM.exe
 D:\kjs\C_Sharp_project\ATM\ATM\obj\Debug\ATM.pdb
 D:\kjs\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csprojAssemblyReference.cache
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_MyCoin.resources
+D:\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_MyCoin.resources
