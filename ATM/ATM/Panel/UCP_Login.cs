@@ -83,6 +83,10 @@ namespace ATM.Panel
                         UCP_MyCoin mycoin = new UCP_MyCoin(parentForm);
                         parentForm.controllView(mycoin);
                         break;
+                    case 4:
+                        UCP_Transaction_history tshis = new UCP_Transaction_history(parentForm);
+                        parentForm.controllView(tshis);
+                        break;
                     default:
                        
                         break;
