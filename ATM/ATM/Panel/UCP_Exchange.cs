@@ -28,10 +28,8 @@ namespace ATM
         Form1 parentForm;
         public UCP_Exchange(Form1 form)
         {
-
             InitializeComponent();
             parentForm = form;
-
         }
         //박상준,20210624
         //당일 환율 api정보를 가져와서 데이터 그리드뷰에 출력(버튼)
@@ -162,7 +160,7 @@ namespace ATM
         //박상준,20210629
         //계좌 잔액을 업데이트 하고, 이미 구매한 화폐가 있다면 update로 수량을, 없다면 insert로 exchange테이블에 추가한다.
         //박소윤,20210629
-        //거래가 진행되면 DB 내 transaction 테이블에 거래내역 기록 & coin 테이블에 보유 외화 저장
+        //거래가 진행되면 DB 내 transaction 테이블에 거래내역 기록 & coin 테이블에 보유 외화 저장 => 트리거로 DB 3개 연동.
         public void exchange(double result)
         {
             string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";

@@ -35,8 +35,6 @@ namespace ATM
         {
             mainL.Controls.Clear();
             mainL.Controls.Add(uc);
-
-
         }
         //박상준,20210627 주석 추가
         //다른 패널에서 홈 패널로 이동
