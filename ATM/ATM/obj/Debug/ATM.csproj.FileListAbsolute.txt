@@ -173,7 +173,6 @@ C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPan
 C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel11.resources
 C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel5.resources
-D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel9.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\bin\Debug\ATM.exe.config
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\bin\Debug\ATM.exe
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\bin\Debug\ATM.pdb
@@ -241,3 +240,4 @@ C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Upbit.re
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Login.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Mycurrency.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_Exchange.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_MyCoin.resources

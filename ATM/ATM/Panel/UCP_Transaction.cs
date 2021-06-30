@@ -1,27 +1,26 @@
-﻿using ATM.Common;
-using ATM.Model;
+﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ATM.Panel
 {
     public partial class UCP_Transaction : UserControl
     {
-        checkAcc ca;
-        Transaction ts = new Transaction();
+        MySqlConnection Myconn = new MySqlConnection();
+        MySqlDataAdapter da;
+        DataSet ds;
         Form1 parentForm;
-        string bank;
-        int bal;
-        string acc_num;
-        string name;
         public UCP_Transaction(Form1 form)
         {
             InitializeComponent();
             parentForm = form;
-            this.bank = parentForm.getBank();
-            this.bal = parentForm.getBalance();
-            this.acc_num = parentForm.getUserAccount();
-            this.name = parentForm.getName();
         }
 
         private void button_back_Click(object sender, EventArgs e)
@@ -31,37 +30,89 @@ namespace ATM.Panel
 
         private void transaction_Click(object sender, EventArgs e)
         {
-            if (bal < int.Parse(money_text.Text))
+
+            if (checkBank(bankName.Text, accNum_text.Text))
             {
-                MessageBox.Show("잔액 부족");
+                MessageBox.Show("있다");
+                Query_Transaction(accNum_text.Text, bankName.Text, int.Parse(money_text.Text));
+                Qurey_Update_inBank(bankName.Text, accNum_text.Text, int.Parse(money_text.Text));
+                /*Qurey_Update_outBank();
+                Qurey_Update_inBank(); */
             }
             else
             {
-                ca = ts.checkAcc(accNum_text.Text, bankName.Text);
-                if (ca.Acc_check)
-                {
-                    DialogResult dr = MessageBox.Show("예금주 : " + ca.Name +
-                                    "\n은행 : " + ca.Bank + "\n계좌번호 : " + ca.Acc_num +
-                                    "\n보낼 금액 : " + money_text.Text + "원" +
-                                    "\n이 계좌로 송금 하시겠습니까?"
-                                    , "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                MessageBox.Show("없다");
+            }
+            /* Query_Transaction(accNum_text.Text, bankName_text.Text, int.Parse(money_text.Text));
+             Qurey_Update_outBank();
+             Qurey_Update_inBank();*/
+        }
 
-                    if (dr == DialogResult.OK)
-                    {
-                        ts.transaction(acc_num, bank, name, bal, ca.Acc_num, ca.Bank, ca.Name, ca.Balance, int.Parse(money_text.Text));
-                        //잔액 조회후 세션 저장 or 로그아웃 -> 메인
-                        MessageBox.Show("정상적으로 송금 되었습니다.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("취소 하였습니다");
-                    }
-                }
-                else
+        private void Qurey_Update_inBank(string in_bank, string acc_num, int money)
+        {
+            ConnectDB();
+            MySqlCommand cmd = new MySqlCommand("", Myconn);
+            string sqlcommand = $"Update atm.account set balance= balance + {money} where bank = '{in_bank}' and acc_num = '{acc_num}'";
+            cmd.CommandText = sqlcommand;
+            cmd.ExecuteNonQuery();
+
+            Myconn.Close();
+        }
+
+        private void Qurey_Update_outBank()
+        {
+            throw new NotImplementedException();
+        }
+        public Boolean checkBank(string in_bank, string in_acc)
+        {
+            Boolean check = false;
+            ConnectDB();
+            string sql = $"SELECT * FROM atm.account where bank = '{in_bank}' and acc_num = '{in_acc}'";
+            da = new MySqlDataAdapter();
+            MySqlCommand cmd = Myconn.CreateCommand();
+            cmd.CommandText = sql;
+            da.SelectCommand = cmd;
+            ds = new DataSet();
+            //da.Fill(ds, "tb_cust");
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                if (rdr["acc_num"].Equals(in_acc) && rdr["bank"].Equals(in_bank))
                 {
-                    MessageBox.Show("없다");
+                    check = true;
                 }
             }
+            Myconn.Close();
+            return check;
+        }
+        public void ConnectDB()
+        {
+            try
+            {
+                string pwd = "1234";
+                string strConn = "Server=192.168.0.104; Port=3306; Database=atm;Uid=root;Pwd=" + pwd + ";Charset=utf8";
+                Myconn = new MySqlConnection(strConn);
+                Myconn.Open();
+            }
+            catch (Exception e)
+            {
+            }
+        }
+        public void Query_Transaction(string in_acc, string in_bank, int trans_amount)
+        {
+            ConnectDB();
+            MySqlCommand cmd = new MySqlCommand("", Myconn);
+            string sqlcommand = $"Insert Into transaction(trans_date, out_acc,out_bank,in_acc,in_bank,trans_amount,trans_type) " +
+                $"values (now(), '1234','대구','{in_acc}','{in_bank}','{trans_amount}','1234')";
+            cmd.CommandText = sqlcommand;
+            cmd.ExecuteNonQuery();
+
+            Myconn.Close();
+        }
+
+        private void accNum_text_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

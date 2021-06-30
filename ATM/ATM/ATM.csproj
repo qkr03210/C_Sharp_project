@@ -62,6 +62,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\Coin.cs" />
     <Compile Include="Model\ExchangeRate.cs" />
     <Compile Include="Panel\UCP_Account_check.cs">
       <SubType>UserControl</SubType>
@@ -74,6 +75,12 @@
     </Compile>
     <Compile Include="Panel\UCP_Homepanel.Designer.cs">
       <DependentUpon>UCP_Homepanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\UCP_MyCoin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Panel\UCP_MyCoin.Designer.cs">
+      <DependentUpon>UCP_MyCoin.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel\UCP_Transaction_history.cs">
       <SubType>UserControl</SubType>
@@ -104,12 +111,6 @@
     </Compile>
     <Compile Include="Panel\UCP_Upbit.Designer.cs">
       <DependentUpon>UCP_Upbit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Panel\UcPanel9.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Panel\UcPanel9.Designer.cs">
-      <DependentUpon>UcPanel9.cs</DependentUpon>
     </Compile>
     <Compile Include="Panel\UCP_Login.cs">
       <SubType>UserControl</SubType>
@@ -146,6 +147,9 @@
     <EmbeddedResource Include="Panel\UCP_Homepanel.resx">
       <DependentUpon>UCP_Homepanel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Panel\UCP_MyCoin.resx">
+      <DependentUpon>UCP_MyCoin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Panel\UCP_Transaction_history.resx">
       <DependentUpon>UCP_Transaction_history.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,9 +164,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UCP_Upbit.resx">
       <DependentUpon>UCP_Upbit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Panel\UcPanel9.resx">
-      <DependentUpon>UcPanel9.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Panel\UCP_Login.resx">
       <DependentUpon>UCP_Login.cs</DependentUpon>
