@@ -21,7 +21,7 @@ namespace ATM
         //(요청) https://www.koreaexim.go.kr/site/program/financial/exchangeJSON?authkey=AUTHKEY1234567890&searchdate=20180102&data=AP01
         //주소+인증키+날짜+타입
         //(반환값 확인용 사이트)https://www.koreaexim.go.kr/site/program/openapi/openApiView?menuid=001003002002001&apino=2&viewtype=C
-        string url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON";
+        //string url = "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON";
         string mykey = "hKSdbCbx9x9G7ynyLP8yxL7z0t9Gwl2c";
 
         List<ExchangeRate> exchanges = new List<ExchangeRate>();

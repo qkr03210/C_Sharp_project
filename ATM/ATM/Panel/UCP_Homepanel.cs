@@ -102,8 +102,19 @@ namespace ATM
         //패널 9번으로
         private void button_panel9_Click(object sender, EventArgs e)
         {
-            Panel.UcPanel9 panel9 = new Panel.UcPanel9(parentForm);
-            parentForm.controllView(panel9);
+            //로그인이 되어있으면
+            if (parentForm.chkLogin())
+            {
+                Panel.UCP_MyCoin mycoin = new Panel.UCP_MyCoin(parentForm);
+                parentForm.controllView(mycoin);
+            }
+            //로그인이 안되어있으면
+            else
+            {
+                UCP_Login uc_login = new UCP_Login(parentForm, 3);
+                parentForm.controllView(uc_login);
+            }
+            
         }
 
         //이승직 20210627

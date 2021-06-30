@@ -114,7 +114,7 @@ namespace ATM.Panel
                 }
 
                 timer1.Interval = 60*1000 * (Convert.ToInt32(time));
-
+                temp();
             }
             else
             {
@@ -126,6 +126,8 @@ namespace ATM.Panel
         }
         private async void temp()
         {
+            Console.WriteLine(timer1.Interval);
+            Console.WriteLine("temp실행중");
             string requestUrl;
             int intCheck;
             string coin = comboBox1.SelectedValue.ToString();
@@ -139,7 +141,10 @@ namespace ATM.Panel
             {
                 var response = await client.GetAsync(requestUrl);
                 var responseString = await response.Content.ReadAsStringAsync();
+                //Console.WriteLine("responseString"+responseString.ToString());
                 var json = JArray.Parse(responseString);
+                Console.WriteLine("json[0]" + json[0].ToString());//가장 최근꺼
+                Console.WriteLine("json[0]의 코드" + json[0]["code"].ToString());
                 DataTable dt = JsonConvert.DeserializeObject<DataTable>(json.ToString());
 
                 chart1.Series["DateTime"].XValueMember = "candleDateTimeKst";

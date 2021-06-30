@@ -129,7 +129,7 @@ namespace ATM
             this.button_panel9.Name = "button_panel9";
             this.button_panel9.Size = new System.Drawing.Size(90, 46);
             this.button_panel9.TabIndex = 9;
-            this.button_panel9.Text = "패널9로";
+            this.button_panel9.Text = "내 코인 정보";
             this.button_panel9.UseVisualStyleBackColor = true;
             this.button_panel9.Click += new System.EventHandler(this.button_panel9_Click);
             // 
@@ -163,7 +163,7 @@ namespace ATM
             this.button_login.UseVisualStyleBackColor = true;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
-            // UcPanel1
+            // UCP_Homepanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,7 +179,7 @@ namespace ATM
             this.Controls.Add(this.button_Test_Mysql);
             this.Controls.Add(this.button_Exit);
             this.Controls.Add(this.button_switch_panel2);
-            this.Name = "UcPanel1";
+            this.Name = "UCP_Homepanel";
             this.Size = new System.Drawing.Size(800, 450);
             this.ResumeLayout(false);
 

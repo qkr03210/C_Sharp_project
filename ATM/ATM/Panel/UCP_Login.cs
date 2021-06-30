@@ -79,6 +79,10 @@ namespace ATM.Panel
                     case 2:
                        
                         break;
+                    case 3:
+                        UCP_MyCoin mycoin = new UCP_MyCoin(parentForm);
+                        parentForm.controllView(mycoin);
+                        break;
                     default:
                        
                         break;
