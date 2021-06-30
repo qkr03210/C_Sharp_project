@@ -66,6 +66,7 @@
     <Compile Include="Model\CheckAcc.cs" />
     <Compile Include="Model\Coin.cs" />
     <Compile Include="Model\ExchangeRate.cs" />
+    <Compile Include="Model\TsHistory.cs" />
     <Compile Include="Panel\UCP_Account_check.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -191,6 +192,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ATM.Model.Account1.datasource" />
     <None Include="Properties\DataSources\ATM.Model.ExchangeRate.datasource" />
+    <None Include="Properties\DataSources\ATM.Model.TsHistory1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
