@@ -11,7 +11,7 @@ namespace ATM.Panel
         Transaction ts = new Transaction();
         Form1 parentForm;
         string bank;
-        int bal;
+        double bal;
         string acc_num;
         string name;
         public UCP_Transaction(Form1 form)
@@ -26,12 +26,12 @@ namespace ATM.Panel
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            parentForm.HomePanel();
+            parentForm.logout();
         }
 
         private void transaction_Click(object sender, EventArgs e)
         {
-            if (bal < int.Parse(money_text.Text))
+            if (bal < double.Parse(money_text.Text))
             {
                 MessageBox.Show("잔액 부족");
             }

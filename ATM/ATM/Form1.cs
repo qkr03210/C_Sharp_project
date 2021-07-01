@@ -19,7 +19,7 @@ namespace ATM
         private string UserAccount = "";
         private string bank = "";
         private string name = "";
-        private int balance = 0;
+        private double balance = 0;
         //박상준,20210627
         //주석 추가, ucpanel1을 기본 홈패널로 생각
         //기본 화면을 ucpanel1로 지정한다.(나중에 패널명 수정 필요)
@@ -97,7 +97,7 @@ namespace ATM
         }
         //박상준,20210629
         //사용자 잔액정보 반환
-        public int getBalance()
+        public double getBalance()
         {
             return balance;
         }
