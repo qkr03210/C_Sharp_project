@@ -17,6 +17,7 @@ namespace ATM.Panel
         Transaction ts = new Transaction();
         List<TsHistory> list = new List<TsHistory>();
         string bank;
+        string name;
         string acc_num;
 
         Form1 parentForm;
@@ -24,9 +25,11 @@ namespace ATM.Panel
         {
             InitializeComponent();
             parentForm = form;
+            this.name = parentForm.getName();
             this.bank = parentForm.getBank();
             this.acc_num = parentForm.getUserAccount();
             list = ts.TsHistory(acc_num, bank);
+            Name_label.Text = name+" 님의 거래 내역";
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = list;
         }

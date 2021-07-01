@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.button_back = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.Label();
-            this.tsHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tsHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Name_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsHistoryBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -69,58 +69,58 @@
             this.dataGridView1.Size = new System.Drawing.Size(665, 248);
             this.dataGridView1.TabIndex = 8;
             // 
-            // Name
-            // 
-            this.Name.AutoSize = true;
-            this.Name.Font = new System.Drawing.Font("궁서체", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Name.Location = new System.Drawing.Point(357, 57);
-            this.Name.Name = "Name";
-            this.Name.Size = new System.Drawing.Size(200, 29);
-            this.Name.TabIndex = 9;
-            this.Name.Text = "내 거래 내역";
-            // 
-            // tsHistoryBindingSource
-            // 
-            this.tsHistoryBindingSource.DataSource = typeof(ATM.Model.TsHistory);
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "trans_date";
-            this.dataGridViewTextBoxColumn1.HeaderText = "trans_date";
+            this.dataGridViewTextBoxColumn1.HeaderText = "거래 일자";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn2.HeaderText = "name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "예금주";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "amount";
-            this.dataGridViewTextBoxColumn3.HeaderText = "amount";
+            this.dataGridViewTextBoxColumn3.HeaderText = "금액";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "balance";
-            this.dataGridViewTextBoxColumn4.HeaderText = "balance";
+            this.dataGridViewTextBoxColumn4.HeaderText = "잔액";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "type";
-            this.dataGridViewTextBoxColumn5.HeaderText = "type";
+            this.dataGridViewTextBoxColumn5.HeaderText = "비고";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // tsHistoryBindingSource
+            // 
+            this.tsHistoryBindingSource.DataSource = typeof(ATM.Model.TsHistory);
+            // 
+            // Name_label
+            // 
+            this.Name_label.AutoSize = true;
+            this.Name_label.Font = new System.Drawing.Font("궁서체", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Name_label.Location = new System.Drawing.Point(274, 35);
+            this.Name_label.Name = "Name_label";
+            this.Name_label.Size = new System.Drawing.Size(153, 29);
+            this.Name_label.TabIndex = 9;
+            this.Name_label.Text = "거래 내역";
             // 
             // UCP_Transaction_history
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Name);
+            this.Controls.Add(this.Name_label);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button_back);
-            //this.Name = "UCP_Transaction_history";
+            this.Name = "UCP_Transaction_history";
             this.Size = new System.Drawing.Size(800, 450);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsHistoryBindingSource)).EndInit();
@@ -138,12 +138,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn amountDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn balanceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn typeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label Name;
+        private System.Windows.Forms.Label Name_label;
+        private System.Windows.Forms.BindingSource tsHistoryBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.BindingSource tsHistoryBindingSource;
     }
 }

@@ -77,6 +77,25 @@ namespace ATM.Common
                 cmd.ExecuteNonQuery();
             }
         }
+        //무통장 입금
+        public void gdgdzz(string out_acc, string out_bank, string out_name,
+            string in_acc, string in_bank, string in_name, double in_balance, int trans_amount)
+        {
+            string sql = "Insert Into transaction (trans_date," +
+                "out_acc,out_bank,out_name,out_balance," +
+                "in_acc,in_bank,in_name,in_balance," +
+                "trans_price,trans_type)" +
+                "value(now(), '" + out_acc + "', '" + out_bank + "', '" + out_name + "', 0 ," +
+                "'" + in_acc + "', '" + in_bank + "', '" + in_name + "'," + (in_balance + trans_amount) + "," + trans_amount + ", 'money'); ";
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                conn.Open();
+
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+            }
+        }
         public List<TsHistory> TsHistory(string acc_num, string bank)
         {
             List<TsHistory> list = new List<TsHistory>();

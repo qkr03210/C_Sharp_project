@@ -121,8 +121,17 @@ namespace ATM
         //패널 10번으로
         private void button_panel10_Click(object sender, EventArgs e)
         {
-            Panel.UCP_Transaction_history panel10 = new Panel.UCP_Transaction_history(parentForm);
-            parentForm.controllView(panel10);
+            if (parentForm.chkLogin())
+            {
+                Panel.UCP_Transaction_history panel10 = new Panel.UCP_Transaction_history(parentForm);
+                parentForm.controllView(panel10);
+            }
+            //로그인이 안되어있으면
+            else
+            {
+                UCP_Login uc_login = new UCP_Login(parentForm, 4);
+                parentForm.controllView(uc_login);
+            }
         }
 
         //이승직 20210627

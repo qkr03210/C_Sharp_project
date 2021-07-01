@@ -72,7 +72,7 @@ namespace ATM.Panel
                         UCP_Exchange exchange = new UCP_Exchange(parentForm);
                         parentForm.controllView(exchange);
                         break;
-                    case 1:
+                    case 1: //송금
                         UCP_Transaction trans = new UCP_Transaction(parentForm);
                         parentForm.controllView(trans);
                         break;
@@ -82,6 +82,10 @@ namespace ATM.Panel
                     case 3:
                         UCP_MyCoin mycoin = new UCP_MyCoin(parentForm);
                         parentForm.controllView(mycoin);
+                        break;
+                    case 4: // 거래내역 조회
+                        Panel.UCP_Transaction_history panel10 = new Panel.UCP_Transaction_history(parentForm);
+                        parentForm.controllView(panel10);
                         break;
                     default:
                        
