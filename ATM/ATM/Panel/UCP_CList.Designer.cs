@@ -37,15 +37,15 @@ namespace ATM.Panel
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.거래 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label_name = new System.Windows.Forms.Label();
+            this.label_price = new System.Windows.Forms.Label();
+            this.label_totalPrice = new System.Windows.Forms.Label();
             this.marketDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.koreannameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tradepriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cPriceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label_name = new System.Windows.Forms.Label();
-            this.label_price = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPriceBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -67,6 +67,7 @@ namespace ATM.Panel
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(374, 413);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // button1
             // 
@@ -80,11 +81,11 @@ namespace ATM.Panel
             // 
             // button_upbit
             // 
-            this.button_upbit.Location = new System.Drawing.Point(409, 355);
+            this.button_upbit.Location = new System.Drawing.Point(605, 278);
             this.button_upbit.Name = "button_upbit";
-            this.button_upbit.Size = new System.Drawing.Size(80, 51);
+            this.button_upbit.Size = new System.Drawing.Size(122, 38);
             this.button_upbit.TabIndex = 2;
-            this.button_upbit.Text = "코인 차트";
+            this.button_upbit.Text = "코인 차트 보기";
             this.button_upbit.UseVisualStyleBackColor = true;
             this.button_upbit.Click += new System.EventHandler(this.button_upbit_Click);
             // 
@@ -116,21 +117,13 @@ namespace ATM.Panel
             // 
             // 거래
             // 
-            this.거래.Location = new System.Drawing.Point(481, 201);
+            this.거래.Location = new System.Drawing.Point(605, 208);
             this.거래.Name = "거래";
-            this.거래.Size = new System.Drawing.Size(63, 37);
+            this.거래.Size = new System.Drawing.Size(122, 37);
             this.거래.TabIndex = 6;
-            this.거래.Text = "button3";
+            this.거래.Text = "구매";
             this.거래.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(589, 201);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(63, 37);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.거래.Click += new System.EventHandler(this.거래_Click);
             // 
             // label3
             // 
@@ -148,6 +141,33 @@ namespace ATM.Panel
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(47, 21);
             this.textBox1.TabIndex = 9;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
+            // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Location = new System.Drawing.Point(506, 54);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(0, 12);
+            this.label_name.TabIndex = 10;
+            // 
+            // label_price
+            // 
+            this.label_price.AutoSize = true;
+            this.label_price.Location = new System.Drawing.Point(506, 95);
+            this.label_price.Name = "label_price";
+            this.label_price.Size = new System.Drawing.Size(9, 12);
+            this.label_price.TabIndex = 11;
+            this.label_price.Text = " ";
+            // 
+            // label_totalPrice
+            // 
+            this.label_totalPrice.AutoSize = true;
+            this.label_totalPrice.Location = new System.Drawing.Point(613, 139);
+            this.label_totalPrice.Name = "label_totalPrice";
+            this.label_totalPrice.Size = new System.Drawing.Size(0, 12);
+            this.label_totalPrice.TabIndex = 12;
             // 
             // marketDataGridViewTextBoxColumn
             // 
@@ -174,32 +194,15 @@ namespace ATM.Panel
             // 
             this.cPriceBindingSource.DataSource = typeof(ATM.Model.CPrice);
             // 
-            // label_name
-            // 
-            this.label_name.AutoSize = true;
-            this.label_name.Location = new System.Drawing.Point(506, 54);
-            this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(0, 12);
-            this.label_name.TabIndex = 10;
-            // 
-            // label_price
-            // 
-            this.label_price.AutoSize = true;
-            this.label_price.Location = new System.Drawing.Point(506, 95);
-            this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(9, 12);
-            this.label_price.TabIndex = 11;
-            this.label_price.Text = " ";
-            // 
             // UCP_CList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label_totalPrice);
             this.Controls.Add(this.label_price);
             this.Controls.Add(this.label_name);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button4);
             this.Controls.Add(this.거래);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -228,10 +231,10 @@ namespace ATM.Panel
         private System.Windows.Forms.BindingSource cPriceBindingSource;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button 거래;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Label label_price;
+        private System.Windows.Forms.Label label_totalPrice;
     }
 }

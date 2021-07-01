@@ -62,7 +62,6 @@ namespace ATM.Panel
             this.textBox_num.Location = new System.Drawing.Point(307, 129);
             this.textBox_num.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_num.Name = "textBox_num";
-            this.textBox_num.PasswordChar = '*';
             this.textBox_num.Size = new System.Drawing.Size(174, 21);
             this.textBox_num.TabIndex = 9;
             // 
@@ -115,6 +114,8 @@ namespace ATM.Panel
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -125,6 +126,7 @@ namespace ATM.Panel
             this.dataGridView1.DataSource = this.accountBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(37, 235);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(444, 150);
             this.dataGridView1.TabIndex = 12;
@@ -134,30 +136,34 @@ namespace ATM.Panel
             this.bankDataGridViewTextBoxColumn.DataPropertyName = "bank";
             this.bankDataGridViewTextBoxColumn.HeaderText = "bank";
             this.bankDataGridViewTextBoxColumn.Name = "bankDataGridViewTextBoxColumn";
+            this.bankDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // accnumDataGridViewTextBoxColumn
             // 
             this.accnumDataGridViewTextBoxColumn.DataPropertyName = "acc_num";
             this.accnumDataGridViewTextBoxColumn.HeaderText = "acc_num";
             this.accnumDataGridViewTextBoxColumn.Name = "accnumDataGridViewTextBoxColumn";
+            this.accnumDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // balanceDataGridViewTextBoxColumn
             // 
             this.balanceDataGridViewTextBoxColumn.DataPropertyName = "balance";
             this.balanceDataGridViewTextBoxColumn.HeaderText = "balance";
             this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
+            this.balanceDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // accountBindingSource
             // 
             this.accountBindingSource.DataSource = typeof(ATM.Model.Account);
             // 
-            // UCP_account_check
+            // UCP_Account_check
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -169,7 +175,7 @@ namespace ATM.Panel
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_back);
-            this.Name = "UCP_account_check";
+            this.Name = "UCP_Account_check";
             this.Size = new System.Drawing.Size(800, 450);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).EndInit();

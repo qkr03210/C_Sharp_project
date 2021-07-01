@@ -76,16 +76,20 @@ namespace ATM.Panel
                         UCP_Transaction trans = new UCP_Transaction(parentForm);
                         parentForm.controllView(trans);
                         break;
-                    case 2:
-                       
+                    case 2: //업비트 (코인 거래 화면으로)
+                        UCP_CList clist = new UCP_CList(parentForm);
+                        parentForm.controllView(clist);
                         break;
-                    case 3:
+                    case 3: // 코인 보유 현황 조회
                         UCP_MyCoin mycoin = new UCP_MyCoin(parentForm);
                         parentForm.controllView(mycoin);
                         break;
                     case 4: // 거래내역 조회
                         Panel.UCP_Transaction_history panel10 = new Panel.UCP_Transaction_history(parentForm);
                         parentForm.controllView(panel10);
+                        break;
+                    case 5: // 홈화면으로
+                        parentForm.HomePanel();
                         break;
                     default:
                        

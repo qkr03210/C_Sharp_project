@@ -19,7 +19,7 @@ namespace ATM.Panel
             parentForm = form;
         }
 
-        private void button_back_Click(object sender, EventArgs e)
+        private void button_back_Click_1(object sender, EventArgs e)
         {
             parentForm.HomePanel();
         }

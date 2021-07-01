@@ -39,13 +39,14 @@
             this.button_back.TabIndex = 8;
             this.button_back.Text = "돌아가기";
             this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.Click += new System.EventHandler(this.button_back_Click_1);
             // 
-            // UcPanel11
+            // UCP_Myinfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button_back);
-            this.Name = "UcPanel11";
+            this.Name = "UCP_Myinfo";
             this.Size = new System.Drawing.Size(800, 450);
             this.ResumeLayout(false);
 
