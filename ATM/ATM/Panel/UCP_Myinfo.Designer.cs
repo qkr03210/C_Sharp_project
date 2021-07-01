@@ -47,7 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.button_back);
             this.Name = "UCP_Myinfo";
-            this.Size = new System.Drawing.Size(800, 450);
+            this.Size = new System.Drawing.Size(900, 550);
             this.ResumeLayout(false);
 
         }

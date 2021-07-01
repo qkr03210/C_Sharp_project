@@ -30,6 +30,7 @@ namespace ATM
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,11 +47,10 @@ namespace ATM
             this.textBox_amount = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label_currency = new System.Windows.Forms.Label();
-            this.label_curr = new System.Windows.Forms.Label();
+            this.exchangeRateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.currnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exchangeRateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exchangeRateBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -60,73 +60,96 @@ namespace ATM
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.currnameDataGridViewTextBoxColumn,
             this.currencyDataGridViewTextBoxColumn,
             this.priceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.exchangeRateBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(243, 82);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(18, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 72;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(540, 298);
+            this.dataGridView1.Size = new System.Drawing.Size(599, 315);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(687, 399);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("배달의민족 주아", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button1.Location = new System.Drawing.Point(745, 424);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 35);
+            this.button1.Size = new System.Drawing.Size(140, 90);
             this.button1.TabIndex = 1;
-            this.button1.Text = "시작 화면으로";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Text = "시작 화면";
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(486, 67);
+            this.label1.Font = new System.Drawing.Font("배달의민족 주아", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(16, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(29, 12);
+            this.label1.Size = new System.Drawing.Size(63, 31);
             this.label1.TabIndex = 2;
             this.label1.Text = "환율";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(539, 399);
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("배달의민족 주아", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button2.Location = new System.Drawing.Point(477, 426);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 35);
+            this.button2.Size = new System.Drawing.Size(140, 90);
             this.button2.TabIndex = 3;
-            this.button2.Text = "환율 api 읽어오기";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Text = "현재 환율";
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button_mycurrency
             // 
-            this.button_mycurrency.Location = new System.Drawing.Point(417, 399);
+            this.button_mycurrency.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.button_mycurrency.FlatAppearance.BorderSize = 0;
+            this.button_mycurrency.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_mycurrency.Font = new System.Drawing.Font("배달의민족 주아", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_mycurrency.Location = new System.Drawing.Point(745, 300);
             this.button_mycurrency.Name = "button_mycurrency";
-            this.button_mycurrency.Size = new System.Drawing.Size(97, 34);
+            this.button_mycurrency.Size = new System.Drawing.Size(140, 90);
             this.button_mycurrency.TabIndex = 4;
             this.button_mycurrency.Text = "마이페이지";
-            this.button_mycurrency.UseVisualStyleBackColor = true;
+            this.button_mycurrency.UseVisualStyleBackColor = false;
             this.button_mycurrency.Click += new System.EventHandler(this.button_mycurrency_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(29, 95);
+            this.label2.Font = new System.Drawing.Font("배달의민족 주아", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Location = new System.Drawing.Point(16, 414);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 12);
+            this.label2.Size = new System.Drawing.Size(44, 23);
             this.label2.TabIndex = 5;
             this.label2.Text = "국가";
             // 
             // label_country
             // 
             this.label_country.AutoSize = true;
-            this.label_country.Location = new System.Drawing.Point(125, 95);
+            this.label_country.Location = new System.Drawing.Point(81, 420);
             this.label_country.Name = "label_country";
             this.label_country.Size = new System.Drawing.Size(0, 12);
             this.label_country.TabIndex = 6;
@@ -134,16 +157,17 @@ namespace ATM
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 187);
+            this.label4.Font = new System.Drawing.Font("배달의민족 주아", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(16, 459);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 12);
+            this.label4.Size = new System.Drawing.Size(45, 23);
             this.label4.TabIndex = 7;
             this.label4.Text = "환율";
             // 
             // label_price
             // 
             this.label_price.AutoSize = true;
-            this.label_price.Location = new System.Drawing.Point(125, 187);
+            this.label_price.Location = new System.Drawing.Point(81, 465);
             this.label_price.Name = "label_price";
             this.label_price.Size = new System.Drawing.Size(0, 12);
             this.label_price.TabIndex = 8;
@@ -151,16 +175,17 @@ namespace ATM
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 243);
+            this.label6.Font = new System.Drawing.Font("배달의민족 주아", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Location = new System.Drawing.Point(16, 482);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 12);
+            this.label6.Size = new System.Drawing.Size(44, 23);
             this.label6.TabIndex = 9;
-            this.label6.Text = "KRW :";
+            this.label6.Text = "금액";
             // 
             // label_totalPrice
             // 
             this.label_totalPrice.AutoSize = true;
-            this.label_totalPrice.Location = new System.Drawing.Point(127, 242);
+            this.label_totalPrice.Location = new System.Drawing.Point(81, 487);
             this.label_totalPrice.Name = "label_totalPrice";
             this.label_totalPrice.Size = new System.Drawing.Size(0, 12);
             this.label_totalPrice.TabIndex = 10;
@@ -168,28 +193,33 @@ namespace ATM
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(30, 290);
+            this.label8.Font = new System.Drawing.Font("배달의민족 주아", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Location = new System.Drawing.Point(16, 505);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(81, 12);
+            this.label8.Size = new System.Drawing.Size(45, 23);
             this.label8.TabIndex = 11;
-            this.label8.Text = "환전할 금액 : ";
+            this.label8.Text = "수량";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(110, 351);
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("배달의민족 주아", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button3.Location = new System.Drawing.Point(199, 426);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 29);
+            this.button3.Size = new System.Drawing.Size(140, 90);
             this.button3.TabIndex = 12;
             this.button3.Text = "환전하기";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // textBox_amount
             // 
             this.textBox_amount.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBox_amount.Location = new System.Drawing.Point(141, 287);
+            this.textBox_amount.Location = new System.Drawing.Point(76, 508);
             this.textBox_amount.Name = "textBox_amount";
-            this.textBox_amount.Size = new System.Drawing.Size(54, 21);
+            this.textBox_amount.Size = new System.Drawing.Size(85, 21);
             this.textBox_amount.TabIndex = 13;
             this.textBox_amount.TextChanged += new System.EventHandler(this.textBox_amount_TextChanged);
             this.textBox_amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_amount_KeyPress);
@@ -197,32 +227,29 @@ namespace ATM
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 142);
+            this.label3.Font = new System.Drawing.Font("배달의민족 주아", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(16, 437);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(29, 12);
+            this.label3.Size = new System.Drawing.Size(44, 23);
             this.label3.TabIndex = 14;
             this.label3.Text = "통화";
             // 
             // label_currency
             // 
             this.label_currency.AutoSize = true;
-            this.label_currency.Location = new System.Drawing.Point(125, 142);
+            this.label_currency.Location = new System.Drawing.Point(81, 443);
             this.label_currency.Name = "label_currency";
             this.label_currency.Size = new System.Drawing.Size(0, 12);
             this.label_currency.TabIndex = 15;
             // 
-            // label_curr
+            // exchangeRateBindingSource
             // 
-            this.label_curr.AutoSize = true;
-            this.label_curr.Location = new System.Drawing.Point(108, 290);
-            this.label_curr.Name = "label_curr";
-            this.label_curr.Size = new System.Drawing.Size(0, 12);
-            this.label_curr.TabIndex = 16;
+            this.exchangeRateBindingSource.DataSource = typeof(ATM.Model.ExchangeRate);
             // 
             // currnameDataGridViewTextBoxColumn
             // 
             this.currnameDataGridViewTextBoxColumn.DataPropertyName = "curr_name";
-            this.currnameDataGridViewTextBoxColumn.HeaderText = "국가명";
+            this.currnameDataGridViewTextBoxColumn.HeaderText = "             국가명";
             this.currnameDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.currnameDataGridViewTextBoxColumn.Name = "currnameDataGridViewTextBoxColumn";
             this.currnameDataGridViewTextBoxColumn.ReadOnly = true;
@@ -231,7 +258,7 @@ namespace ATM
             // currencyDataGridViewTextBoxColumn
             // 
             this.currencyDataGridViewTextBoxColumn.DataPropertyName = "currency";
-            this.currencyDataGridViewTextBoxColumn.HeaderText = "통화단위";
+            this.currencyDataGridViewTextBoxColumn.HeaderText = "            통화단위";
             this.currencyDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.currencyDataGridViewTextBoxColumn.Name = "currencyDataGridViewTextBoxColumn";
             this.currencyDataGridViewTextBoxColumn.ReadOnly = true;
@@ -240,21 +267,17 @@ namespace ATM
             // priceDataGridViewTextBoxColumn
             // 
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "환율";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "                환율";
             this.priceDataGridViewTextBoxColumn.MinimumWidth = 9;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             this.priceDataGridViewTextBoxColumn.ReadOnly = true;
             this.priceDataGridViewTextBoxColumn.Width = 175;
             // 
-            // exchangeRateBindingSource
-            // 
-            this.exchangeRateBindingSource.DataSource = typeof(ATM.Model.ExchangeRate);
-            // 
             // UCP_Exchange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label_curr);
+            this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label_currency);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_amount);
@@ -272,7 +295,7 @@ namespace ATM
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "UCP_Exchange";
-            this.Size = new System.Drawing.Size(800, 450);
+            this.Size = new System.Drawing.Size(900, 550);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.exchangeRateBindingSource)).EndInit();
             this.ResumeLayout(false);

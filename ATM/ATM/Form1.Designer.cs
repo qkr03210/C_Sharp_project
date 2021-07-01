@@ -37,18 +37,19 @@ namespace ATM
             this.mainL.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainL.Location = new System.Drawing.Point(0, 0);
             this.mainL.Name = "mainL";
-            this.mainL.Size = new System.Drawing.Size(802, 454);
+            this.mainL.Size = new System.Drawing.Size(900, 550);
             this.mainL.TabIndex = 0;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 454);
+            this.ClientSize = new System.Drawing.Size(900, 550);
             this.ControlBox = false;
             this.Controls.Add(this.mainL);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
 
