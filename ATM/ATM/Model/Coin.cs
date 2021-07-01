@@ -14,13 +14,15 @@ namespace ATM.Model
         public int AvgPrice { get; set; }
         public string earning_rate { get; set; }
         public double nowPrice { get; set; }
-        public Coin(string coin_name, int total_amount, int AvgPrice, double nowPrice,string earning_rate)
+        public double revenue { get; set; }
+        public Coin(string coin_name, int total_amount, int AvgPrice, double nowPrice,string earning_rate, double revenue)
         {
             this.coin_name = coin_name;
             this.total_amount = total_amount;
             this.AvgPrice = AvgPrice;
             this.nowPrice = nowPrice;
             this.earning_rate = earning_rate;
+            this.revenue = revenue;
         }
     }
 }
