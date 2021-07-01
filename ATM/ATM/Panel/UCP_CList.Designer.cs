@@ -32,10 +32,6 @@ namespace ATM.Panel
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.marketDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.koreannameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tradepriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cPriceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.button_upbit = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -48,6 +44,11 @@ namespace ATM.Panel
             this.label_price = new System.Windows.Forms.Label();
             this.label_totalPrice = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.marketDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.koreannameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tradepriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cPriceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cPriceBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -71,33 +72,6 @@ namespace ATM.Panel
             this.dataGridView1.Size = new System.Drawing.Size(343, 343);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
-            // 
-            // marketDataGridViewTextBoxColumn
-            // 
-            this.marketDataGridViewTextBoxColumn.DataPropertyName = "market";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.marketDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.marketDataGridViewTextBoxColumn.HeaderText = "코인코드";
-            this.marketDataGridViewTextBoxColumn.Name = "marketDataGridViewTextBoxColumn";
-            this.marketDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // koreannameDataGridViewTextBoxColumn
-            // 
-            this.koreannameDataGridViewTextBoxColumn.DataPropertyName = "korean_name";
-            this.koreannameDataGridViewTextBoxColumn.HeaderText = "코인이름";
-            this.koreannameDataGridViewTextBoxColumn.Name = "koreannameDataGridViewTextBoxColumn";
-            this.koreannameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // tradepriceDataGridViewTextBoxColumn
-            // 
-            this.tradepriceDataGridViewTextBoxColumn.DataPropertyName = "trade_price";
-            this.tradepriceDataGridViewTextBoxColumn.HeaderText = "가격";
-            this.tradepriceDataGridViewTextBoxColumn.Name = "tradepriceDataGridViewTextBoxColumn";
-            this.tradepriceDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cPriceBindingSource
-            // 
-            this.cPriceBindingSource.DataSource = typeof(ATM.Model.CPrice);
             // 
             // button1
             // 
@@ -137,7 +111,7 @@ namespace ATM.Panel
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("배달의민족 주아", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(460, 193);
+            this.label1.Location = new System.Drawing.Point(462, 193);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 27);
             this.label1.TabIndex = 3;
@@ -147,7 +121,7 @@ namespace ATM.Panel
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("배달의민족 주아", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(498, 237);
+            this.label2.Location = new System.Drawing.Point(500, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 27);
             this.label2.TabIndex = 4;
@@ -171,7 +145,7 @@ namespace ATM.Panel
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("배달의민족 주아", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(498, 278);
+            this.label3.Location = new System.Drawing.Point(500, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 27);
             this.label3.TabIndex = 8;
@@ -179,9 +153,10 @@ namespace ATM.Panel
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(583, 284);
+            this.textBox1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox1.Location = new System.Drawing.Point(585, 274);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(47, 21);
+            this.textBox1.Size = new System.Drawing.Size(47, 26);
             this.textBox1.TabIndex = 9;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
@@ -189,26 +164,29 @@ namespace ATM.Panel
             // label_name
             // 
             this.label_name.AutoSize = true;
-            this.label_name.Location = new System.Drawing.Point(581, 202);
+            this.label_name.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_name.Location = new System.Drawing.Point(585, 200);
             this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(0, 12);
+            this.label_name.Size = new System.Drawing.Size(0, 16);
             this.label_name.TabIndex = 10;
             // 
             // label_price
             // 
             this.label_price.AutoSize = true;
-            this.label_price.Location = new System.Drawing.Point(581, 243);
+            this.label_price.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_price.Location = new System.Drawing.Point(585, 237);
             this.label_price.Name = "label_price";
-            this.label_price.Size = new System.Drawing.Size(9, 12);
+            this.label_price.Size = new System.Drawing.Size(14, 16);
             this.label_price.TabIndex = 11;
             this.label_price.Text = " ";
             // 
             // label_totalPrice
             // 
             this.label_totalPrice.AutoSize = true;
-            this.label_totalPrice.Location = new System.Drawing.Point(640, 180);
+            this.label_totalPrice.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_totalPrice.Location = new System.Drawing.Point(585, 321);
             this.label_totalPrice.Name = "label_totalPrice";
-            this.label_totalPrice.Size = new System.Drawing.Size(0, 12);
+            this.label_totalPrice.Size = new System.Drawing.Size(0, 16);
             this.label_totalPrice.TabIndex = 12;
             // 
             // label4
@@ -221,11 +199,49 @@ namespace ATM.Panel
             this.label4.TabIndex = 13;
             this.label4.Text = "코인 구매";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("배달의민족 주아", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Location = new System.Drawing.Point(498, 313);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 27);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "합계";
+            // 
+            // marketDataGridViewTextBoxColumn
+            // 
+            this.marketDataGridViewTextBoxColumn.DataPropertyName = "market";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.marketDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this.marketDataGridViewTextBoxColumn.HeaderText = "코인코드";
+            this.marketDataGridViewTextBoxColumn.Name = "marketDataGridViewTextBoxColumn";
+            this.marketDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // koreannameDataGridViewTextBoxColumn
+            // 
+            this.koreannameDataGridViewTextBoxColumn.DataPropertyName = "korean_name";
+            this.koreannameDataGridViewTextBoxColumn.HeaderText = "코인이름";
+            this.koreannameDataGridViewTextBoxColumn.Name = "koreannameDataGridViewTextBoxColumn";
+            this.koreannameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tradepriceDataGridViewTextBoxColumn
+            // 
+            this.tradepriceDataGridViewTextBoxColumn.DataPropertyName = "trade_price";
+            this.tradepriceDataGridViewTextBoxColumn.HeaderText = "가격";
+            this.tradepriceDataGridViewTextBoxColumn.Name = "tradepriceDataGridViewTextBoxColumn";
+            this.tradepriceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cPriceBindingSource
+            // 
+            this.cPriceBindingSource.DataSource = typeof(ATM.Model.CPrice);
+            // 
             // UCP_CList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label_totalPrice);
             this.Controls.Add(this.label_price);
@@ -266,5 +282,6 @@ namespace ATM.Panel
         private System.Windows.Forms.Label label_price;
         private System.Windows.Forms.Label label_totalPrice;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }

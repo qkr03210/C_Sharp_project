@@ -251,6 +251,8 @@ D:\myfirstrepository_210125\C_Sharp_project\ATM\ATM\obj\Debug\ATM.exe
 D:\myfirstrepository_210125\C_Sharp_project\ATM\ATM\obj\Debug\ATM.pdb
 D:\kjs\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_CList.resources
 D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_CList.resources
+C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_MyCoin.resources
+C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_CList.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\bin\Debug\ATM.exe.config
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\bin\Debug\ATM.exe
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\bin\Debug\ATM.pdb
@@ -290,5 +292,3 @@ C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.CopyComplet
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.exe
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.pdb
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csprojAssemblyReference.cache
-C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_MyCoin.resources
-C:\Users\KB\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_CList.resources
