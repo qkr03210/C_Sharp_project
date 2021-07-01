@@ -289,3 +289,4 @@ D:\myfirstrepository_210125\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.CopyCom
 D:\myfirstrepository_210125\C_Sharp_project\ATM\ATM\obj\Debug\ATM.exe
 D:\myfirstrepository_210125\C_Sharp_project\ATM\ATM\obj\Debug\ATM.pdb
 D:\kjs\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_CList.resources
+D:\psj\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_CList.resources

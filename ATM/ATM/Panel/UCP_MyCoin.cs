@@ -28,16 +28,18 @@ namespace ATM.Panel
             parentForm = form;
             MyCoin();
             dataGridView1.DoubleBuffered(true);
+            label_clock.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
         }
         private void MyCoin()
         {
             coins.Clear();
             string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
             dataGridView1.DataSource = null;
+            int count = 0;
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "select coin_name, sum(amount) as total_amount,sum(amount * price) / sum(amount) as AvgPrice from coin where acc_num = '" + parentForm.getUserAccount() + "';";
+                string sql = "select count(*) as cnt ,coin_name, sum(amount) as total_amount,sum(amount * price) / sum(amount) as AvgPrice from coin where acc_num = '" + parentForm.getUserAccount() + "';";
                 string coin_name;
                 int total_amount;
                 int AvgPrice;
@@ -48,18 +50,25 @@ namespace ATM.Panel
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    coin_name = rdr["coin_name"].ToString();
-                    total_amount = Convert.ToInt32(rdr["total_amount"]);
-                    AvgPrice = Convert.ToInt32(rdr["AvgPrice"]);
-                    label1.Text = coin_name;
-                    label2.Text = total_amount.ToString();
-
-                    Coin temp = new Coin(coin_name, total_amount, AvgPrice, 0);
-                    coins.Add(temp);
+                    count = Convert.ToInt32(rdr["cnt"]);
+                    if (count != 0)
+                    {
+                        coin_name = rdr["coin_name"].ToString();
+                        total_amount = Convert.ToInt32(rdr["total_amount"]);
+                        AvgPrice = Convert.ToInt32(rdr["AvgPrice"]);
+                        Coin temp = new Coin(coin_name, total_amount, AvgPrice, 0);
+                        coins.Add(temp);
+                    }
                 }
                 rdr.Close();
             }
-            dataGridView1.DataSource = coins;
+            if (count != 0)
+            {
+                timer1.Enabled = true;
+                dataGridView1.DataSource = coins;
+            }
+            else
+                timer1.Enabled = false;
         }
         private void button_back_Click(object sender, EventArgs e)
         {
@@ -68,8 +77,6 @@ namespace ATM.Panel
 
         private async void temp()
         {
-            //TODO datasource가 null에서 coins으로 바뀌면서 깜박이는거 수정해야함
-            //dataGridView1.DataSource = null;
             Console.WriteLine(timer1.Interval);
             Console.WriteLine("temp실행중");
             string requestUrl;
@@ -91,23 +98,12 @@ namespace ATM.Panel
                 Console.WriteLine("json[0]의 코드" + json[0]["code"].ToString());
                 Console.WriteLine("json[0]의 가격" + json[0]["tradePrice"].ToString());
                 coins[0].earning_rate = Math.Truncate((((coins[0].AvgPrice / Convert.ToDouble(json[0]["tradePrice"])) * 100) - 100) * 100) / 100;
-                label3.Text = "" + (((coins[0].AvgPrice / Convert.ToDouble(json[0]["tradePrice"])) * 100) - 100) * 100;
                 Console.WriteLine(coins[0].earning_rate);
                 //coins.Add(new Coin("a", 3, 3, 3));
             }
             //박상준,20210639
             //데이터 그리드뷰 새로고침
             dataGridView1.Refresh();
-
-            //if (dataGridView1.DataSource == null)
-            //{
-            //    dataGridView1.DataSource = coins;
-            //}
-            //else
-            //{
-
-            //}
-
         }
 
         public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
@@ -146,6 +142,12 @@ namespace ATM.Panel
         private void timer1_Tick(object sender, EventArgs e)
         {
             temp();
+        }
+        //박상준,20210701
+        //시계 기능(1초 단위)
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            label_clock.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
         }
     }
     public static class ExtensionMethods
