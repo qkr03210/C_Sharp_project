@@ -24,6 +24,8 @@ namespace ATM.Panel
         UCP_CList ucp_clist;
         private List<Coin> coins = new List<Coin>();
         DataGridView data;
+        double ClientInvest = 0;
+        double ClientRevenue = 0;
         List<CPrice> cp = new List<CPrice>();
         public UCP_MyCoin(Form1 form)
         {
@@ -60,7 +62,7 @@ namespace ATM.Panel
                         coin_name = rdr["coin_name"].ToString();
                         total_amount = Convert.ToInt32(rdr["total_amount"]);
                         AvgPrice = Convert.ToInt32(rdr["AvgPrice"]);
-                        Coin temp = new Coin(coin_name, total_amount, AvgPrice, AvgPrice, "" + 0 + "%");
+                        Coin temp = new Coin(coin_name, total_amount, AvgPrice, AvgPrice, "" + 0 + "%",0);
                         coins.Add(temp);
                     }
                 }
@@ -91,18 +93,22 @@ namespace ATM.Panel
             if (data != null && data.DataSource != null)
             {
                 cp = data.DataSource as List<CPrice>;
-                Console.WriteLine("가져옴");
+                ClientInvest = 0;
+                ClientRevenue = 0;
                 for (int i = 0; i < coins.Count; i++)
                 {
                     CPrice mycoin = cp.Find(x => x.korean_name == coins[i].coin_name);
                     if (mycoin != null)
                     {
-                        Console.WriteLine(mycoin.korean_name + "의 현재 가격은 " + mycoin.trade_price + "입니다");
                         coins[i].nowPrice = Convert.ToDouble(mycoin.trade_price);
-                        coins[i].earning_rate = (Math.Truncate((((coins[i].AvgPrice / Convert.ToDouble(mycoin.trade_price)) * 100) - 100) * 1000) / 1000) + "%";
+                        coins[i].revenue = coins[i].total_amount * (coins[i].nowPrice-coins[i].AvgPrice);
+                        coins[i].earning_rate =(-1* (Math.Truncate((((coins[i].AvgPrice / Convert.ToDouble(mycoin.trade_price)) * 100) - 100) * 1000) / 1000)) + "%";
                     }
-
+                    ClientInvest += (coins[i].AvgPrice * coins[i].total_amount);
+                    ClientRevenue += (coins[i].revenue);
                 }
+                label_invest.Text = "" + ClientInvest;
+                label_revenue.Text = "" + ClientRevenue;
             }
         }
 
