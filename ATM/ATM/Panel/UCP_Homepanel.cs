@@ -94,7 +94,7 @@ namespace ATM
         //패널 7번으로
         private void button_panel7_Click(object sender, EventArgs e)
         {
-            Panel.UCP_Upbit panel7 = new Panel.UCP_Upbit(parentForm);
+            Panel.UCP_CList panel7 = new Panel.UCP_CList(parentForm);
             parentForm.controllView(panel7);
         }
 

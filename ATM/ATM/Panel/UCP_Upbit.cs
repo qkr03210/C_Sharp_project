@@ -21,7 +21,6 @@ namespace ATM.Panel
             InitializeComponent();
             parentForm = form;
             DropDownInit();
-
         }
 
         private void button_back_Click(object sender, EventArgs e)
@@ -161,6 +160,21 @@ namespace ATM.Panel
         private void timer1_Tick(object sender, EventArgs e)
         {
             temp();
+        }
+
+        private void UCP_Upbit_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            parentForm.Close();
         }
     }
 }

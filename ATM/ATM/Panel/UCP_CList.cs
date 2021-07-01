@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,23 +17,13 @@ namespace ATM.Panel
     public partial class UCP_CList : UserControl
     {
         List<CPrice> cprice = new List<CPrice>();
-
+        Form1 parentForm;
         public UCP_CList(Form1 form)
         {
             InitializeComponent();
-            /*UcPanel1 panel = new UcPanel1(parent);
-            controllView(panel, "ucpanel1");*/
-        }
-        public void controllView(UserControl uc, string view)
-        {
-            if (!/*mainL.*/Controls.ContainsKey(view))
-            {
-                uc.Dock = DockStyle.Fill;
-                /*mainL.*/
-                Controls.Add(uc);
-            }
-            /*mainL.*/
-            Controls[view].BringToFront();
+            parentForm = form;
+            dataGridView1.DataSource = null;
+            dataGridView1.DoubleBuffered(true);
         }
         void coins()
         {
@@ -52,7 +43,7 @@ namespace ATM.Panel
                 string korean_name = "";
                 string trade_price = "";
 
-                dataGridView1.DataSource = null;
+        
                 cprice.Clear();
 
                 /*korean_name = objs1[0]["korean_name"].ToString().Trim().Replace(",", "");
@@ -100,12 +91,35 @@ namespace ATM.Panel
 
         private void button1_Click(object sender, EventArgs e)
         {
+            parentForm.HomePanel();
+        }
+
+        private void button_upbit_Click(object sender, EventArgs e)
+        {
+            UCP_Upbit ub = new UCP_Upbit(parentForm);
+            parentForm.controllView(ub);
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
             coins();
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
+        
+      
 
-        }
+
+
+
+
+        /*    public static class ExtensionMethods
+            {
+                public static void DoubleBuffered(this DataGridView dgv, bool setting)
+                {
+                    Type dgvType = dgv.GetType();
+                    PropertyInfo pi = dgvType.GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.SetProperty);
+                    pi.SetValue(dgv, setting, null);
+                }
+            }*/
     }
 }
