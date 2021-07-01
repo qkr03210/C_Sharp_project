@@ -35,21 +35,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.coinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.coinnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avgPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.earningrateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coinBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.coinBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // button_back
             // 
-            this.button_back.Location = new System.Drawing.Point(1102, 721);
-            this.button_back.Margin = new System.Windows.Forms.Padding(5);
+            this.button_back.Location = new System.Drawing.Point(701, 412);
             this.button_back.Name = "button_back";
-            this.button_back.Size = new System.Drawing.Size(151, 61);
+            this.button_back.Size = new System.Drawing.Size(96, 35);
             this.button_back.TabIndex = 6;
             this.button_back.Text = "돌아가기";
             this.button_back.UseVisualStyleBackColor = true;
@@ -65,12 +64,11 @@
             this.avgPriceDataGridViewTextBoxColumn,
             this.earningrateDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.coinBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(42, 73);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5);
+            this.dataGridView1.Location = new System.Drawing.Point(27, 42);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 72;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(911, 551);
+            this.dataGridView1.Size = new System.Drawing.Size(580, 315);
             this.dataGridView1.TabIndex = 7;
             // 
             // timer1
@@ -82,33 +80,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1009, 133);
+            this.label1.Location = new System.Drawing.Point(636, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 21);
+            this.label1.Size = new System.Drawing.Size(38, 12);
             this.label1.TabIndex = 8;
             this.label1.Text = "label1";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(997, 213);
+            this.label2.Location = new System.Drawing.Point(636, 83);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 21);
+            this.label2.Size = new System.Drawing.Size(38, 12);
             this.label2.TabIndex = 9;
             this.label2.Text = "label2";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(999, 277);
+            this.label3.Location = new System.Drawing.Point(636, 145);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 21);
+            this.label3.Size = new System.Drawing.Size(38, 12);
             this.label3.TabIndex = 10;
             this.label3.Text = "label3";
-            // 
-            // coinBindingSource
-            // 
-            this.coinBindingSource.DataSource = typeof(ATM.Model.Coin);
             // 
             // coinnameDataGridViewTextBoxColumn
             // 
@@ -142,18 +139,21 @@
             this.earningrateDataGridViewTextBoxColumn.Name = "earningrateDataGridViewTextBoxColumn";
             this.earningrateDataGridViewTextBoxColumn.Width = 175;
             // 
+            // coinBindingSource
+            // 
+            this.coinBindingSource.DataSource = typeof(ATM.Model.Coin);
+            // 
             // UCP_MyCoin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button_back);
-            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "UCP_MyCoin";
-            this.Size = new System.Drawing.Size(1257, 788);
+            this.Size = new System.Drawing.Size(800, 450);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coinBindingSource)).EndInit();
             this.ResumeLayout(false);
