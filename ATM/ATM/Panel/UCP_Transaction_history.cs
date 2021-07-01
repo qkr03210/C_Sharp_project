@@ -36,7 +36,7 @@ namespace ATM.Panel
 
         private void button_back_Click_1(object sender, EventArgs e)
         {
-            parentForm.logout();
+            parentForm.HomePanel();
         }
     }
 }

@@ -119,6 +119,7 @@ namespace ATM
             else
             {
                 label_totalPrice.Text = (Convert.ToDouble(textBox_amount.Text) * Convert.ToDouble(label_price.Text)).ToString();
+                label_totalPrice.Text += " 원";
             }
         }
 
@@ -199,11 +200,15 @@ namespace ATM
         //데이터 그리드뷰 클릭하면 정보 출력
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            label_totalPrice.Text = "";
-            textBox_amount.Text = "";
-            label_country.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            label_currency.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            label_price.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            if (e.RowIndex >= 0)
+            {
+                label_totalPrice.Text = "";
+                textBox_amount.Text = "";
+                label_country.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                label_currency.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                label_price.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                label_curr.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            }
         }
         //TODO 당일 api읽어와서 파일로 저장하는 기능 해야함
     }

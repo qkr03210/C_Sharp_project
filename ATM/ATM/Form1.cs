@@ -101,5 +101,9 @@ namespace ATM
         {
             return balance;
         }
+        public void setBalance(double balance)
+        {
+            this.balance = balance;
+        }
     }
 }

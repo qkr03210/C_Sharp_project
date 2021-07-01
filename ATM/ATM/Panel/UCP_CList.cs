@@ -89,7 +89,7 @@ namespace ATM.Panel
             {
                 conn.Open();
                 string sql2 = "insert transaction(trans_date, in_acc, in_bank, in_name, out_acc, out_bank, out_name, out_balance, trans_price, trans_type) " +
-                    "values (now(), '00001', 'BTC', 'BTC', '" + parentForm.getUserAccount() + "','" + parentForm.getBank() + "','" + parentForm.getName() + "'," + result + "," + Convert.ToDouble(label_totalPrice.Text) + ",'coin')";
+                    "values (now(), '00001', 'UPBIT','" + label_name.Text+"','" + parentForm.getUserAccount() + "','" + parentForm.getBank() + "','" + parentForm.getName() + "'," + result + "," + Convert.ToDouble(label_totalPrice.Text) + ",'coin')";
 
                 //ExecuteReader를 이용하여
                 //연결 모드로 데이타 가져오기
@@ -126,12 +126,14 @@ namespace ATM.Panel
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            if (e.RowIndex >= 0) { 
             label_name.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             label_price.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             textBox1.Text = "";
-            //label_totalPrice.Text = "";         
+                //label_totalPrice.Text = "";
+            }
         }
-        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+            private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back)))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
             {

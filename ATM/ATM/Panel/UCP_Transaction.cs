@@ -48,9 +48,10 @@ namespace ATM.Panel
 
                     if (dr == DialogResult.OK)
                     {
-                        ts.transaction(acc_num, bank, name, bal, ca.Acc_num, ca.Bank, ca.Name, ca.Balance, int.Parse(money_text.Text));
+                        ts.transaction(acc_num, bank, name, bal, ca.Acc_num, ca.Bank, ca.Name, ca.Balance, Convert.ToInt32(money_text.Text));
                         //잔액 조회후 세션 저장 or 로그아웃 -> 메인
                         MessageBox.Show("정상적으로 송금 되었습니다.");
+                        parentForm.setBalance(Convert.ToDouble(bal-Convert.ToInt32(money_text.Text)));
                     }
                     else
                     {
