@@ -29,8 +29,7 @@ namespace ATM
 
         private void button_switch_panel1_Click(object sender, EventArgs e)
         {
-            UCP_Homepanel panel1 = new UCP_Homepanel(parentForm);
-            parentForm.controllView(panel1);
+            parentForm.HomePanel();
         }
 
         private void transaction_Click(object sender, EventArgs e)

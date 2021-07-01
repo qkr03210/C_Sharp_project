@@ -12,22 +12,21 @@ namespace ATM.Common
     {
         string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
         // 계좌 잔액 확인
-        public int checkBal(string acc_num, string bank, string name)
+        public double checkBal(string acc_num, string bank)
         {
-            int bal = 0;
-
+            double bal = 0;
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "SELECT count(*) as cnt, bank, name, balance  FROM account where acc_num = '"
-                    + acc_num + "' and name = '" + name + "' and bank = '" + bank + "';";
+                string sql = "SELECT balance FROM account where acc_num = '"
+                    + acc_num + "' and bank = '" + bank + "';";
                 //ExecuteReader를 이용하여
                 //연결 모드로 데이타 가져오기
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    bal = Convert.ToInt32(rdr["balance"]);
+                    bal = Convert.ToDouble(rdr["balance"]);
                 }
                 rdr.Close();
             }

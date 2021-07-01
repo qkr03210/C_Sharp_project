@@ -19,18 +19,18 @@ namespace ATM.Panel
             InitializeComponent();
             parentForm = form;
             this.bank = parentForm.getBank();
-            this.bal = parentForm.getBalance();
             this.acc_num = parentForm.getUserAccount();
             this.name = parentForm.getName();
         }
 
         private void button_back_Click(object sender, EventArgs e)
         {
-            parentForm.logout();
+            parentForm.HomePanel();
         }
 
         private void transaction_Click(object sender, EventArgs e)
         {
+            bal = ts.checkBal(acc_num, bank);
             if (bal < double.Parse(money_text.Text))
             {
                 MessageBox.Show("잔액 부족");

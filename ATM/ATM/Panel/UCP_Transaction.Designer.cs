@@ -116,7 +116,7 @@ namespace ATM.Panel
             this.bankName.Size = new System.Drawing.Size(131, 20);
             this.bankName.TabIndex = 10;
             // 
-            // UcPanel4
+            // UCP_Transaction
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,7 +129,7 @@ namespace ATM.Panel
             this.Controls.Add(this.accNum);
             this.Controls.Add(this.bank_name);
             this.Controls.Add(this.button_back);
-            this.Name = "UcPanel4";
+            this.Name = "UCP_Transaction";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Size = new System.Drawing.Size(800, 450);
             this.ResumeLayout(false);
