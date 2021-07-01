@@ -21,12 +21,16 @@ namespace ATM.Panel
         //박상준,20210629
         //내가 가진 코인에 대한 정보 확인
         Form1 parentForm;
+        UCP_CList ucp_clist;
         private List<Coin> coins = new List<Coin>();
+        DataGridView data;
+        List<CPrice> cp = new List<CPrice>();
         public UCP_MyCoin(Form1 form)
         {
             InitializeComponent();
             parentForm = form;
             MyCoin();
+            ucp_clist = new UCP_CList(form);
             dataGridView1.DoubleBuffered(true);
             label_clock.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
         }
@@ -39,7 +43,7 @@ namespace ATM.Panel
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
-                string sql = "select count(*) as cnt ,coin_name, sum(amount) as total_amount,sum(amount * price) / sum(amount) as AvgPrice from coin where acc_num = '" + parentForm.getUserAccount() + "';";
+                string sql = "select count(*) as cnt ,coin_name, sum(amount) as total_amount,sum(amount * price) / sum(amount) as AvgPrice from coin where acc_num = '" + parentForm.getUserAccount() + "' group by coin_name" + ";";
                 string coin_name;
                 int total_amount;
                 int AvgPrice;
@@ -56,7 +60,7 @@ namespace ATM.Panel
                         coin_name = rdr["coin_name"].ToString();
                         total_amount = Convert.ToInt32(rdr["total_amount"]);
                         AvgPrice = Convert.ToInt32(rdr["AvgPrice"]);
-                        Coin temp = new Coin(coin_name, total_amount, AvgPrice, 0);
+                        Coin temp = new Coin(coin_name, total_amount, AvgPrice, AvgPrice, "" + 0 + "%");
                         coins.Add(temp);
                     }
                 }
@@ -70,40 +74,36 @@ namespace ATM.Panel
             else
                 timer1.Enabled = false;
         }
+
+
+        //박상준,20210701
         private void button_back_Click(object sender, EventArgs e)
         {
+            this.Dispose();
             parentForm.HomePanel();
         }
 
-        private async void temp()
+        //박상준,20210701
+        //UCP_CList에서 datagridview를 가져와 값을 활용
+        private void countEarningRate()
         {
-            Console.WriteLine(timer1.Interval);
-            Console.WriteLine("temp실행중");
-            string requestUrl;
-            int intCheck;
-            string coin = "BTC";
-            string time = "1";
-
-            if (int.TryParse(time, out intCheck))
-                requestUrl = $"https://crix-api-endpoint.upbit.com/v1/crix/candles/minutes/{time}?code=CRIX.UPBIT.KRW-{coin}&count=200";
-            else
-                requestUrl = $"https://crix-api-endpoint.upbit.com/v1/crix/candles/{time}?code=CRIX.UPBIT.KRW-{coin}&count=200";
-            using (var client = new HttpClient())
+            data = ucp_clist.getCprice();
+            if (data != null && data.DataSource != null)
             {
-                var response = await client.GetAsync(requestUrl);
-                var responseString = await response.Content.ReadAsStringAsync();
-                //Console.WriteLine("responseString"+responseString.ToString());
-                var json = JArray.Parse(responseString);
-                Console.WriteLine("json[0]" + json[0].ToString());//가장 최근꺼
-                Console.WriteLine("json[0]의 코드" + json[0]["code"].ToString());
-                Console.WriteLine("json[0]의 가격" + json[0]["tradePrice"].ToString());
-                coins[0].earning_rate = Math.Truncate((((coins[0].AvgPrice / Convert.ToDouble(json[0]["tradePrice"])) * 100) - 100) * 100) / 100;
-                Console.WriteLine(coins[0].earning_rate);
-                //coins.Add(new Coin("a", 3, 3, 3));
+                cp = data.DataSource as List<CPrice>;
+                Console.WriteLine("가져옴");
+                for (int i = 0; i < coins.Count; i++)
+                {
+                    CPrice mycoin = cp.Find(x => x.korean_name == coins[i].coin_name);
+                    if (mycoin != null)
+                    {
+                        Console.WriteLine(mycoin.korean_name + "의 현재 가격은 " + mycoin.trade_price + "입니다");
+                        coins[i].nowPrice = Convert.ToDouble(mycoin.trade_price);
+                        coins[i].earning_rate = (Math.Truncate((((coins[i].AvgPrice / Convert.ToDouble(mycoin.trade_price)) * 100) - 100) * 1000) / 1000) + "%";
+                    }
+
+                }
             }
-            //박상준,20210639
-            //데이터 그리드뷰 새로고침
-            dataGridView1.Refresh();
         }
 
         public static DataTable GetDataGridViewAsDataTable(DataGridView _DataGridView)
@@ -139,9 +139,14 @@ namespace ATM.Panel
                 return null;
             }
         }
+        //박상준,20210701
+        //수익률 계산
         private void timer1_Tick(object sender, EventArgs e)
         {
-            temp();
+            countEarningRate();
+            //박상준,20210639
+            //데이터 그리드뷰 새로고침
+            dataGridView1.Refresh();
         }
         //박상준,20210701
         //시계 기능(1초 단위)

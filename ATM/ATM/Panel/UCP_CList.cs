@@ -185,5 +185,12 @@ namespace ATM.Panel
                 rdr.Close();
             }
         }
+
+        //박상준,20210701
+        //수익률 계산에 사용
+        public DataGridView getCprice()
+        {
+            return dataGridView1;
+        }
     }
 }
