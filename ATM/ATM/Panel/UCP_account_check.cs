@@ -14,6 +14,7 @@ using System.Windows.Forms;
 
 namespace ATM.Panel
 {
+    //이승직
     public partial class UCP_Account_check : UserControl
     {
         Form1 parentForm;
@@ -23,25 +24,31 @@ namespace ATM.Panel
             parentForm = form;
         }
 
+        //button_back을 클릭했을 때
         private void button_back_Click(object sender, EventArgs e)
         {
+            //HomePanel로 이동
             parentForm.HomePanel();
         }
 
+        //button_check를 클릭했을 때
         private void button_check_Click(object sender, EventArgs e)
         {
+            //MySQL 서버 192.168.0.104, 데이터베이스이름 atm, id root, pw 1234로 접속
             string connStr = "Server=192.168.0.104;Database=atm;Uid=root;Pwd=1234;";
             using (MySqlConnection conn = new MySqlConnection(connStr))
             {
                 conn.Open();
+                //MySQL select Query문
+                //account에서 이름이 textBox_name에 입력된 값이고, 번호가 textBox_num에 입력된 acc_num, bank, name, balance를 출력
                 string sql = "SELECT acc_num, bank, name, balance FROM account WHERE name= '" + textBox_name.Text + "' and phone= '" + textBox_num.Text + "';";
 
                 //ExecuteReader를 이용하여
                 //연결 모드로 데이타 가져오기
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
-                //foreach (DataRow item in MySQL_Helper.ds.Tables[0].Rows)
-                while(rdr.Read())
+
+                while (rdr.Read())
                 {
                     string bank = rdr["bank"].ToString();
                     string acc_num = rdr["acc_num"].ToString();
@@ -51,7 +58,10 @@ namespace ATM.Panel
                     MySQL_Manager.accounts.Add(temp);
                 }
                 rdr.Close();
+
+                //dataGridView1에 DataSource는 null
                 dataGridView1.DataSource = null;
+                //dataGridView1에 DataSource는 MySQL_Manager 클래스의 accounts 리스트
                 dataGridView1.DataSource = MySQL_Manager.accounts;
             }
         }

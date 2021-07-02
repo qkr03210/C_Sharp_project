@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace ATM.Common
 {
+    //이승직
     class MySQL_Manager
     {
-        //주석추가
+        //Account 클래스를 리스트 accounts로 새로운 객체 생성
         public static List<Account> accounts = new List<Account>();
 
         public static void Load()

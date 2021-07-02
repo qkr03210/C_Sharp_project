@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace ATM.Common
 {
+    //이승직
     class MySQL_Helper
     {
         public static MySqlConnection Myconn = new MySqlConnection();
@@ -25,6 +26,7 @@ namespace ATM.Common
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.StackTrace);
             }
         }
 
