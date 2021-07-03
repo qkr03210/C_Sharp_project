@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ATM.Util;
 
-namespace Test1.Common
+namespace ATM.Common
 {
     abstract class BaseController
     {

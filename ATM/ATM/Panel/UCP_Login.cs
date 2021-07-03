@@ -11,8 +11,21 @@ using System.Windows.Forms;
 
 namespace ATM.Panel
 {
+    //박상준,20210703
+    //로그인 패널로 미리 이동할 패널정보를 받음
     public partial class UCP_Login : UserControl
     {
+        #region 패널 상수 정의
+
+        private const int EXCHANGE = 0;
+        private const int TRANSACTION = 1;
+        private const int CLIST = 2;
+        private const int MYCOIN = 3;
+        private const int TRANSACTION_HISTORY = 4;
+        private const int HOMEPANEL = 5;
+
+        #endregion
+
         Form1 parentForm;
         int panelNum;
         string bank;
@@ -29,7 +42,8 @@ namespace ATM.Panel
         {
             parentForm.HomePanel();
         }
-
+        //박상준,20210703
+        //DB에서 사용자 정보가 있는지 확인
         private void button_login_Click(object sender, EventArgs e)
         {
             try
@@ -51,7 +65,6 @@ namespace ATM.Panel
                         bank = rdr["bank"].ToString();
                         name = rdr["name"].ToString();
                         balance = Convert.ToInt32(rdr["balance"]);
-                        Console.WriteLine("{0}", result);
                     }
                     rdr.Close();
                 }
@@ -70,27 +83,27 @@ namespace ATM.Panel
 
                     switch (panelNum)
                     {
-                        case 0://환전
+                        case EXCHANGE://환전
                             UCP_Exchange exchange = new UCP_Exchange(parentForm);
                             parentForm.controllView(exchange);
                             break;
-                        case 1: //송금
+                        case TRANSACTION: //송금
                             UCP_Transaction trans = new UCP_Transaction(parentForm);
                             parentForm.controllView(trans);
                             break;
-                        case 2: //업비트 (코인 거래 화면으로)
+                        case CLIST: //업비트 (코인 거래 화면으로)
                             UCP_CList clist = new UCP_CList(parentForm);
                             parentForm.controllView(clist);
                             break;
-                        case 3: // 코인 보유 현황 조회
+                        case MYCOIN: // 코인 보유 현황 조회
                             UCP_MyCoin mycoin = new UCP_MyCoin(parentForm);
                             parentForm.controllView(mycoin);
                             break;
-                        case 4: // 거래내역 조회
+                        case TRANSACTION_HISTORY: // 거래내역 조회
                             Panel.UCP_Transaction_history panel10 = new Panel.UCP_Transaction_history(parentForm);
                             parentForm.controllView(panel10);
                             break;
-                        case 5: // 홈화면으로
+                        case HOMEPANEL: // 홈화면으로
                             parentForm.HomePanel();
                             break;
                         default:
