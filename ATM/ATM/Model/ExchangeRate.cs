@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ATM.Model
 {
     //박상준,20210627 주석 추가 
-    //환율(나라,환율)
+    //환율
     public class ExchangeRate
     {
         public ExchangeRate()

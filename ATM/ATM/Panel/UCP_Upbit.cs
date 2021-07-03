@@ -22,9 +22,11 @@ namespace ATM.Panel
             parentForm = form;
             DropDownInit();
         }
-
+        //박상준,20210703
+        //this.dispose추가(timer때문)
         private void button_back_Click(object sender, EventArgs e)
         {
+            this.Dispose();
             parentForm.HomePanel();
         }
 
@@ -100,7 +102,8 @@ namespace ATM.Panel
             comboBox2.ValueMember = "Key";
             comboBox2.SelectedValue = "days";
         }
-
+        //박상준,20210703
+        //버튼 클릭시 타이머 실행
         private void button1_Click(object sender, EventArgs e)
         {
             string time = comboBox2.SelectedValue.ToString();
@@ -113,20 +116,20 @@ namespace ATM.Panel
                 }
 
                 timer1.Interval = 60*1000 * (Convert.ToInt32(time));
-                temp();
+                CurrentCoin();
             }
             else
             {
-                temp();
+                CurrentCoin();
             }
                 
 
 
         }
-        private async void temp()
+        //박상준,20210703
+        //기존에 완성된 코인 정보를 1초단위 읽어오도로 timer로 옮김
+        private async void CurrentCoin()
         {
-            Console.WriteLine(timer1.Interval);
-            Console.WriteLine("temp실행중");
             string requestUrl;
             int intCheck;
             string coin = comboBox1.SelectedValue.ToString();
@@ -140,10 +143,8 @@ namespace ATM.Panel
             {
                 var response = await client.GetAsync(requestUrl);
                 var responseString = await response.Content.ReadAsStringAsync();
-                //Console.WriteLine("responseString"+responseString.ToString());
                 var json = JArray.Parse(responseString);
-                Console.WriteLine("json[0]" + json[0].ToString());//가장 최근꺼
-                Console.WriteLine("json[0]의 코드" + json[0]["code"].ToString());
+
                 DataTable dt = JsonConvert.DeserializeObject<DataTable>(json.ToString());
 
                 chart1.Series["DateTime"].XValueMember = "candleDateTimeKst";
@@ -157,9 +158,10 @@ namespace ATM.Panel
                 chart1.DataBind();
             }
         }
+        
         private void timer1_Tick(object sender, EventArgs e)
         {
-            temp();
+            CurrentCoin();
         }
 
         private void UCP_Upbit_Load(object sender, EventArgs e)

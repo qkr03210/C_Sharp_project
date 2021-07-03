@@ -73,15 +73,6 @@ namespace ATM
             }
 
         }
-
-        //이승직 20210627
-        //패널 5번으로
-        private void button_panel5_Click(object sender, EventArgs e)
-        {
-            Panel.UcPanel5 panel5 = new Panel.UcPanel5(parentForm);
-            parentForm.controllView(panel5);
-        }
-
         //이승직 20210627
         //패널 6번으로
         private void button_panel6_Click(object sender, EventArgs e)
@@ -127,7 +118,7 @@ namespace ATM
         }
 
         //이승직 20210627
-        //패널 10번으로
+        //패널 UCP_Transaction_history으로
         private void button_panel10_Click(object sender, EventArgs e)
         {
             if (parentForm.chkLogin())
@@ -144,66 +135,19 @@ namespace ATM
         }
 
         //이승직 20210627
-        //패널 11번으로
+        //패널 UCP_Myinfo으로
         private void button_panel11_Click(object sender, EventArgs e)
         {
             Panel.UCP_Myinfo panel11 = new Panel.UCP_Myinfo(parentForm);
             parentForm.controllView(panel11);
         }
 
-        //종료
+        //박상준,20210703
+        //form1 종료
         private void button_Exit_Click(object sender, EventArgs e)
         {
             parentForm.Close();
         }
-
-        private static void SelectUsingReader()
-        {
-            string connStr = "Server=localhost;Database=atm;Uid=root;Pwd=1234;";
-
-            using (MySqlConnection conn = new MySqlConnection(connStr))
-            {
-                conn.Open();
-                string sql = "SELECT * FROM client";
-
-                //ExecuteReader를 이용하여
-                //연결 모드로 데이타 가져오기
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
-                while (rdr.Read())
-                {
-                    Console.WriteLine("{0}: {1}", rdr["name"], rdr["money"]);
-                }
-                rdr.Close();
-            }
-        }
-
-        //아직 안씀
-        private static void SelectUsingAdapter()
-        {
-            DataSet ds = new DataSet();
-            string connStr = "Server=localhost;Database=atm;Uid=root;Pwd=1234;";
-
-            using (MySqlConnection conn = new MySqlConnection(connStr))
-            {
-                //MySqlDataAdapter 클래스를 이용하여
-                //비연결 모드로 데이타 가져오기
-                string sql = "SELECT * FROM Tab1 WHERE Id>=2";
-                MySqlDataAdapter adpt = new MySqlDataAdapter(sql, conn);
-                adpt.Fill(ds, "Tab1");
-            }
-
-            foreach (DataRow r in ds.Tables[0].Rows)
-            {
-                Console.WriteLine(r["Name"]);
-            }
-        }
-
-        private void button_Test_Mysql_Click(object sender, EventArgs e)
-        {
-            SelectUsingReader();
-        }
-
 
     }
 }

@@ -21,12 +21,15 @@ namespace ATM.Panel
         //박상준,20210629
         //내가 가진 코인에 대한 정보 확인
         Form1 parentForm;
-        UCP_CList ucp_clist;
         private List<Coin> coins = new List<Coin>();
+
+        //수익률 계산에 사용
+        UCP_CList ucp_clist;
         DataGridView data;
         double ClientInvest = 0;
         double ClientRevenue = 0;
         List<CPrice> cp = new List<CPrice>();
+
         public UCP_MyCoin(Form1 form)
         {
             InitializeComponent();
@@ -36,6 +39,9 @@ namespace ATM.Panel
             dataGridView1.DoubleBuffered(true);
             label_clock.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
         }
+
+        //박상준,20210703
+        //처음 패널로 이동시 DB에 있는 사용자 코인정보를 읽어와 coins리스트에 추가
         private void MyCoin()
         {
             coins.Clear();
@@ -79,6 +85,7 @@ namespace ATM.Panel
 
 
         //박상준,20210701
+        //Dispose() 추가
         private void button_back_Click(object sender, EventArgs e)
         {
             this.Dispose();
@@ -161,6 +168,9 @@ namespace ATM.Panel
             label_clock.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
         }
     }
+
+    //박상준,20210701
+    //데이터 그리드뷰 수정시 화면 깜박임 제거(구글링)
     public static class ExtensionMethods
     {
         public static void DoubleBuffered(this DataGridView dgv, bool setting)
