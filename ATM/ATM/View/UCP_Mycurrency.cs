@@ -18,23 +18,30 @@ namespace ATM.Panel
         Form1 parentForm;
         public UCP_Mycurrency(Form1 form)
         {
+            //박소윤
+            //내가 가진 외화 보유 내역 조회
             InitializeComponent();
             parentForm = form;
+            //로그인한 계좌, 은행명 표시
             label_account.Text = parentForm.getUserAccount();
             label_bank2.Text = parentForm.getBank();
             dataGridView1.DataSource = Mycurr();
         }
-
+        //박소윤
+        //홈화면으로 이동
         private void button_home_Click(object sender, EventArgs e)
         {
             parentForm.HomePanel();
         }
-
+        //박소윤
+        //이전 화면(외화 가격 확인 UCP_Exchange 패널로 이동)
         private void button_back_Click(object sender, EventArgs e)
         {
             UCP_Exchange panel3 = new UCP_Exchange(parentForm);
             parentForm.controllView(panel3);
         }
+        //박소윤
+        //DB에서 가져온 외화 보유 내역 조회
         public List<ExchangeRate> Mycurr()
         {
             string curr_name = "";
