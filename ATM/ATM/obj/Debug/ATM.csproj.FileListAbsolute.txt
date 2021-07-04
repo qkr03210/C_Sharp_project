@@ -293,3 +293,6 @@ C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_L
 C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Mycurrency.resources
 C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_CList.resources
 C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_Exchange.resources
+C:\Users\kjs94\OneDrive\바탕 화면\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.AssemblyReference.cache
+C:\Users\kjs94\OneDrive\바탕 화면\C_Sharp_project\ATM\ATM\obj\Debug\ATM.exe
+C:\Users\kjs94\OneDrive\바탕 화면\C_Sharp_project\ATM\ATM\obj\Debug\ATM.pdb

@@ -30,13 +30,17 @@ namespace ATM.Panel
 
         private void transaction_Click(object sender, EventArgs e)
         {
+            //김준석
+            //계좌 잔액 확인
             bal = ts.checkBal(acc_num, bank);
+            // 잔액이 부족하면
             if (bal < double.Parse(money_text.Text))
             {
                 MessageBox.Show("잔액 부족");
             }
             else
             {
+                //송금 하기전 상대방 계좌 정보 확인
                 ca = ts.checkAcc(accNum_text.Text, bankName.Text);
                 if (ca.Acc_check)
                 {
@@ -48,19 +52,20 @@ namespace ATM.Panel
 
                     if (dr == DialogResult.OK)
                     {
+                        //확인 누르면 송금
                         ts.transaction(acc_num, bank, name, bal, ca.Acc_num, ca.Bank, ca.Name, ca.Balance, Convert.ToInt32(money_text.Text));
-                        //잔액 조회후 세션 저장 or 로그아웃 -> 메인
                         MessageBox.Show("정상적으로 송금 되었습니다.");
-                        parentForm.setBalance(Convert.ToDouble(bal-Convert.ToInt32(money_text.Text)));
                     }
                     else
                     {
+                        //취소하면 송금 취소
                         MessageBox.Show("취소 하였습니다");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("없다");
+                    //계좌 정보가 없으면
+                    MessageBox.Show("없는 계좌정보 입니다");
                 }
             }
         }

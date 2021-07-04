@@ -28,10 +28,12 @@ namespace ATM.Panel
             this.name = parentForm.getName();
             this.bank = parentForm.getBank();
             this.acc_num = parentForm.getUserAccount();
-            list = ts.TsHistory(acc_num, bank);
+
+           
             Name_label.Text = name+" 님의 거래 내역";
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = list;
+            //김준석
+            //거래 내역 조회 해서 데이터 그리드에 출력
+            dataGridView1.DataSource = ts.TsHistory(acc_num, bank); ;
         }
 
         private void button_back_Click_1(object sender, EventArgs e)
