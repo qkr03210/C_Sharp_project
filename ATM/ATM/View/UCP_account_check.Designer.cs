@@ -30,6 +30,7 @@ namespace ATM.Panel
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_back = new System.Windows.Forms.Button();
             this.textBox_num = new System.Windows.Forms.TextBox();
             this.textBox_name = new System.Windows.Forms.TextBox();
@@ -38,11 +39,11 @@ namespace ATM.Panel
             this.button_check = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accnumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.balanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.accountBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@ namespace ATM.Panel
             this.button_back.FlatAppearance.BorderSize = 0;
             this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_back.Font = new System.Drawing.Font("배달의민족 주아", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_back.Location = new System.Drawing.Point(739, 356);
+            this.button_back.Location = new System.Drawing.Point(727, 330);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(140, 90);
             this.button_back.TabIndex = 3;
@@ -63,7 +64,7 @@ namespace ATM.Panel
             // 
             // textBox_num
             // 
-            this.textBox_num.Location = new System.Drawing.Point(525, 110);
+            this.textBox_num.Location = new System.Drawing.Point(513, 84);
             this.textBox_num.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_num.Name = "textBox_num";
             this.textBox_num.Size = new System.Drawing.Size(174, 21);
@@ -71,7 +72,7 @@ namespace ATM.Panel
             // 
             // textBox_name
             // 
-            this.textBox_name.Location = new System.Drawing.Point(144, 110);
+            this.textBox_name.Location = new System.Drawing.Point(132, 84);
             this.textBox_name.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_name.Name = "textBox_name";
             this.textBox_name.Size = new System.Drawing.Size(174, 21);
@@ -81,7 +82,7 @@ namespace ATM.Panel
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("배달의민족 주아", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(370, 108);
+            this.label2.Location = new System.Drawing.Point(358, 82);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 30);
@@ -92,7 +93,7 @@ namespace ATM.Panel
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("배달의민족 주아", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(37, 108);
+            this.label1.Location = new System.Drawing.Point(25, 82);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 30);
@@ -105,7 +106,7 @@ namespace ATM.Panel
             this.button_check.FlatAppearance.BorderSize = 0;
             this.button_check.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_check.Font = new System.Drawing.Font("배달의민족 주아", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_check.Location = new System.Drawing.Point(739, 78);
+            this.button_check.Location = new System.Drawing.Point(727, 52);
             this.button_check.Name = "button_check";
             this.button_check.Size = new System.Drawing.Size(140, 90);
             this.button_check.TabIndex = 10;
@@ -117,7 +118,7 @@ namespace ATM.Panel
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("배달의민족 주아", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(157, 196);
+            this.label3.Location = new System.Drawing.Point(147, 157);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(189, 35);
             this.label3.TabIndex = 11;
@@ -136,16 +137,12 @@ namespace ATM.Panel
             this.nameDataGridViewTextBoxColumn,
             this.balanceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.accountBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(163, 243);
+            this.dataGridView1.Location = new System.Drawing.Point(153, 204);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 23;
             this.dataGridView1.Size = new System.Drawing.Size(444, 287);
             this.dataGridView1.TabIndex = 12;
-            // 
-            // accountBindingSource
-            // 
-            this.accountBindingSource.DataSource = typeof(ATM.Model.Account);
             // 
             // bankDataGridViewTextBoxColumn
             // 
@@ -171,9 +168,16 @@ namespace ATM.Panel
             // balanceDataGridViewTextBoxColumn
             // 
             this.balanceDataGridViewTextBoxColumn.DataPropertyName = "balance";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "###,###";
+            this.balanceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.balanceDataGridViewTextBoxColumn.HeaderText = "잔액";
             this.balanceDataGridViewTextBoxColumn.Name = "balanceDataGridViewTextBoxColumn";
             this.balanceDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // accountBindingSource
+            // 
+            this.accountBindingSource.DataSource = typeof(ATM.Model.Account);
             // 
             // UCP_Account_check
             // 
@@ -207,10 +211,10 @@ namespace ATM.Panel
         private System.Windows.Forms.Button button_check;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource accountBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn bankDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn accnumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn balanceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource accountBindingSource;
     }
 }

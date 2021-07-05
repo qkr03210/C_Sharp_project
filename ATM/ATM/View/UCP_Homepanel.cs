@@ -31,7 +31,7 @@ namespace ATM
 
         //이승직 20210627
         //패널 2번으로
-        private void button_switch_panel2_Click(object sender, EventArgs e)
+        private void button_noaccount_Click(object sender, EventArgs e)
         {
             UCP_noaccount noacc = new UCP_noaccount(parentForm);
             parentForm.controllView(noacc);
@@ -57,7 +57,7 @@ namespace ATM
 
         //이승직 20210627
         // 패널 4번으로
-        private void button_Panel4_Click(object sender, EventArgs e)
+        private void button_trans_Click(object sender, EventArgs e)
         {
             //로그인이 되어있으면
             if (parentForm.chkLogin())
@@ -75,12 +75,12 @@ namespace ATM
         }
         //이승직 20210627
         //패널 6번으로
-        private void button_panel6_Click(object sender, EventArgs e)
+        private void button_myinfo_Click(object sender, EventArgs e)
         {
             if (parentForm.chkLogin())
             {
-                Panel.UCP_Account_check panel6 = new Panel.UCP_Account_check(parentForm, parentForm.getName(), parentForm.getPN());
-                parentForm.controllView(panel6);
+                Panel.UCP_Account_check acc_check = new Panel.UCP_Account_check(parentForm, parentForm.getName(), parentForm.getPN());
+                parentForm.controllView(acc_check);
             }
             else
             {
@@ -91,7 +91,7 @@ namespace ATM
 
         //이승직 20210627
         //패널 7번으로
-        private void button_panel7_Click(object sender, EventArgs e)
+        private void button_upbit_Click(object sender, EventArgs e)
         {
             if (parentForm.chkLogin())
             {
@@ -108,7 +108,7 @@ namespace ATM
 
         //이승직 20210627
         //패널 9번으로
-        private void button_panel9_Click(object sender, EventArgs e)
+        private void button_mycoin_Click(object sender, EventArgs e)
         {
             //로그인이 되어있으면
             if (parentForm.chkLogin())
@@ -127,12 +127,12 @@ namespace ATM
 
         //이승직 20210627
         //패널 UCP_Transaction_history으로
-        private void button_panel10_Click(object sender, EventArgs e)
+        private void button_trans_hist_Click(object sender, EventArgs e)
         {
             if (parentForm.chkLogin())
             {
-                Panel.UCP_Transaction_history panel10 = new Panel.UCP_Transaction_history(parentForm);
-                parentForm.controllView(panel10);
+                Panel.UCP_Transaction_history trans_hist = new Panel.UCP_Transaction_history(parentForm);
+                parentForm.controllView(trans_hist);
             }
             //로그인이 안되어있으면
             else

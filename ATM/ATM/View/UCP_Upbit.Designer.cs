@@ -46,28 +46,30 @@
             // 
             // button_back
             // 
+            this.button_back.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button_back.FlatAppearance.BorderSize = 0;
-            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_back.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button_back.Font = new System.Drawing.Font("배달의민족 주아", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_back.Location = new System.Drawing.Point(563, 3);
             this.button_back.Name = "button_back";
             this.button_back.Size = new System.Drawing.Size(111, 33);
             this.button_back.TabIndex = 4;
             this.button_back.Text = "돌아가기";
-            this.button_back.UseVisualStyleBackColor = true;
+            this.button_back.UseVisualStyleBackColor = false;
             this.button_back.Click += new System.EventHandler(this.button_back_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("배달의민족 주아", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button1.Location = new System.Drawing.Point(302, 3);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(122, 33);
             this.button1.TabIndex = 0;
             this.button1.Text = "차트보기";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox2
@@ -111,15 +113,16 @@
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button2.Font = new System.Drawing.Font("배달의민족 주아", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button2.Location = new System.Drawing.Point(685, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(128, 33);
             this.button2.TabIndex = 5;
             this.button2.Text = "종료";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // chart1

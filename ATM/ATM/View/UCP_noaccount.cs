@@ -21,6 +21,7 @@ namespace ATM
         string bank = "GDGDG 은행";
         string acc_num = "ATM";
         string name = "무통장 입금";
+
         public UCP_noaccount(Form1 form)
         {
             InitializeComponent();
@@ -42,10 +43,10 @@ namespace ATM
                                 "\n보낼 금액 : " + money_text.Text + "원" +
                                 "\n이 계좌로 송금 하시겠습니까?"
                                 , "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-
+                //쿼리 실행 완료되면(성공적으로 거래 되면)
                 if (dr == DialogResult.OK)
                 {
-                    ts.gdgdzz(acc_num, bank, name, ca.Acc_num, ca.Bank, ca.Name, ca.Balance, int.Parse(money_text.Text));
+                    ts.gdgdzz(acc_num, bank, name, ca.Acc_num, ca.Bank, ca.Name, ca.Balance, Convert.ToDouble(money_text.Text));
                     //잔액 조회후 세션 저장 or 로그아웃 -> 메인
                     MessageBox.Show("정상적으로 송금 되었습니다.");
                 }
@@ -56,7 +57,7 @@ namespace ATM
             }
             else
             {
-                MessageBox.Show("없다");
+                MessageBox.Show("해당 계좌는 존재하지 않습니다.");
             }
         }
     }

@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_back = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Name_label = new System.Windows.Forms.Label();
+            this.tsHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tsHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tsHistoryBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -68,10 +70,10 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.dataGridView1.DataSource = this.tsHistoryBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(83, 110);
+            this.dataGridView1.Location = new System.Drawing.Point(34, 99);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(544, 416);
+            this.dataGridView1.Size = new System.Drawing.Size(626, 416);
             this.dataGridView1.TabIndex = 8;
             // 
             // Name_label
@@ -84,11 +86,17 @@
             this.Name_label.TabIndex = 9;
             this.Name_label.Text = "거래 내역";
             // 
+            // tsHistoryBindingSource
+            // 
+            this.tsHistoryBindingSource.DataSource = typeof(ATM.Model.TsHistory);
+            // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "trans_date";
             this.dataGridViewTextBoxColumn1.HeaderText = "거래 일자";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Width = 82;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -99,12 +107,20 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "amount";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn3.HeaderText = "금액";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "balance";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "###,##0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn4.HeaderText = "잔액";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
@@ -113,10 +129,6 @@
             this.dataGridViewTextBoxColumn5.DataPropertyName = "type";
             this.dataGridViewTextBoxColumn5.HeaderText = "비고";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // tsHistoryBindingSource
-            // 
-            this.tsHistoryBindingSource.DataSource = typeof(ATM.Model.TsHistory);
             // 
             // UCP_Transaction_history
             // 

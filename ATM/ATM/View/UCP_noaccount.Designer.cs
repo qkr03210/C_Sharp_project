@@ -57,6 +57,7 @@ namespace ATM
             // bankName
             // 
             this.bankName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.bankName.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.bankName.FormattingEnabled = true;
             this.bankName.Items.AddRange(new object[] {
             "국민",
@@ -65,9 +66,9 @@ namespace ATM
             "우리",
             "카카오",
             "하나"});
-            this.bankName.Location = new System.Drawing.Point(471, 180);
+            this.bankName.Location = new System.Drawing.Point(465, 172);
             this.bankName.Name = "bankName";
-            this.bankName.Size = new System.Drawing.Size(131, 20);
+            this.bankName.Size = new System.Drawing.Size(173, 24);
             this.bankName.TabIndex = 17;
             // 
             // transaction
@@ -76,7 +77,7 @@ namespace ATM
             this.transaction.FlatAppearance.BorderSize = 0;
             this.transaction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transaction.Font = new System.Drawing.Font("배달의민족 주아", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.transaction.Location = new System.Drawing.Point(462, 368);
+            this.transaction.Location = new System.Drawing.Point(395, 344);
             this.transaction.Name = "transaction";
             this.transaction.Size = new System.Drawing.Size(140, 90);
             this.transaction.TabIndex = 16;
@@ -86,16 +87,18 @@ namespace ATM
             // 
             // money_text
             // 
-            this.money_text.Location = new System.Drawing.Point(471, 287);
+            this.money_text.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.money_text.Location = new System.Drawing.Point(465, 280);
             this.money_text.Name = "money_text";
-            this.money_text.Size = new System.Drawing.Size(131, 21);
+            this.money_text.Size = new System.Drawing.Size(173, 26);
             this.money_text.TabIndex = 15;
             // 
             // accNum_text
             // 
-            this.accNum_text.Location = new System.Drawing.Point(471, 233);
+            this.accNum_text.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.accNum_text.Location = new System.Drawing.Point(465, 226);
             this.accNum_text.Name = "accNum_text";
-            this.accNum_text.Size = new System.Drawing.Size(131, 21);
+            this.accNum_text.Size = new System.Drawing.Size(173, 26);
             this.accNum_text.TabIndex = 14;
             // 
             // money
@@ -138,7 +141,7 @@ namespace ATM
             this.label1.TabIndex = 18;
             this.label1.Text = "무통장 입금하기";
             // 
-            // UcPanel2
+            // UCP_noaccount
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -152,7 +155,7 @@ namespace ATM
             this.Controls.Add(this.accNum);
             this.Controls.Add(this.bank_name);
             this.Controls.Add(this.button_switch_panel1);
-            this.Name = "UcPanel2";
+            this.Name = "UCP_noaccount";
             this.Size = new System.Drawing.Size(900, 550);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -116,6 +116,15 @@ namespace ATM.Panel
                 }
                 label_invest.Text = "" + ClientInvest;
                 label_revenue.Text = "" + ClientRevenue;
+                int revenue = Convert.ToInt32(label_revenue.Text);
+                if (revenue > 0)
+                {
+                    label_revenue.ForeColor = Color.Red;
+                }
+                else
+                {
+                    label_revenue.ForeColor = Color.Blue;
+                }
             }
         }
 
@@ -166,7 +175,7 @@ namespace ATM.Panel
         private void timer2_Tick(object sender, EventArgs e)
         {
             label_clock.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
-        }
+        } 
     }
 
     //박상준,20210701

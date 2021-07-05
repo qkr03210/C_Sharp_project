@@ -121,7 +121,8 @@ namespace ATM
             else
             {
                 label_totalPrice.Text = (Convert.ToDouble(textBox_amount.Text) * Convert.ToDouble(label_price.Text)).ToString();
-                label_totalPrice.Text += " 원";
+                //label_totalPrice.Text += " 원";
+                label5_won.Text = "원";
             }
         }
 
@@ -143,9 +144,9 @@ namespace ATM
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    Console.WriteLine("기존 금액" + Convert.ToInt32(rdr["balance"]));
-                    Console.WriteLine("환전할 금액" + Convert.ToDouble(label_totalPrice.Text));
-                    result = Convert.ToInt32(rdr["balance"]) - Convert.ToDouble(label_totalPrice.Text); //총 금액(=trans_price)
+                    Console.WriteLine("기존 금액" + Convert.ToDouble(rdr["balance"]).ToString());
+                    Console.WriteLine("환전할 금액" + Convert.ToDouble(label_totalPrice.Text).ToString());
+                    result = Convert.ToDouble(rdr["balance"].ToString()) - Convert.ToDouble(label_totalPrice.Text); //총 금액(=trans_price)
                     Console.WriteLine("DB에 들어갈 금액" + result);
                     if (result < 0)
                     {

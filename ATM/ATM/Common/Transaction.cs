@@ -77,7 +77,7 @@ namespace ATM.Common
         //김준석
         //송금
         public void transaction(string out_acc, string out_bank, string out_name, double out_balance,
-            string in_acc, string in_bank, string in_name, double in_balance, int trans_amount)
+            string in_acc, string in_bank, string in_name, double in_balance, double trans_amount)
         {
             string sql = "Insert Into transaction (trans_date," +
                 "out_acc,out_bank,out_name,out_balance," +
@@ -101,7 +101,7 @@ namespace ATM.Common
         //김준석
         //무통장 입금
         public void gdgdzz(string out_acc, string out_bank, string out_name,
-            string in_acc, string in_bank, string in_name, double in_balance, int trans_amount)
+            string in_acc, string in_bank, string in_name, double in_balance, double trans_amount)
         {
             string sql = "Insert Into transaction (trans_date," +
                 "out_acc,out_bank,out_name,out_balance," +
