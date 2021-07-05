@@ -54,10 +54,15 @@ namespace ATM.Panel
 
                 while (rdr.Read())
                 {
+                    //bank
                     string bank = rdr["bank"].ToString();
+                    //acc_num
                     string acc_num = rdr["acc_num"].ToString();
+                    //name
                     string name = rdr["name"].ToString();
+                    //balance
                     double balance = double.Parse(rdr["balance"].ToString());
+                    //Account를 temp라는 새로운 객체로 만듬, bank, acc_num, name, balance
                     Account temp = new Account(bank, acc_num, name, balance);
                     MySQL_Manager.accounts.Add(temp);
                 }

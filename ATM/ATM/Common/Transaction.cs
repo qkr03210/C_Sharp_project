@@ -22,9 +22,13 @@ namespace ATM.Common
                 conn.Open();
                 //김준석
                 //계좌 번호와 은행명 으로 잔액 확인
+                //이승직
+                //account 데이터베이스에서 acc_num과 bank가 각각 acc_num, bank의 값 일때 balance를 출력한다.
                 string sql = "SELECT balance FROM account where acc_num = '"
                     + acc_num + "' and bank = '" + bank + "';";
 
+                //이승직
+                //MySQL연결
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())

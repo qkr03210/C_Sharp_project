@@ -55,6 +55,8 @@
     <Compile Include="Common\MySQL_Helper.cs" />
     <Compile Include="Common\MySQL_Manager.cs" />
     <Compile Include="Common\Transaction.cs" />
+    <Compile Include="Common\참고용\BaseController.cs" />
+    <Compile Include="Common\참고용\CommMenu.cs" />
     <Compile Include="Control\PanelControl.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -68,8 +70,12 @@
     <Compile Include="Model\CPrice.cs" />
     <Compile Include="Model\ExchangeRate.cs" />
     <Compile Include="Model\TsHistory.cs" />
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Util\MyMenu.cs" />
+    <Compile Include="Util\RandData.cs" />
     <Compile Include="View\UCP_noaccount.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -182,6 +188,7 @@
     <EmbeddedResource Include="View\UCP_Upbit.resx">
       <DependentUpon>UCP_Upbit.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\ATM.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\ATM.Model.Account1.datasource" />
     <None Include="Properties\DataSources\ATM.Model.Coin1.datasource" />
@@ -202,6 +209,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\piggy-bank.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ATM.exe" />
+    <Content Include="bin\Debug\ATM.pdb" />
+    <Content Include="bin\Debug\BouncyCastle.Crypto.dll" />
+    <Content Include="bin\Debug\Google.Protobuf.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.dll" />
+    <Content Include="bin\Debug\K4os.Compression.LZ4.Streams.dll" />
+    <Content Include="bin\Debug\K4os.Hash.xxHash.dll" />
+    <Content Include="bin\Debug\MySql.Data.dll" />
+    <Content Include="bin\Debug\MySql.Data.xml" />
+    <Content Include="bin\Debug\Newtonsoft.Json.dll" />
+    <Content Include="bin\Debug\Newtonsoft.Json.xml" />
+    <Content Include="bin\Debug\System.Buffers.dll" />
+    <Content Include="bin\Debug\System.Memory.dll" />
+    <Content Include="bin\Debug\System.Numerics.Vectors.dll" />
+    <Content Include="bin\Debug\System.Runtime.CompilerServices.Unsafe.dll" />
+    <Content Include="bin\Debug\Ubiety.Dns.Core.dll" />
+    <Content Include="bin\Debug\Zstandard.Net.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
