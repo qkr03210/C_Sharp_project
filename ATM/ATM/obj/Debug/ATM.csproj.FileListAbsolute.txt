@@ -266,15 +266,12 @@ C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Account_
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_Homepanel.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_MyCoin.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Transaction_history.resources
-C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Myinfo.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Transaction.resources
-C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UcPanel5.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Upbit.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Login.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_Mycurrency.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Panel.UCP_CList.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.Properties.Resources.resources
-C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UcPanel2.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_Exchange.resources
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.GenerateResource.cache
 C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.CoreCompileInputs.cache
@@ -296,3 +293,4 @@ C:\Users\user\Documents\GitHub\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_Exchang
 C:\Users\kjs94\OneDrive\바탕 화면\C_Sharp_project\ATM\ATM\obj\Debug\ATM.csproj.AssemblyReference.cache
 C:\Users\kjs94\OneDrive\바탕 화면\C_Sharp_project\ATM\ATM\obj\Debug\ATM.exe
 C:\Users\kjs94\OneDrive\바탕 화면\C_Sharp_project\ATM\ATM\obj\Debug\ATM.pdb
+C:\Users\KB\Desktop\PSY\C_Sharp_project\ATM\ATM\obj\Debug\ATM.UCP_noaccount.resources

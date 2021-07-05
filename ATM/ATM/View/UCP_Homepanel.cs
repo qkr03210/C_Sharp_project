@@ -33,8 +33,8 @@ namespace ATM
         //패널 2번으로
         private void button_switch_panel2_Click(object sender, EventArgs e)
         {
-            UcPanel2 panel2 = new UcPanel2(parentForm);
-            parentForm.controllView(panel2);
+            UCP_noaccount noacc = new UCP_noaccount(parentForm);
+            parentForm.controllView(noacc);
         }
 
         //이승직 20210627
@@ -44,8 +44,8 @@ namespace ATM
             //로그인이 되어있으면
             if(parentForm.chkLogin())
             {
-                UCP_Exchange panel3 = new UCP_Exchange(parentForm);
-                parentForm.controllView(panel3);
+                UCP_Exchange exchange = new UCP_Exchange(parentForm);
+                parentForm.controllView(exchange);
             }
             //로그인이 안되어있으면
             else
@@ -62,8 +62,8 @@ namespace ATM
             //로그인이 되어있으면
             if (parentForm.chkLogin())
             {
-                Panel.UCP_Transaction panel4 = new Panel.UCP_Transaction(parentForm);
-                parentForm.controllView(panel4);
+                UCP_Transaction trans = new UCP_Transaction(parentForm);
+                parentForm.controllView(trans);
             }
             //로그인이 안되어있으면
             else
@@ -77,8 +77,16 @@ namespace ATM
         //패널 6번으로
         private void button_panel6_Click(object sender, EventArgs e)
         {
-            Panel.UCP_Account_check panel6 = new Panel.UCP_Account_check(parentForm);
-            parentForm.controllView(panel6);
+            if (parentForm.chkLogin())
+            {
+                Panel.UCP_Account_check panel6 = new Panel.UCP_Account_check(parentForm, parentForm.getName(), parentForm.getPN());
+                parentForm.controllView(panel6);
+            }
+            else
+            {
+                UCP_Login uc_login = new UCP_Login(parentForm, 6);
+                parentForm.controllView(uc_login);
+            }
         }
 
         //이승직 20210627
@@ -132,14 +140,6 @@ namespace ATM
                 UCP_Login uc_login = new UCP_Login(parentForm, 4);
                 parentForm.controllView(uc_login);
             }
-        }
-
-        //이승직 20210627
-        //패널 UCP_Myinfo으로
-        private void button_panel11_Click(object sender, EventArgs e)
-        {
-            Panel.UCP_Myinfo panel11 = new Panel.UCP_Myinfo(parentForm);
-            parentForm.controllView(panel11);
         }
 
         //박상준,20210703

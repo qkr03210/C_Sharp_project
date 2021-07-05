@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace ATM
 {
-    public partial class UcPanel2 : UserControl
+    public partial class UCP_noaccount : UserControl
     {
         CheckAcc ca;
         Transaction ts = new Transaction();
@@ -21,7 +21,7 @@ namespace ATM
         string bank = "GDGDG 은행";
         string acc_num = "ATM";
         string name = "무통장 입금";
-        public UcPanel2(Form1 form)
+        public UCP_noaccount(Form1 form)
         {
             InitializeComponent();
             parentForm = form;

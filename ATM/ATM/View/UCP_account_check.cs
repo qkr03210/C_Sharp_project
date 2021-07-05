@@ -18,10 +18,12 @@ namespace ATM.Panel
     public partial class UCP_Account_check : UserControl
     {
         Form1 parentForm;
-        public UCP_Account_check(Form1 form)
+        public UCP_Account_check(Form1 form, string name, string phone)
         {
             InitializeComponent();
             parentForm = form;
+            textBox_name.Text = name;
+            textBox_num.Text = phone;
         }
 
         //button_back을 클릭했을 때
@@ -47,13 +49,15 @@ namespace ATM.Panel
                 //연결 모드로 데이타 가져오기
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 MySqlDataReader rdr = cmd.ExecuteReader();
+                //데이터 그리드뷰에 들어갈 리스트 비워주기 -> 그래야 이전 기록 지워짐.
+                MySQL_Manager.accounts.Clear();
 
                 while (rdr.Read())
                 {
                     string bank = rdr["bank"].ToString();
                     string acc_num = rdr["acc_num"].ToString();
                     string name = rdr["name"].ToString();
-                    int balance = int.Parse(rdr["balance"].ToString());
+                    double balance = double.Parse(rdr["balance"].ToString());
                     Account temp = new Account(bank, acc_num, name, balance);
                     MySQL_Manager.accounts.Add(temp);
                 }

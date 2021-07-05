@@ -39,7 +39,6 @@ namespace ATM
             this.button_panel7 = new System.Windows.Forms.Button();
             this.button_panel9 = new System.Windows.Forms.Button();
             this.button_panel10 = new System.Windows.Forms.Button();
-            this.button_panel11 = new System.Windows.Forms.Button();
             this.button_login = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -58,7 +57,7 @@ namespace ATM
             this.button_switch_panel2.Name = "button_switch_panel2";
             this.button_switch_panel2.Size = new System.Drawing.Size(140, 90);
             this.button_switch_panel2.TabIndex = 0;
-            this.button_switch_panel2.Text = "무통장\r\n입금";
+            this.button_switch_panel2.Text = "   무통장\r\n    입금";
             this.button_switch_panel2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_switch_panel2.UseVisualStyleBackColor = false;
             this.button_switch_panel2.Click += new System.EventHandler(this.button_switch_panel2_Click);
@@ -71,7 +70,7 @@ namespace ATM
             this.button_Exit.Font = new System.Drawing.Font("배달의민족 주아", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_Exit.Image = ((System.Drawing.Image)(resources.GetObject("button_Exit.Image")));
             this.button_Exit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_Exit.Location = new System.Drawing.Point(468, 429);
+            this.button_Exit.Location = new System.Drawing.Point(371, 430);
             this.button_Exit.Name = "button_Exit";
             this.button_Exit.Size = new System.Drawing.Size(155, 90);
             this.button_Exit.TabIndex = 1;
@@ -191,23 +190,6 @@ namespace ATM
             this.button_panel10.UseVisualStyleBackColor = false;
             this.button_panel10.Click += new System.EventHandler(this.button_panel10_Click);
             // 
-            // button_panel11
-            // 
-            this.button_panel11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.button_panel11.FlatAppearance.BorderSize = 0;
-            this.button_panel11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_panel11.Font = new System.Drawing.Font("배달의민족 주아", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_panel11.Image = ((System.Drawing.Image)(resources.GetObject("button_panel11.Image")));
-            this.button_panel11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_panel11.Location = new System.Drawing.Point(757, 353);
-            this.button_panel11.Name = "button_panel11";
-            this.button_panel11.Size = new System.Drawing.Size(140, 90);
-            this.button_panel11.TabIndex = 11;
-            this.button_panel11.Text = "내 정보";
-            this.button_panel11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_panel11.UseVisualStyleBackColor = false;
-            this.button_panel11.Click += new System.EventHandler(this.button_panel11_Click);
-            // 
             // button_login
             // 
             this.button_login.BackColor = System.Drawing.Color.Tan;
@@ -215,13 +197,13 @@ namespace ATM
             this.button_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_login.Font = new System.Drawing.Font("배달의민족 주아", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.button_login.Image = ((System.Drawing.Image)(resources.GetObject("button_login.Image")));
-            this.button_login.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button_login.Location = new System.Drawing.Point(292, 429);
+            this.button_login.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_login.Location = new System.Drawing.Point(757, 353);
             this.button_login.Name = "button_login";
-            this.button_login.Size = new System.Drawing.Size(155, 90);
+            this.button_login.Size = new System.Drawing.Size(140, 90);
             this.button_login.TabIndex = 12;
-            this.button_login.Text = "계좌인증(로그인)";
-            this.button_login.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button_login.Text = "계좌인증\r\n(로그인)";
+            this.button_login.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button_login.UseVisualStyleBackColor = false;
             this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
@@ -256,7 +238,6 @@ namespace ATM
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button_login);
-            this.Controls.Add(this.button_panel11);
             this.Controls.Add(this.button_panel10);
             this.Controls.Add(this.button_panel9);
             this.Controls.Add(this.button_panel7);
@@ -284,7 +265,6 @@ namespace ATM
         private System.Windows.Forms.Button button_panel7;
         private System.Windows.Forms.Button button_panel9;
         private System.Windows.Forms.Button button_panel10;
-        private System.Windows.Forms.Button button_panel11;
         private System.Windows.Forms.Button button_login;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;

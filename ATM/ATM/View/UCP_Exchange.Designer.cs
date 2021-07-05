@@ -325,6 +325,5 @@ namespace ATM
         private System.Windows.Forms.BindingSource exchangeRateBindingSource;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label_currency;
-        private System.Windows.Forms.Label label_curr;
     }
 }

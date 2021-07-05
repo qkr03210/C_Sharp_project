@@ -212,7 +212,6 @@ namespace ATM
                 label_country.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 label_currency.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 label_price.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-                label_curr.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             }
         }
     }

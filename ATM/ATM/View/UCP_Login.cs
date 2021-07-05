@@ -23,6 +23,7 @@ namespace ATM.Panel
         private const int MYCOIN = 3;
         private const int TRANSACTION_HISTORY = 4;
         private const int HOMEPANEL = 5;
+        private const int MYACCOUNT = 6;
 
         #endregion
 
@@ -31,6 +32,7 @@ namespace ATM.Panel
         string bank;
         string name;
         int balance;
+        string phonenum;
         public UCP_Login(Form1 form, int panelNum)
         {
             InitializeComponent();
@@ -54,7 +56,7 @@ namespace ATM.Panel
                 using (MySqlConnection conn = new MySqlConnection(connStr))
                 {
                     conn.Open();
-                    string sql = "SELECT count(*) as cnt, bank, name, balance  FROM account where acc_num = '" + textBox_account.Text + "' and pwd = '" + textBox_pwd.Text + "';";
+                    string sql = "SELECT count(*) as cnt, bank, name, balance, phone FROM account where acc_num = '" + textBox_account.Text + "' and pwd = '" + textBox_pwd.Text + "';";
                     //ExecuteReader를 이용하여
                     //연결 모드로 데이타 가져오기
                     MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -65,6 +67,7 @@ namespace ATM.Panel
                         bank = rdr["bank"].ToString();
                         name = rdr["name"].ToString();
                         balance = Convert.ToInt32(rdr["balance"]);
+                        phonenum = rdr["phone"].ToString();
                     }
                     rdr.Close();
                 }
@@ -79,7 +82,7 @@ namespace ATM.Panel
                 else if (result == 1)
                 {
                     //form에 로그인한 정보 저장
-                    parentForm.login(textBox_account.Text, bank, name, balance);
+                    parentForm.login(textBox_account.Text, bank, name, balance, phonenum);
 
                     switch (panelNum)
                     {
@@ -106,8 +109,11 @@ namespace ATM.Panel
                         case HOMEPANEL: // 홈화면으로
                             parentForm.HomePanel();
                             break;
+                        case MYACCOUNT: // 내 계좌조회 화면으로
+                            UCP_Account_check myaccount = new UCP_Account_check(parentForm, parentForm.getName(), parentForm.getPN());
+                            parentForm.controllView(myaccount);
+                            break;
                         default:
-
                             break;
                     }
                 }

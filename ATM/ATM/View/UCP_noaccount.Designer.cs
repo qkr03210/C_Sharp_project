@@ -1,7 +1,7 @@
 ﻿
 namespace ATM
 {
-    partial class UcPanel2
+    partial class UCP_noaccount
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
