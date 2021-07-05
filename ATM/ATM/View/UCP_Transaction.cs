@@ -68,6 +68,7 @@ namespace ATM.Panel
                     MessageBox.Show("없는 계좌정보 입니다");
                 }
             }
+            parentForm.HomePanel();
         }
     }
 }

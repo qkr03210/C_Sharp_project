@@ -33,8 +33,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.button_back = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Name_label = new System.Windows.Forms.Label();
             this.tsHistoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.Name_label = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,6 +76,10 @@
             this.dataGridView1.Size = new System.Drawing.Size(626, 416);
             this.dataGridView1.TabIndex = 8;
             // 
+            // tsHistoryBindingSource
+            // 
+            this.tsHistoryBindingSource.DataSource = typeof(ATM.Model.TsHistory);
+            // 
             // Name_label
             // 
             this.Name_label.AutoSize = true;
@@ -85,10 +89,6 @@
             this.Name_label.Size = new System.Drawing.Size(149, 41);
             this.Name_label.TabIndex = 9;
             this.Name_label.Text = "거래 내역";
-            // 
-            // tsHistoryBindingSource
-            // 
-            this.tsHistoryBindingSource.DataSource = typeof(ATM.Model.TsHistory);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -108,7 +108,7 @@
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "amount";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Format = "C0";
+            dataGridViewCellStyle1.Format = "#,#";
             dataGridViewCellStyle1.NullValue = null;
             this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn3.HeaderText = "금액";

@@ -25,6 +25,7 @@ namespace ATM.Panel
             //로그인한 계좌, 은행명 표시
             label_account.Text = parentForm.getUserAccount();
             label_bank2.Text = parentForm.getBank();
+            label_balance.Text = parentForm.getBalance() + "원";
             dataGridView1.DataSource = Mycurr();
         }
         //박소윤

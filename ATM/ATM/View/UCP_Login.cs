@@ -31,7 +31,7 @@ namespace ATM.Panel
         int panelNum;
         string bank;
         string name;
-        int balance;
+        double balance;
         string phonenum;
         public UCP_Login(Form1 form, int panelNum)
         {
@@ -66,7 +66,7 @@ namespace ATM.Panel
                         result = Convert.ToInt32(rdr["cnt"]);
                         bank = rdr["bank"].ToString();
                         name = rdr["name"].ToString();
-                        balance = Convert.ToInt32(rdr["balance"]);
+                        balance = Convert.ToDouble(rdr["balance"]);
                         phonenum = rdr["phone"].ToString();
                     }
                     rdr.Close();

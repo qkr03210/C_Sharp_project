@@ -41,12 +41,14 @@ namespace ATM.Panel
             this.label_acctitle = new System.Windows.Forms.Label();
             this.label_account = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label_bank = new System.Windows.Forms.Label();
-            this.label_bank2 = new System.Windows.Forms.Label();
-            this.exchangeRateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.currencyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exchangeRateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label_bank = new System.Windows.Forms.Label();
+            this.label_bank2 = new System.Windows.Forms.Label();
+            this.label_bal = new System.Windows.Forms.Label();
+            this.label_balance = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.exchangeRateBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -139,30 +141,6 @@ namespace ATM.Panel
             this.dataGridView1.Size = new System.Drawing.Size(345, 400);
             this.dataGridView1.TabIndex = 5;
             // 
-            // label_bank
-            // 
-            this.label_bank.AutoSize = true;
-            this.label_bank.Font = new System.Drawing.Font("배달의민족 주아", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label_bank.Location = new System.Drawing.Point(416, 236);
-            this.label_bank.Name = "label_bank";
-            this.label_bank.Size = new System.Drawing.Size(105, 31);
-            this.label_bank.TabIndex = 3;
-            this.label_bank.Text = "은행명 : ";
-            // 
-            // label_bank2
-            // 
-            this.label_bank2.AutoSize = true;
-            this.label_bank2.Font = new System.Drawing.Font("배달의민족 주아", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label_bank2.Location = new System.Drawing.Point(527, 236);
-            this.label_bank2.Name = "label_bank2";
-            this.label_bank2.Size = new System.Drawing.Size(21, 31);
-            this.label_bank2.TabIndex = 4;
-            this.label_bank2.Text = " ";
-            // 
-            // exchangeRateBindingSource
-            // 
-            this.exchangeRateBindingSource.DataSource = typeof(ATM.Model.ExchangeRate);
-            // 
             // currencyDataGridViewTextBoxColumn
             // 
             this.currencyDataGridViewTextBoxColumn.DataPropertyName = "currency";
@@ -190,14 +168,60 @@ namespace ATM.Panel
             this.currnameDataGridViewTextBoxColumn.Name = "currnameDataGridViewTextBoxColumn";
             this.currnameDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // exchangeRateBindingSource
+            // 
+            this.exchangeRateBindingSource.DataSource = typeof(ATM.Model.ExchangeRate);
+            // 
+            // label_bank
+            // 
+            this.label_bank.AutoSize = true;
+            this.label_bank.Font = new System.Drawing.Font("배달의민족 주아", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_bank.Location = new System.Drawing.Point(416, 182);
+            this.label_bank.Name = "label_bank";
+            this.label_bank.Size = new System.Drawing.Size(105, 31);
+            this.label_bank.TabIndex = 3;
+            this.label_bank.Text = "은행명 : ";
+            // 
+            // label_bank2
+            // 
+            this.label_bank2.AutoSize = true;
+            this.label_bank2.Font = new System.Drawing.Font("배달의민족 주아", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_bank2.Location = new System.Drawing.Point(527, 182);
+            this.label_bank2.Name = "label_bank2";
+            this.label_bank2.Size = new System.Drawing.Size(21, 31);
+            this.label_bank2.TabIndex = 4;
+            this.label_bank2.Text = " ";
+            // 
+            // label_bal
+            // 
+            this.label_bal.AutoSize = true;
+            this.label_bal.Font = new System.Drawing.Font("배달의민족 주아", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_bal.Location = new System.Drawing.Point(416, 246);
+            this.label_bal.Name = "label_bal";
+            this.label_bal.Size = new System.Drawing.Size(84, 31);
+            this.label_bal.TabIndex = 3;
+            this.label_bal.Text = "잔액 : ";
+            // 
+            // label_balance
+            // 
+            this.label_balance.AutoSize = true;
+            this.label_balance.Font = new System.Drawing.Font("배달의민족 주아", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_balance.Location = new System.Drawing.Point(506, 246);
+            this.label_balance.Name = "label_balance";
+            this.label_balance.Size = new System.Drawing.Size(21, 31);
+            this.label_balance.TabIndex = 4;
+            this.label_balance.Text = " ";
+            // 
             // UCP_Mycurrency
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label_balance);
             this.Controls.Add(this.label_bank2);
             this.Controls.Add(this.label_account);
+            this.Controls.Add(this.label_bal);
             this.Controls.Add(this.label_bank);
             this.Controls.Add(this.label_acctitle);
             this.Controls.Add(this.label_title);
@@ -226,5 +250,7 @@ namespace ATM.Panel
         private System.Windows.Forms.DataGridViewTextBoxColumn currnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label_bank;
         private System.Windows.Forms.Label label_bank2;
+        private System.Windows.Forms.Label label_bal;
+        private System.Windows.Forms.Label label_balance;
     }
 }

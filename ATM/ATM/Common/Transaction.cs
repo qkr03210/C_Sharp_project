@@ -151,9 +151,19 @@ namespace ATM.Common
                     th = new TsHistory();
                     th.trans_date = rdr["trans_date"].ToString();
                     th.name = rdr["name"].ToString();
-                    th.amount = rdr["price"].ToString();
                     th.balance = double.Parse(rdr["balance"].ToString());
                     th.type = rdr["type"].ToString();
+
+                    //입금액, 출금액 앞에 +,- 표시
+                    if(th.type == "입금")
+                    {
+                        th.amount = "+" + rdr["price"].ToString();
+                    }
+                    else
+                    {
+                        th.amount = "-" + rdr["price"].ToString();
+                    }
+
                     //김준석
                     //거래내역 리스트에 추가
                     list.Add(th);

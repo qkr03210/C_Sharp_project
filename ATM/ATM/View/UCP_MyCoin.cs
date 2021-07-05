@@ -114,8 +114,8 @@ namespace ATM.Panel
                     ClientInvest += (coins[i].AvgPrice * coins[i].total_amount);
                     ClientRevenue += (coins[i].revenue);
                 }
-                label_invest.Text = "" + ClientInvest;
-                label_revenue.Text = "" + ClientRevenue;
+                label_invest.Text = "" + ClientInvest.ToString("#,#");
+                label_revenue.Text = "" + ClientRevenue.ToString("#,#");
                 int revenue = Convert.ToInt32(label_revenue.Text);
                 if (revenue > 0)
                 {

@@ -28,8 +28,7 @@ namespace ATM.Panel
             this.name = parentForm.getName();
             this.bank = parentForm.getBank();
             this.acc_num = parentForm.getUserAccount();
-
-           
+                       
             Name_label.Text = name+" 님의 거래 내역";
             //김준석
             //거래 내역 조회 해서 데이터 그리드에 출력
