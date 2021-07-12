@@ -116,7 +116,7 @@ namespace ATM.Panel
                 }
                 label_invest.Text = "" + ClientInvest.ToString("#,#");
                 label_revenue.Text = "" + ClientRevenue.ToString("#,#");
-                int revenue = Convert.ToInt32(label_revenue.Text);
+                double revenue = Convert.ToDouble(label_revenue.Text);
                 if (revenue > 0)
                 {
                     label_revenue.ForeColor = Color.Red;
