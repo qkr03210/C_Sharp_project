@@ -39,6 +39,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label_invest = new System.Windows.Forms.Label();
             this.label_revenue = new System.Windows.Forms.Label();
+            this.label_name = new System.Windows.Forms.Label();
             this.coinnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalamountDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.avgPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -90,11 +91,12 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("배달의민족 주아", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(321, 18);
+            this.label1.Location = new System.Drawing.Point(378, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(222, 35);
+            this.label1.Size = new System.Drawing.Size(221, 35);
             this.label1.TabIndex = 8;
-            this.label1.Text = "내 코인 정보 보기";
+            this.label1.Text = "님 코인 정보 보기";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label_clock
             // 
@@ -148,6 +150,16 @@
             this.label_revenue.Size = new System.Drawing.Size(0, 16);
             this.label_revenue.TabIndex = 13;
             // 
+            // label_name
+            // 
+            this.label_name.AutoSize = true;
+            this.label_name.Font = new System.Drawing.Font("배달의민족 주아", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_name.Location = new System.Drawing.Point(289, 18);
+            this.label_name.Name = "label_name";
+            this.label_name.Size = new System.Drawing.Size(0, 35);
+            this.label_name.TabIndex = 8;
+            this.label_name.Click += new System.EventHandler(this.label1_Click);
+            // 
             // coinnameDataGridViewTextBoxColumn
             // 
             this.coinnameDataGridViewTextBoxColumn.DataPropertyName = "coin_name";
@@ -194,11 +206,13 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label_clock);
+            this.Controls.Add(this.label_name);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button_back);
             this.Name = "UCP_MyCoin";
             this.Size = new System.Drawing.Size(900, 550);
+            this.Load += new System.EventHandler(this.UCP_MyCoin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.coinBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -223,5 +237,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label_invest;
         private System.Windows.Forms.Label label_revenue;
+        private System.Windows.Forms.Label label_name;
     }
 }

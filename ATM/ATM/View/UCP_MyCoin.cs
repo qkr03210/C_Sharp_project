@@ -38,6 +38,7 @@ namespace ATM.Panel
             ucp_clist = new UCP_CList(form);
             dataGridView1.DoubleBuffered(true);
             label_clock.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
+            label_name.Text = parentForm.getName();
         }
 
         //박상준,20210703
@@ -175,7 +176,17 @@ namespace ATM.Panel
         private void timer2_Tick(object sender, EventArgs e)
         {
             label_clock.Text = DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToLongTimeString();
-        } 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UCP_MyCoin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
     //박상준,20210701
