@@ -78,7 +78,6 @@ namespace ATM.Panel
               items.Add("XLM", "스텔라루멘");
               items.Add("SBD", "스팀달러");
               items.Add("NEO", "네오");
-              items.Add("STRAT", "스트라티스");
 
               comboBox1.DataSource = new BindingSource(items, null);
               comboBox1.DisplayMember = "Value";
@@ -122,9 +121,6 @@ namespace ATM.Panel
             {
                 CurrentCoin();
             }
-                
-
-
         }
         //박상준,20210703
         //기존에 완성된 코인 정보를 1초단위 읽어오도로 timer로 옮김
@@ -141,21 +137,28 @@ namespace ATM.Panel
                 requestUrl = $"https://crix-api-endpoint.upbit.com/v1/crix/candles/{time}?code=CRIX.UPBIT.KRW-{coin}&count=200";
             using (var client = new HttpClient())
             {
-                var response = await client.GetAsync(requestUrl);
-                var responseString = await response.Content.ReadAsStringAsync();
-                var json = JArray.Parse(responseString);
+                try
+                {
+                    var response = await client.GetAsync(requestUrl);
+                    var responseString = await response.Content.ReadAsStringAsync();
+                    var json = JArray.Parse(responseString);
 
-                DataTable dt = JsonConvert.DeserializeObject<DataTable>(json.ToString());
+                    DataTable dt = JsonConvert.DeserializeObject<DataTable>(json.ToString());
 
-                chart1.Series["DateTime"].XValueMember = "candleDateTimeKst";
-                chart1.Series["DateTime"].YValueMembers = "highPrice,lowPrice,openingPrice,tradePrice";
-                chart1.Series["DateTime"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
-                chart1.Series["DateTime"].CustomProperties = "PriceDownColor=Blue, PriceUpColor=Red";
-                chart1.Series["DateTime"]["OpenCloseStyle"] = "Triangle";
-                chart1.Series["DateTime"]["ShowOpenClose"] = "Both";
-                chart1.DataManipulator.IsStartFromFirst = true;
-                chart1.DataSource = dt;
-                chart1.DataBind();
+                    chart1.Series["DateTime"].XValueMember = "candleDateTimeKst";
+                    chart1.Series["DateTime"].YValueMembers = "highPrice,lowPrice,openingPrice,tradePrice";
+                    chart1.Series["DateTime"].XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.DateTime;
+                    chart1.Series["DateTime"].CustomProperties = "PriceDownColor=Blue, PriceUpColor=Red";
+                    chart1.Series["DateTime"]["OpenCloseStyle"] = "Triangle";
+                    chart1.Series["DateTime"]["ShowOpenClose"] = "Both";
+                    chart1.DataManipulator.IsStartFromFirst = true;
+                    chart1.DataSource = dt;
+                    chart1.DataBind();
+                }
+                catch
+                {
+                    MessageBox.Show("다른 코인 선택");
+                }
             }
         }
         
