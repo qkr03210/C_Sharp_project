@@ -152,7 +152,9 @@ namespace ATM
                     }
                     else
                     {
+                        MessageBox.Show("거래가 완료되었습니다.");
                         exchange(result);
+                        parentForm.HomePanel();
                     }
                 }
                 rdr.Close();

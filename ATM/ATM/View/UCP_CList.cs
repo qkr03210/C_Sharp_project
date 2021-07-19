@@ -170,7 +170,7 @@ namespace ATM.Panel
                 MySqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    result = Convert.ToInt32(rdr["balance"]) - Convert.ToDouble(label_totalPrice.Text); //총 금액(=trans_price)
+                    result = Convert.ToDouble(rdr["balance"]) - Convert.ToDouble(label_totalPrice.Text); //총 금액(=trans_price)
                     if (result < 0)
                     {
                         MessageBox.Show("잔액이 부족합니다");
