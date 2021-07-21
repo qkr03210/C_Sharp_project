@@ -116,7 +116,7 @@ namespace ATM.Panel
                     ClientRevenue += (coins[i].revenue);
                 }
                 label_invest.Text = "" + ClientInvest.ToString("#,#");
-                label_revenue.Text = "" + ClientRevenue.ToString("#,#");
+                label_revenue.Text = "" + ClientRevenue.ToString();
                 double revenue = Convert.ToDouble(label_revenue.Text);
                 if (revenue > 0)
                 {
